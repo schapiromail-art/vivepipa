@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obrigado — Pele de Filtro</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ═══ META PIXEL ═══
+     Esta página só é acessível depois do pagamento aprovado, por isso o Purchase
+     dispara aqui.
+     ATENÇÃO: se você também ativou o pixel dentro do Kiwify, a compra vai contar
+     DUAS vezes e o seu ROAS no gerenciador vai mentir para cima. Escolha um dos dois:
+     ou o pixel do Kiwify, ou este evento. Não os dois. -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','SEU_PIXEL_ID');
+fbq('track','PageView');
+fbq('track','Purchase',{value:37.00,currency:'BRL'});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<style>
+:root{--bg:#FFF;--alt:#F4EDE6;--ink:#303030;--muted:#707070;--accent:#C0714F;
+  --accent-dark:#A65C3D;--deep:#2B2320;--line:#E3D7CB;--green:#049A6A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--alt);color:var(--ink);font-family:Poppins,system-ui,sans-serif;
+  font-size:17px;line-height:1.6}
+.wrap{max-width:560px;margin:0 auto;padding:28px 20px 70px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 24px;
+  margin-bottom:18px}
+h1{font-size:1.45rem;line-height:1.3;margin:0 0 .5em}
+h2{font-size:1.05rem;margin:0 0 .4em}
+p{margin:0 0 1em}
+.muted{color:var(--muted);font-size:.94rem}
+
+/* barra de progresso — o mecanismo central deste padrão */
+.prog{margin-bottom:22px}
+.prog .lbl{display:flex;justify-content:space-between;font-size:.8rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:8px}
+.prog .bar{height:12px;background:#E3D7CB;border-radius:99px;overflow:hidden}
+.prog .fill{height:100%;width:92%;background:var(--accent);border-radius:99px;
+  transition:width 1.2s ease}
+
+.warn{background:#FFF4E8;border:1px solid #F0D3B0;border-radius:12px;padding:16px 18px;
+  margin-bottom:18px}
+.warn strong{color:#9A5A1E;display:block;margin-bottom:4px;letter-spacing:.03em}
+.warn p{margin:0;font-size:.93rem;color:#7A5230}
+
+label{display:block;font-weight:500;font-size:.93rem;margin:18px 0 6px}
+input[type=text],input[type=tel],select,textarea{width:100%;padding:13px 14px;font:inherit;
+  font-size:16px;border:1px solid var(--line);border-radius:9px;background:#FCFAF8;
+  color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+textarea{min-height:78px;resize:vertical}
+.opts{display:grid;gap:8px;grid-template-columns:1fr 1fr;margin-top:4px}
+.opts label{display:flex;align-items:center;gap:8px;margin:0;padding:11px 12px;
+  border:1px solid var(--line);border-radius:9px;background:#FCFAF8;cursor:pointer;
+  font-size:.9rem;font-weight:400}
+.opts label:has(input:checked){border-color:var(--accent);background:#FBF2EC;font-weight:500}
+.opts input{accent-color:var(--accent);margin:0}
+.req{color:var(--accent)}
+
+button{width:100%;margin-top:26px;background:var(--accent);color:#fff;border:0;
+  font:inherit;font-weight:600;font-size:1.05rem;padding:18px;border-radius:10px;
+  cursor:pointer;box-shadow:0 3px 0 var(--accent-dark)}
+button:active{transform:translateY(2px);box-shadow:0 1px 0 var(--accent-dark)}
+.foot{text-align:center;font-size:.78rem;color:var(--muted);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="prog">
+    <div class="lbl"><span>Quase concluído!</span><span>92%</span></div>
+    <div class="bar"><div class="fill" id="fill"></div></div>
+  </div>
+
+  <div class="card">
+    <h1>Pagamento aprovado. Falta um passo para liberar o seu acesso.</h1>
+
+    <div class="warn">
+      <strong>ATENÇÃO, NÃO PULE ESSA ETAPA.</strong>
+      <p>Preencha o formulário abaixo para liberar o material. É rápido — e é assim que eu
+      sei o que te mandar depois, em vez de te encher de e-mail que não tem nada a ver
+      com você.</p>
+    </div>
+
+    <!-- Netlify Forms: funciona até em deploy por arrastar-e-soltar, sem backend.
+         Se não for publicar na Netlify, troque o action por um Google Form ou Formspree. -->
+    <form name="qualificacao" method="POST" data-netlify="true"
+          netlify-honeypot="bot-field" action="/acesso.html">
+      <input type="hidden" name="form-name" value="qualificacao">
+      <p style="display:none"><label>Não preencha: <input name="bot-field"></label></p>
+
+      <label>Seu nome <span class="req">*</span></label>
+      <input type="text" name="nome" required autocomplete="given-name">
+
+      <label>Seu WhatsApp <span class="req">*</span></label>
+      <input type="tel" name="whatsapp" required placeholder="(11) 90000-0000"
+             autocomplete="tel" inputmode="tel">
+
+      <label>Sua faixa de idade <span class="req">*</span></label>
+      <div class="opts">
+        <label><input type="radio" name="idade" value="ate-34" required> Até 34</label>
+        <label><input type="radio" name="idade" value="35-44"> 35 a 44</label>
+        <label><input type="radio" name="idade" value="45-54"> 45 a 54</label>
+        <label><input type="radio" name="idade" value="55+"> 55 ou mais</label>
+      </div>
+
+      <label>Como é a sua pele <span class="req">*</span></label>
+      <div class="opts">
+        <label><input type="radio" name="pele" value="seca" required> Seca</label>
+        <label><input type="radio" name="pele" value="oleosa"> Oleosa</label>
+        <label><input type="radio" name="pele" value="mista"> Mista</label>
+        <label><input type="radio" name="pele" value="nao-sei"> Não sei</label>
+      </div>
+
+      <label>O que mais te incomoda hoje <span class="req">*</span></label>
+      <div class="opts" style="grid-template-columns:1fr">
+        <label><input type="radio" name="dor" value="craquela" required> A base craquela ao longo do dia</label>
+        <label><input type="radio" name="dor" value="olheira"> Marca a linha embaixo do olho</label>
+        <label><input type="radio" name="dor" value="oxida"> A base oxida e fica alaranjada</label>
+        <label><input type="radio" name="dor" value="some"> A maquiagem simplesmente some</label>
+      </div>
+
+      <label>Qual base você usa hoje?</label>
+      <input type="text" name="base" placeholder="Marca e nome, se lembrar">
+
+      <label>Me conta em uma frase: o que você já tentou e não funcionou?</label>
+      <textarea name="tentou" placeholder="Escreva do seu jeito, como você falaria"></textarea>
+
+      <button type="submit">LIBERAR MEU ACESSO</button>
+      <p class="foot">Seus dados são usados só para te enviar o material e conteúdo
+      relacionado. Nada de spam, e você sai quando quiser.</p>
+    </form>
+  </div>
+
+</div>
+<script>
+// A barra anima de 70% para 92% ao carregar: o movimento é o que faz a barra funcionar.
+var f=document.getElementById('fill');
+f.style.width='70%';
+requestAnimationFrame(function(){setTimeout(function(){f.style.width='92%'},120)});
+</script>
+</body>
+</html>

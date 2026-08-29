@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pele de Filtro — maquiagem que não craquela depois dos 35</title>
-<meta name="description" content="O protocolo de 10 minutos para uma maquiagem que não craquela e não marca linha nenhuma. Funciona com a base que você já tem.">
+<meta name="description" content="Descubra como ter uma maquiagem que não craquela e não marca linha nenhuma em 10 minutos, mesmo usando a base que você já tem.">
 <meta property="og:title" content="Pele de Filtro">
 <meta property="og:description" content="O protocolo de 10 minutos para uma maquiagem que não craquela depois dos 35.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- ═══ META PIXEL — troque SEU_PIXEL_ID ═══ -->
+<!-- ═══ META PIXEL — troque SEU_PIXEL_ID (3 ocorrências no arquivo) ═══ -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -26,262 +26,477 @@ fbq('track','PageView');
 src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
 <style>
+/* Estrutura: framework MAXXIMA (15 blocos). Tipografia: Poppins, como o template.
+   Paleta: terracota da oferta — o #AD1F1F é a marca da MAXXIMA, não uma regra. */
 :root{
-  --bg:#F7F1EA; --ink:#2B2320; --muted:#6B5D55;
-  --accent:#C0714F; --accent-dark:#A65C3D;
-  --card:#FFFCF9; --line:#E5D9CD;
-  --max:640px;
+  --bg:#FFFFFF; --alt:#F4EDE6; --ink:#303030; --muted:#707070;
+  --accent:#C0714F; --accent-dark:#A65C3D; --deep:#2B2320;
+  --line:#E3D7CB; --green:#049A6A; --max:660px;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Poppins,system-ui,sans-serif;
+  font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
-h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.2;margin:0 0 .5em}
-h1{font-size:2.1rem}
-h2{font-size:1.55rem;margin-top:2.6em}
-h3{font-size:1.15rem;font-family:Inter,sans-serif;font-weight:600;margin-bottom:.3em}
+section{padding:54px 0}
+section.alt{background:var(--alt)}
+section.dark{background:var(--deep);color:#F4EDE6}
+h1,h2,h3{line-height:1.25;margin:0 0 .6em;font-weight:600}
+h1{font-size:2rem}
+h2{font-size:1.6rem;text-align:center;margin-bottom:1.2em}
+h3{font-size:1.12rem;margin-bottom:.3em}
 p{margin:0 0 1.1em}
-strong{font-weight:600}
-em{color:var(--accent-dark);font-style:normal;font-weight:600}
+em{font-style:normal;color:var(--accent-dark);font-weight:600}
+.dark em{color:#E0A182}
+.center{text-align:center}
+.muted{color:var(--muted)}
+.kicker{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;text-align:center;margin-bottom:1.4em}
 
-header{background:var(--ink);color:var(--bg);padding:46px 0 40px;text-align:center}
-header h1{color:var(--bg)}
-header .sub{color:#D9C9BC;font-size:1.05rem;margin-bottom:1.6em}
-.kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:1.4em;font-weight:600}
-
-.cta{display:block;background:var(--accent);color:#fff;text-decoration:none;
-  font-weight:600;font-size:1.08rem;text-align:center;padding:18px 24px;
-  border-radius:10px;margin:0 auto;max-width:420px;
-  box-shadow:0 3px 0 var(--accent-dark);transition:transform .08s}
+.cta{display:block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;
+  font-size:1.1rem;text-align:center;padding:20px 24px;border-radius:10px;margin:24px auto 0;
+  max-width:440px;box-shadow:0 3px 0 var(--accent-dark);transition:transform .08s}
 .cta:active{transform:translateY(2px);box-shadow:0 1px 0 var(--accent-dark)}
-.cta small{display:block;font-weight:400;font-size:.82rem;opacity:.9;margin-top:3px}
+.cta small{display:block;font-weight:400;font-size:.8rem;opacity:.92;margin-top:4px}
 
-section{padding:8px 0}
-.pain{background:var(--card);border:1px solid var(--line);border-radius:12px;
-  padding:24px 26px;margin:20px 0}
-.pain ul{margin:0;padding-left:1.1em}
-.pain li{margin-bottom:.7em;color:var(--muted)}
-.pain li::marker{color:var(--accent)}
+/* B1 */
+header{background:var(--deep);color:#F4EDE6;padding:52px 0 46px;text-align:center}
+header h1{color:#fff}
+header .sub{color:#CDBBAD;font-size:1.05rem;max-width:520px;margin:0 auto}
 
-.mech{border-left:3px solid var(--accent);padding:4px 0 4px 20px;margin:26px 0;
-  font-size:1.12rem}
+/* B3 ruminação */
+.think{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;
+  margin:18px 0;font-size:1.05rem;position:relative}
+.think::before{content:"“";position:absolute;top:2px;left:12px;font-size:3rem;
+  color:var(--line);line-height:1}
+.think p{margin:0 0 .6em;padding-left:14px}
+.think p:last-child{margin:0}
+.ask{text-align:center;font-size:1.3rem;font-weight:600;margin:26px 0;color:var(--accent-dark)}
 
-.steps{counter-reset:s;list-style:none;padding:0;margin:22px 0}
-.steps li{counter-increment:s;position:relative;padding-left:52px;margin-bottom:22px}
-.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;
-  width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;
-  display:grid;place-items:center;font-weight:600;font-size:.95rem}
+/* B4 passos */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding-left:60px;margin-bottom:26px}
+.steps li::before{content:"Passo " counter(s);position:absolute;left:0;top:2px;width:46px;
+  font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);
+  font-weight:600;line-height:1.3}
+.steps li::after{content:"";position:absolute;left:0;top:30px;bottom:-20px;width:2px;
+  background:var(--line)}
+.steps li:last-child::after{display:none}
 
-.bonus{background:var(--card);border:1px solid var(--line);border-radius:12px;
+/* benefícios */
+.bens{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:620px){.bens{grid-template-columns:1fr 1fr}}
+.ben{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.ben h3{color:var(--accent-dark)}
+.ben p{margin:0;font-size:.95rem;color:var(--muted)}
+
+/* B5/B6 itens */
+.item{display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:12px;
   padding:20px 22px;margin-bottom:14px}
-.bonus .tag{display:inline-block;font-size:.72rem;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:6px}
-.bonus p{margin:0;color:var(--muted);font-size:.96rem}
+.item .n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;
+  display:grid;place-items:center;font-weight:600;font-size:.92rem}
+.item h3{margin-top:2px}
+.item p{margin:0;font-size:.95rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:4px}
 
-.price{background:var(--ink);color:var(--bg);border-radius:14px;
-  padding:34px 26px;text-align:center;margin:30px 0}
-.price .old{color:#9C8B80;text-decoration:line-through;font-size:1rem}
-.price .now{font-family:"Playfair Display",serif;font-size:3.1rem;line-height:1;
-  margin:6px 0 4px}
-.price .note{color:#D9C9BC;font-size:.9rem;margin-bottom:22px}
-.price .cta{max-width:100%}
+/* B7 lista */
+.check{list-style:none;padding:0;margin:0}
+.check li{position:relative;padding-left:34px;margin-bottom:14px}
+.check li::before{content:"✓";position:absolute;left:0;top:0;width:22px;height:22px;
+  border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;
+  font-size:.75rem;font-weight:700}
 
-.guar{border:2px dashed var(--line);border-radius:12px;padding:22px 24px;margin:26px 0}
+/* B8 stack */
+.stack{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.stack .row{display:flex;justify-content:space-between;gap:14px;padding:13px 20px;
+  border-bottom:1px solid var(--line);font-size:.95rem}
+.stack .row span:last-child{white-space:nowrap;color:var(--muted)}
+.stack .sum{display:flex;justify-content:space-between;padding:18px 20px;font-weight:600;
+  background:var(--alt)}
+.stack .sum .old{text-decoration:line-through;color:var(--muted)}
+
+/* B9 preço */
+.price{background:var(--deep);color:#F4EDE6;border-radius:16px;padding:36px 24px;
+  text-align:center}
+.price .from{color:#9C8B80;text-decoration:line-through;font-size:1rem}
+.price .now{font-size:3.2rem;font-weight:700;line-height:1;margin:6px 0 2px;color:#fff}
+.price .inst{color:#CDBBAD;font-size:.92rem;margin-bottom:6px}
+
+/* B10 como acessar */
+.how{display:grid;gap:16px;grid-template-columns:1fr;text-align:center}
+@media(min-width:620px){.how{grid-template-columns:repeat(3,1fr)}}
+.how div{padding:8px}
+.how .ic{width:44px;height:44px;margin:0 auto 10px;border-radius:50%;background:var(--accent);
+  color:#fff;display:grid;place-items:center;font-weight:600}
+.how p{font-size:.92rem;color:var(--muted);margin:0}
+
+/* B11 autoridade */
+.auth{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.auth h3{margin-bottom:0}
+.auth .role{color:var(--accent);font-size:.85rem;font-weight:500;margin-bottom:14px}
+
+/* B12 duas opções */
+.opt{border-radius:12px;padding:20px 22px;margin-bottom:14px}
+.opt.bad{background:#F2EAE6;border:1px solid #E0CFC6}
+.opt.good{background:#E8F4EE;border:1px solid #BFE0CE}
+.opt h3{margin-bottom:.2em}
+.opt.bad h3{color:#8A5A48}.opt.good h3{color:#1F7A57}
+.opt p{margin:0;font-size:.96rem;color:var(--muted)}
+
+/* garantia */
+.guar{border:2px dashed var(--line);border-radius:14px;padding:24px;margin-top:26px;
+  background:#fff}
 .guar h3{margin-top:0}
-.guar p{margin:0;color:var(--muted);font-size:.96rem}
+.guar p{margin:0;font-size:.96rem;color:var(--muted)}
 
-details{border-bottom:1px solid var(--line);padding:14px 0}
-summary{cursor:pointer;font-weight:600;list-style:none}
+/* B14 faq */
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:500;list-style:none}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";float:right;color:var(--accent);font-weight:600}
 details[open] summary::after{content:"–"}
-details p{margin:12px 0 2px;color:var(--muted);font-size:.96rem}
+details p{margin:12px 0 2px;color:var(--muted);font-size:.95rem}
 
-footer{background:var(--ink);color:#9C8B80;font-size:.82rem;
-  padding:34px 0 120px;margin-top:50px;text-align:center}
-footer a{color:#D9C9BC}
+/* B15 rodapé */
+footer{background:var(--deep);color:#8A7B71;font-size:.8rem;padding:36px 0 120px;
+  text-align:center;line-height:1.6}
+footer a{color:#CDBBAD}
+footer .disc{margin-top:16px;font-size:.72rem;opacity:.8}
 
-.sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(247,241,234,.97);
-  border-top:1px solid var(--line);padding:11px 16px;
-  backdrop-filter:blur(6px);z-index:50}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.97);
+  border-top:1px solid var(--line);padding:11px 16px;backdrop-filter:blur(6px);z-index:50}
 .sticky .cta{margin:0 auto;padding:15px;font-size:1rem}
-@media(min-width:700px){h1{font-size:2.6rem}body{font-size:18px}}
+@media(min-width:700px){h1{font-size:2.5rem}h2{font-size:1.9rem}}
 </style>
 </head>
 <body>
 
+<!-- ══════════ BLOCO 1 — VENDER SOZINHO ══════════
+     {promessa principal} + {tempo específico} + {objeção/dificuldade} -->
 <header>
   <div class="wrap">
     <div class="kicker">Protocolo de 10 minutos</div>
-    <h1>A sua base não é o problema.<br>A espessura é.</h1>
-    <p class="sub">O método para uma maquiagem que não craquela e não marca
-    linha nenhuma — com a base que já está na sua gaveta.</p>
+    <h1>Descubra como ter uma maquiagem que não craquela e não marca linha nenhuma em 10 minutos, mesmo usando a base que você já tem.</h1>
+    <p class="sub">Sem comprar produto novo. Sem técnica de pincel. Só a ordem certa —
+    a que ninguém te contou quando a sua pele mudou.</p>
     <a class="cta" href="#comprar" data-cta="hero">Quero o protocolo por R$ 37
-      <small>Acesso imediato · 7 dias de garantia</small></a>
+      <small>Acesso imediato no e-mail · 7 dias de garantia</small></a>
   </div>
 </header>
 
-<div class="wrap">
+<!-- ══════════ BLOCO 2 — DEPOIMENTOS ══════════
+     REMOVIDO NA V1 DE PROPÓSITO. Não existe cliente ainda e depoimento inventado é
+     fraude — além de risco de conta no Meta e de chargeback. Reative este bloco quando
+     tiver prints reais de compradoras. Se um dia usar antes/depois, que a comparação
+     seja da MAQUIAGEM APLICADA, nunca da pele: o Meta restringe o outro formato. -->
 
+<!-- ══════════ BLOCO 3 — RUMINAÇÃO ══════════ -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Você não aguenta mais passar base de manhã e ver que às 11h já craquelou.</h2>
+    <p class="center muted">Por isso, você pensa:</p>
+
+    <div class="think">
+      <p>“Já troquei de base três vezes e nenhuma resolveu.”</p>
+      <p>“Marca a linha embaixo do olho e me deixa com cara de cansada.”</p>
+      <p>“Fico bem no espelho e horrível na foto.”</p>
+      <p>“Minha filha usa a mesma base e nela fica lisinho.”</p>
+    </div>
+
+    <p class="ask">Estou certo?</p>
+
+    <p>Eu sei. E sei também que você já pensou que era falta de jeito — que outras mulheres
+    sabem alguma coisa que você não sabe.</p>
+    <p><em>Não é isso.</em> Você sempre soube se maquiar. O que mudou foi a textura da sua
+    pele, e ninguém avisou que a técnica precisava mudar junto.</p>
+    <p class="center" style="font-size:1.15rem;font-weight:500;margin-top:26px">
+    Se você pudesse ter uma maquiagem que dura o dia inteiro sem craquelar, sem trocar
+    nenhum produto da sua gaveta — o <em>Pele de Filtro</em> é para você.</p>
+  </div>
+</section>
+
+<!-- ══════════ BLOCO 4 — PASSO A PASSO ══════════ -->
 <section>
-  <h2>Você reconhece isto?</h2>
-  <div class="pain">
-    <ul>
-      <li>Passa a base às 7h e às 11h já craquelou embaixo do olho.</li>
-      <li>A maquiagem marca a linha de expressão e te deixa com cara de cansada.</li>
-      <li>A base oxida, fica alaranjada e parece máscara.</li>
-      <li>Você fica bem no espelho e não se reconhece na foto.</li>
-      <li>Já gastou uma fortuna em base nova e nenhuma resolveu.</li>
-      <li>Sua filha usa a mesma base e nela fica lisinho.</li>
+  <div class="wrap">
+    <h2>Esses são os 3 passos para uma maquiagem que não racha</h2>
+
+    <ol class="steps">
+      <li>
+        <h3>Esperar a pele secar de verdade</h3>
+        <p>Maquiar por cima de hidratante que ainda não secou dissolve a base. São 3
+        minutos e é o passo que quase todo mundo pula — tem um teste de um segundo no guia
+        para saber a hora exata de começar.</p>
+      </li>
+      <li>
+        <h3>Três camadas finas no lugar de uma grossa</h3>
+        <p>Depois dos 35 a pele retém menos água: o produto fica parado em cima e escorre
+        para dentro da linha de expressão. É ali que ele racha. Três camadas finíssimas,
+        com 40 segundos entre elas, formam um filme que acompanha o rosto —
+        <em>nenhuma camada tem espessura suficiente para quebrar.</em></p>
+      </li>
+      <li>
+        <h3>Quase nada de pó na área dos olhos</h3>
+        <p>Pó em excesso é a causa número um do vinco embaixo do olho. Numa pele que não
+        tem água, ele vira crosta e quebra no primeiro sorriso. Tem quantidade certa, e
+        ela é menor do que você imagina.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════ BLOCO EXTRA — BENEFÍCIOS ══════════ -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Com esse passo a passo você vai:</h2>
+    <div class="bens">
+      <div class="ben"><h3>Sair de casa e chegar em casa igual</h3>
+        <p>A maquiagem da manhã ainda de pé às 19h, sem retoque no meio do dia.</p></div>
+      <div class="ben"><h3>Se reconhecer na foto</h3>
+        <p>Sem a linha marcada embaixo do olho, que é o que a câmera mostra e o espelho esconde.</p></div>
+      <div class="ben"><h3>Parar de comprar base</h3>
+        <p>Porque você vai entender que o problema nunca esteve no produto.</p></div>
+      <div class="ben"><h3>Fazer tudo em 10 minutos</h3>
+        <p>Cronometrado. E tem a versão de 4 minutos para o dia em que você acordou atrasada.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BLOCO 5 — ENTREGÁVEIS ══════════ -->
+<section>
+  <div class="wrap">
+    <h2>Veja tudo que você vai receber com o Pele de Filtro</h2>
+
+    <div class="item"><div class="n">1</div><div>
+      <h3>O Protocolo Pele de Filtro</h3>
+      <p>O método completo dos 10 minutos, minuto a minuto: o preparo, as três camadas
+      cronometradas, a área dos olhos, a selagem e o retoque do meio do dia.</p></div></div>
+
+    <div class="item"><div class="n">2</div><div>
+      <h3>Checklist do Espelho</h3>
+      <p>O protocolo inteiro em uma página, para imprimir e colar no espelho do banheiro.
+      Nos primeiros dias você não vai lembrar da ordem — e não precisa.</p></div></div>
+
+    <div class="item"><div class="n">3</div><div>
+      <h3>Mapa das Olheiras</h3>
+      <p>Qual corretor de cor usar para cada tipo de olheira: azulada, marrom, avermelhada
+      ou funda. Corretor errado por cima de olheira escura resulta em cinza — é por isso
+      que nunca ficou bom.</p></div></div>
+
+    <div class="item"><div class="n">4</div><div>
+      <h3>O Kit de R$ 100</h3>
+      <p>O que procurar no rótulo, por função e não por marca. Mais os quatro tipos de
+      produto caro que não valem o seu dinheiro.</p></div></div>
+  </div>
+</section>
+
+<!-- ══════════ BLOCO 6 — BÔNUS ══════════ -->
+<section class="alt">
+  <div class="wrap">
+    <p class="kicker">Ainda não acabou</p>
+    <h2>Você também vai receber…</h2>
+
+    <div class="item"><div>
+      <div class="tag">Bônus 1</div>
+      <h3>Protocolo Express de 4 Minutos</h3>
+      <p>A ordem de prioridade para o dia em que você acordou atrasada: o que fazer e o
+      que pular sem estragar o resultado.</p></div></div>
+
+    <div class="item"><div>
+      <div class="tag">Bônus 2</div>
+      <h3>7 Erros Depois dos 35</h3>
+      <p>O que parar de fazer hoje. O quinto sozinho já muda o seu resultado amanhã de
+      manhã — e é o que praticamente toda mulher faz.</p></div></div>
+  </div>
+</section>
+
+<!-- ══════════ BLOCO 7 — PARA QUEM SERVE ══════════ -->
+<section>
+  <div class="wrap">
+    <h2>O Pele de Filtro é para você que:</h2>
+    <ul class="check">
+      <li>Quer uma maquiagem que dure o dia inteiro sem craquelar nem marcar;</li>
+      <li>Se incomoda em ficar bem no espelho e não se reconhecer na foto;</li>
+      <li>Não tem 40 minutos de manhã e precisa de algo que caiba em 10;</li>
+      <li>Já gastou dinheiro em base nova achando que era o produto;</li>
+      <li>Quer resolver com o que já tem na gaveta, sem comprar nada;</li>
+      <li>Passou dos 35 e sentiu que a maquiagem mudou de comportamento.</li>
     </ul>
+    <p class="center" style="font-size:1.15rem;font-weight:500;margin-top:30px">
+    Se você quer parar de brigar com a sua base toda manhã,<br>
+    o <em>Pele de Filtro</em> é para você.</p>
   </div>
-  <p>Se você marcou três ou mais, não é falta de habilidade. Você sempre soube se maquiar.
-  <em>A sua pele mudou de textura e ninguém avisou que a técnica precisava mudar junto.</em></p>
 </section>
 
-<section>
-  <h2>Por que isso começou depois dos 35</h2>
-  <p>Três coisas acontecem ao mesmo tempo. A pele passa a reter menos água, então não
-  “puxa” o produto para dentro — ele fica parado em cima. As linhas de expressão viram
-  canais, e o produto parado escorre para dentro delas. E a oleosidade muda de lugar:
-  sobra na zona T, falta no resto.</p>
-  <p>Repare que <strong>nenhuma dessas três coisas tem a ver com a marca da sua base.</strong></p>
-  <div class="mech">
-    Uma camada só racha se tiver espessura suficiente para quebrar. Três camadas
-    finíssimas, com tempo de secagem entre elas, formam um filme que acompanha o
-    movimento do rosto. Uma camada grossa não acompanha — <em>ela quebra.</em>
+<!-- ══════════ BLOCO 8 — RECAPITULANDO (value stack) ══════════ -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Recapitulando…</h2>
+    <p class="center muted" style="margin-top:-.6em">Tudo que você recebe no Pele de Filtro</p>
+
+    <div class="stack">
+      <div class="row"><span>✅ O Protocolo Pele de Filtro</span><span>R$ 97</span></div>
+      <div class="row"><span>✅ Checklist do Espelho</span><span>R$ 27</span></div>
+      <div class="row"><span>✅ Mapa das Olheiras</span><span>R$ 47</span></div>
+      <div class="row"><span>✅ O Kit de R$ 100</span><span>R$ 37</span></div>
+      <div class="row"><span>✅ Bônus: Protocolo Express de 4 Minutos</span><span>R$ 27</span></div>
+      <div class="row"><span>✅ Bônus: 7 Erros Depois dos 35</span><span>R$ 27</span></div>
+      <div class="sum"><span>Tudo isso deveria custar:</span><span class="old">R$ 262</span></div>
+    </div>
+
+    <p class="center" style="margin-top:26px">Mas somente hoje você pode ter acesso ao
+    <em>Pele de Filtro</em> por um valor muito mais acessível.</p>
   </div>
-  <p>É isso o <strong>Método das 3 Camadas Finas</strong>. Você não vai comprar nada novo:
-  vai aplicar o que já tem de um jeito que a sua pele de hoje aceita.</p>
 </section>
 
-<section>
-  <h2>O que você recebe</h2>
-  <ol class="steps">
-    <li><h3>O preparo que quase todo mundo pula</h3>
-      <p>Por que maquiar sobre hidratante que não secou dissolve a base — e como saber
-      o momento exato de começar.</p></li>
-    <li><h3>As três camadas finas, cronometradas</h3>
-      <p>Onde aplicar cada uma, com qual ferramenta, e os 40 segundos de espera que fazem
-      a diferença entre assentar e rachar.</p></li>
-    <li><h3>A área dos olhos sem vinco</h3>
-      <p>A quantidade certa de corretor e por que o pó em excesso é a causa número um da
-      marca embaixo do olho.</p></li>
-    <li><h3>Cor e selagem</h3>
-      <p>O que trocar de pó para creme e o passo final que transforma “maquiada” em
-      pele bonita.</p></li>
-    <li><h3>O retoque do meio do dia</h3>
-      <p>O que fazer às 15h — e o erro que cria a aparência de máscara.</p></li>
-  </ol>
-</section>
-
-<section>
-  <h2>E mais 4 bônus</h2>
-
-  <div class="bonus"><div class="tag">Bônus 1</div>
-    <h3>Mapa das Olheiras</h3>
-    <p>Qual corretor de cor usar para cada tipo de olheira — azulada, marrom, avermelhada
-    ou funda. Corretor errado por cima de olheira escura resulta em cinza.</p></div>
-
-  <div class="bonus"><div class="tag">Bônus 2</div>
-    <h3>O Kit de R$ 100</h3>
-    <p>O que procurar no rótulo, por função e não por marca. E os quatro produtos caros
-    que não valem o seu dinheiro.</p></div>
-
-  <div class="bonus"><div class="tag">Bônus 3</div>
-    <h3>Protocolo Express de 4 Minutos</h3>
-    <p>A ordem de prioridade para o dia em que você acordou atrasada — o que fazer e o
-    que pular sem estragar o resultado.</p></div>
-
-  <div class="bonus"><div class="tag">Bônus 4</div>
-    <h3>7 Erros Depois dos 35</h3>
-    <p>O que parar de fazer hoje. O quinto sozinho já muda o seu resultado amanhã de manhã.</p></div>
-</section>
-
+<!-- ══════════ BLOCO 9 — VALOR ══════════ -->
 <section id="comprar">
-  <div class="price">
-    <div class="old">R$ 97</div>
-    <div class="now">R$ 37</div>
-    <div class="note">à vista ou parcelado · acesso imediato</div>
-    <a class="cta" href="#" id="checkout" data-cta="principal">Quero o protocolo agora
-      <small>Você recebe tudo por e-mail em seguida</small></a>
-  </div>
-
-  <div class="guar">
-    <h3>Teste amanhã de manhã</h3>
-    <p>Se a sua maquiagem craquelar do mesmo jeito, você tem 7 dias para pedir o dinheiro
-    de volta — sem precisar explicar nada — e fica com todo o material mesmo assim.
-    O risco é meu.</p>
+  <div class="wrap">
+    <div class="price">
+      <div class="from">De R$ 262</div>
+      <div class="now">R$ 37</div>
+      <!-- CONFIRA no Kiwify o parcelamento exato antes de publicar -->
+      <div class="inst">à vista · ou parcelado no cartão</div>
+      <a class="cta" href="#" id="checkout" data-cta="principal">QUERO COMPRAR AGORA
+        <small>Acesso imediato no seu e-mail</small></a>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2>Perguntas</h2>
-
-  <details><summary>Vou precisar comprar produtos novos?</summary>
-  <p>Não. O protocolo foi montado justamente para funcionar com a base que você já tem —
-  inclusive com aquela que você achou que era ruim. O Bônus 2 é para o dia em que você
-  for repor, não para agora.</p></details>
-
-  <details><summary>Funciona com a minha base matte?</summary>
-  <p>Funciona, com um ajuste que está no guia. Bases matte de longa duração foram
-  formuladas para pele oleosa e jovem: elas secam rápido e duro. Tem uma correção
-  simples para usar a sua sem que ela quebre.</p></details>
-
-  <details><summary>Eu não sou boa de maquiagem. É difícil?</summary>
-  <p>São 10 minutos e nenhuma técnica de pincel. A maior parte do método é sobre
-  quantidade e tempo de espera — não sobre habilidade manual.</p></details>
-
-  <details><summary>Como recebo?</summary>
-  <p>Na hora. Assim que o pagamento é aprovado você recebe o acesso no e-mail cadastrado
-  na compra. É material digital, para ler no celular ou no computador.</p></details>
-
-  <details><summary>Serve para pele oleosa?</summary>
-  <p>Serve, e é um dos casos mais comuns. Pele oleosa que craquela normalmente está
-  desidratada — o guia trata as duas coisas juntas.</p></details>
-
-  <details><summary>E se não funcionar para mim?</summary>
-  <p>Você pede o reembolso em até 7 dias, sem justificativa, e fica com o material.</p></details>
+<!-- ══════════ BLOCO 10 — COMO ACESSAR ══════════ -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Compre agora e receba o acesso no e-mail imediatamente</h2>
+    <div class="how">
+      <div><div class="ic">1</div><h3>Faça sua compra</h3>
+        <p>Pix ou cartão, no checkout seguro. Leva menos de dois minutos.</p></div>
+      <div><div class="ic">2</div><h3>Baixe o material</h3>
+        <p>Assim que o pagamento é aprovado, tudo chega no e-mail que você cadastrar.</p></div>
+      <div><div class="ic">3</div><h3>Tudo pronto</h3>
+        <p>É só aplicar amanhã de manhã e ver a sua maquiagem se comportar.</p></div>
+    </div>
+  </div>
 </section>
 
+<!-- ══════════ BLOCO 11 — AUTORIDADE ══════════ -->
 <section>
-  <a class="cta" href="#" data-cta="final" onclick="document.getElementById('checkout').click();return false;">
-    Começar por R$ 37 <small>7 dias de garantia incondicional</small></a>
+  <div class="wrap">
+    <div class="auth">
+      <!-- PREENCHA com o seu nome e a sua história real. Não invente credencial:
+           é o bloco mais fácil de checar e o que mais custa se for falso. -->
+      <h3>{SEU NOME}</h3>
+      <div class="role">Criador do Pele de Filtro</div>
+      <p class="muted" style="margin:0;font-size:.96rem">{Duas ou três frases sobre por que
+      você montou este protocolo — o que te levou até ele e o que você viu funcionar.
+      Honesto e curto vende mais do que título inflado.}</p>
+    </div>
+  </div>
 </section>
 
-</div>
+<!-- ══════════ BLOCO 12 — CONVERSA SÉRIA ══════════ -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Agora você tem duas opções:</h2>
 
+    <div class="opt bad"><h3>Opção 1</h3>
+      <p>Continuar passando base todo dia sabendo que às 11h vai craquelar. Continuar
+      fugindo das fotos. E comprar mais uma base, que também não vai resolver, porque o
+      problema nunca esteve ali.</p></div>
+
+    <div class="opt good"><h3>Opção 2</h3>
+      <p>Acessar o Pele de Filtro por R$ 37, testar amanhã de manhã com a base que você já
+      tem, e finalmente ter uma maquiagem que dura o dia inteiro.</p></div>
+
+    <p class="center" style="font-weight:500;margin-top:22px">
+    Eu sei — e você também sabe — qual das duas é a mais inteligente.</p>
+  </div>
+</section>
+
+<!-- ══════════ BLOCO 13 — VALOR (repetição) ══════════ -->
+<section>
+  <div class="wrap">
+    <div class="price">
+      <div class="from">De R$ 262</div>
+      <div class="now">R$ 37</div>
+      <div class="inst">à vista · ou parcelado no cartão</div>
+      <a class="cta" href="#" data-cta="final"
+         onclick="document.getElementById('checkout').click();return false;">QUERO COMPRAR AGORA
+        <small>Acesso imediato no seu e-mail</small></a>
+    </div>
+
+    <div class="guar">
+      <h3>Teste amanhã de manhã. O risco é meu.</h3>
+      <p>Se a sua maquiagem craquelar do mesmo jeito, você tem 7 dias para pedir o dinheiro
+      de volta — sem precisar explicar nada — e fica com todo o material mesmo assim.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BLOCO 14 — FAQ ══════════ -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Perguntas frequentes</h2>
+
+    <details><summary>Vou precisar comprar produtos novos?</summary>
+    <p>Não. O protocolo foi montado justamente para funcionar com a base que você já tem —
+    inclusive com aquela que você achou que era ruim. O Kit de R$ 100 é para o dia em que
+    você for repor, não para agora.</p></details>
+
+    <details><summary>Funciona com a minha base matte?</summary>
+    <p>Funciona, com um ajuste que está no guia. Bases matte de longa duração foram
+    formuladas para pele oleosa e jovem: elas secam rápido e duro. Tem uma correção simples
+    para usar a sua sem que ela quebre.</p></details>
+
+    <details><summary>Serve para pele oleosa?</summary>
+    <p>Serve, e é um dos casos mais comuns. Pele oleosa que craquela normalmente está
+    desidratada — o guia trata as duas coisas juntas.</p></details>
+
+    <details><summary>Eu não sou boa de maquiagem. É difícil?</summary>
+    <p>São 10 minutos e nenhuma técnica de pincel. A maior parte do método é sobre
+    quantidade e tempo de espera, não sobre habilidade manual.</p></details>
+
+    <details><summary>Como e quando eu recebo?</summary>
+    <p>Na hora. Assim que o pagamento é aprovado você recebe o acesso no e-mail cadastrado
+    na compra. É material digital, para ler no celular ou no computador.</p></details>
+
+    <details><summary>E se não funcionar para mim?</summary>
+    <p>Você pede o reembolso em até 7 dias, sem justificativa, e fica com o material.</p></details>
+  </div>
+</section>
+
+<!-- ══════════ BLOCO 15 — RODAPÉ ══════════ -->
 <footer>
   <div class="wrap">
-    <p>Pele de Filtro · material educativo sobre técnica de maquiagem.<br>
-    Resultados variam conforme o tipo de pele e os produtos utilizados.</p>
-    <p><a href="#">Termos</a> · <a href="#">Privacidade</a> · <a href="#">Contato</a></p>
+    <p><a href="#">Termos de uso</a> · <a href="#">Política de privacidade</a> ·
+       <a href="#">Contato</a><br>
+    Copyright © {Nome do Autor/Empresa} — Pele de Filtro — 2026</p>
+    <p class="disc">Este site não é afiliado ao Facebook ou a qualquer entidade do
+    Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do
+    nosso site. Pele de Filtro é material educativo sobre técnica de maquiagem: a compra
+    deste material não garante nenhum tipo de resultado, e os resultados variam conforme
+    o tipo de pele e os produtos utilizados.</p>
   </div>
 </footer>
 
 <div class="sticky">
-  <a class="cta" href="#comprar" data-cta="sticky">Quero por R$ 37</a>
+  <a class="cta" href="#comprar" data-cta="sticky">Quero o protocolo por R$ 37</a>
 </div>
 
 <script>
 // ═══ TROQUE PELA URL DO SEU CHECKOUT KIWIFY ═══
 var CHECKOUT_URL = "https://pay.kiwify.com.br/SEU_CODIGO";
-
 document.getElementById('checkout').href = CHECKOUT_URL;
 
-// Dispara InitiateCheckout ao clicar em qualquer CTA que leve ao pagamento.
 document.getElementById('checkout').addEventListener('click', function(){
   if (window.fbq) fbq('track','InitiateCheckout',{value:37.00,currency:'BRL'});
 });
 
-// Sinal de engajamento: quem rola 50% da página está lendo de verdade.
+// Sinal de leitura: quem passa de 50% da página está lendo de verdade.
 var fired = false;
 window.addEventListener('scroll', function(){
   if (fired) return;
-  var pct = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
-  if (pct > 0.5) { fired = true; if (window.fbq) fbq('trackCustom','Leu50'); }
+  if ((window.scrollY + window.innerHeight) / document.body.scrollHeight > 0.5){
+    fired = true; if (window.fbq) fbq('trackCustom','Leu50');
+  }
 }, {passive:true});
 </script>
 </body>

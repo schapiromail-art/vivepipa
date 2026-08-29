@@ -195,3 +195,37 @@ Pule: primer, camadas 2 e 3, pó, bronzer.
 
 *Testou e a maquiagem se comportou? Me conta. Não funcionou? Você tem 7 dias para pedir
 o dinheiro de volta e fica com todo o material.*
+
+---
+
+# CHECKLIST DO ESPELHO
+
+*Imprima e cole no espelho do banheiro. O protocolo inteiro em uma página.*
+
+**PREPARO**
+- [ ] Rosto limpo, seco com batidinhas
+- [ ] Hidratante — pouco
+- [ ] **Esperar 3 minutos** (toque a bochecha: deslizou seco? pode seguir)
+- [ ] Primer só no poro e na linha marcada
+
+**AS TRÊS CAMADAS** — esponja úmida e torcida · pressionar, nunca arrastar
+- [ ] Camada 1 — 4 pontos: testa, nariz, duas bochechas → espalhar
+- [ ] **Esperar 40 segundos**
+- [ ] Camada 2 — só onde ainda aparece
+- [ ] **Esperar 40 segundos**
+- [ ] Camada 3 — esponja seca e limpa, sem produto novo
+
+**OLHOS** — aqui o excesso não tem correção
+- [ ] Corretor: traço fino do canto até a metade
+- [ ] Espalhar com a ponta da esponja, 3 ou 4 toques
+- [ ] Pó: bater o excesso 2x fora, **uma** pressionada só
+
+**COR E SELAGEM**
+- [ ] Blush e bronzer em creme, com o dedo
+- [ ] Pó translúcido só na zona T
+- [ ] Spray fixador, 2 borrifadas a um palmo
+
+**AO LONGO DO DIA**
+- [ ] Brilho → papel absorvente, pressionar
+- [ ] Opaca → spray fixador
+- [ ] ✗ Nunca pó por cima da base assentada

@@ -12,7 +12,10 @@ testado em um dia com R$ 150 de mídia.
 |---|---|
 | `oferta/oferta.md` | Público, dor, mecanismo, estrutura da oferta e bônus |
 | `produto/pele-de-filtro.md` | O entregável completo — protocolo + 4 bônus, pronto para virar PDF |
-| `landing/index.html` | Página de vendas, mobile-first, com pixel e evento de checkout |
+| `estrutura/framework-maxxima.md` | **Os cimentos** — os 15 blocos do template MAXXIMA e o padrão da página de obrigado |
+| `landing/index.html` | Página de vendas nos 15 blocos, com pixel e `InitiateCheckout` |
+| `landing/obrigado.html` | Pós-compra: barra de 92% e formulário de qualificação antes da entrega |
+| `landing/acesso.html` | Entrega dos arquivos, depois do formulário |
 | `ads/copys.md` | 6 ângulos de anúncio com copy completa |
 | `ads/criativos.md` | Especificação dos 5 estáticos + carrossel, com paleta |
 | `campanha/estrutura-campanha.md` | Estrutura, benchmarks do Brasil e critérios de decisão |
@@ -20,10 +23,19 @@ testado em um dia com R$ 150 de mídia.
 
 ### Antes de publicar
 
-Dois valores de exemplo precisam ser trocados em `landing/index.html`:
+- `SEU_PIXEL_ID` em `index.html` (3x) e em `obrigado.html` (2x)
+- `https://pay.kiwify.com.br/SEU_CODIGO` em `index.html` — a URL real do checkout
+- Os `href="#"` de `acesso.html` — os links dos PDFs
+- O bloco de autoridade de `index.html` — seu nome e sua história, sem inventar credencial
 
-- `SEU_PIXEL_ID` — o ID do pixel do Meta (aparece 3 vezes)
-- `https://pay.kiwify.com.br/SEU_CODIGO` — a URL real do checkout
+E no Kiwify: redirecionar a compra aprovada para `/obrigado.html`.
+
+### Origem
+
+A estrutura da página vem do `Template_Oficial_MAXXIMA.json` (export do Elementor,
+15 blocos) e o padrão da obrigado vem de `trafegopagolowticket.com.br/obrigado/`.
+O framework está documentado em `estrutura/framework-maxxima.md` — é o que se reaproveita
+para o próximo produto.
 
 ### Escopo
 

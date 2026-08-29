@@ -58,7 +58,11 @@ Conta nova com R$ 150/dia de cara chama atenção. Se a conta nunca gastou:
 - [ ] **Colar o pixel do Meta no checkout do Kiwify** (Configurações → Pixels).
       Sem isso você não registra a compra e a campanha otimiza no escuro.
 - [ ] Copiar a **URL do checkout** — vai no `landing/index.html`
-- [ ] **Comprar você mesmo**, com Pix, para confirmar que o e-mail de entrega chega
+- [ ] Em Configurações do produto → **redirecionar após a compra** para
+      `seudominio.com/obrigado.html`. É essa página que captura o WhatsApp e segmenta
+      a compradora — sem ela você vende R$ 37 e não fica com nada
+- [ ] **Comprar você mesmo**, com Pix, e percorrer o caminho inteiro: checkout → obrigado
+      → formulário → página de acesso → e-mail. É o único teste que importa
 
 > O último item não é opcional. Vender e não entregar em dia de teste é a única falha
 > desta lista que custa reembolso e reclamação.
@@ -69,8 +73,14 @@ Conta nova com R$ 150/dia de cara chama atenção. Se a conta nunca gastou:
 
 - [ ] Em `landing/index.html`, trocar `SEU_PIXEL_ID` pelo ID do pixel (**aparece 3 vezes**)
 - [ ] Trocar `https://pay.kiwify.com.br/SEU_CODIGO` pela URL real do checkout
+- [ ] Trocar `SEU_PIXEL_ID` também em `landing/obrigado.html` (dispara o `Purchase`)
+- [ ] **Decidir quem registra a compra:** ou o pixel dentro do Kiwify, ou o evento da
+      `obrigado.html`. Os dois juntos contam a venda em dobro e o seu ROAS mente
 - [ ] Publicar: arraste a pasta `landing/` em app.netlify.com/drop — leva 2 minutos e não
-      precisa de conta paga. Domínio próprio é melhor, mas não é bloqueante hoje
+      precisa de conta paga. Vai publicar `index`, `obrigado` e `acesso` de uma vez.
+      Domínio próprio é melhor, mas não é bloqueante hoje
+- [ ] Na Netlify, conferir em **Forms** que o formulário `qualificacao` foi detectado
+- [ ] Subir os PDFs e trocar os `href="#"` de `landing/acesso.html` pelos links reais
 - [ ] Abrir a página **no celular** e conferir: carrega rápido, botão visível, sem
       rolagem horizontal
 - [ ] Clicar no botão e confirmar que chega no checkout com o preço certo

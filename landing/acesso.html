@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seu acesso — Pele de Filtro</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--alt:#F4EDE6;--ink:#303030;--muted:#707070;--accent:#C0714F;--accent-dark:#A65C3D;
+  --line:#E3D7CB;--green:#049A6A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--alt);color:var(--ink);font-family:Poppins,system-ui,sans-serif;
+  font-size:17px;line-height:1.6}
+.wrap{max-width:560px;margin:0 auto;padding:34px 20px 70px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 24px;
+  margin-bottom:16px}
+h1{font-size:1.5rem;margin:0 0 .4em}
+h2{font-size:1rem;margin:0 0 .3em}
+p{margin:0 0 1em}
+.muted{color:var(--muted);font-size:.93rem}
+.done{display:flex;align-items:center;gap:10px;color:var(--green);font-weight:600;
+  margin-bottom:14px}
+.done .tick{width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;
+  display:grid;place-items:center;font-size:.8rem}
+.dl{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  border:1px solid var(--line);border-radius:11px;padding:15px 17px;margin-bottom:10px}
+.dl h2{margin:0}
+.dl a{background:var(--accent);color:#fff;text-decoration:none;font-weight:600;
+  font-size:.85rem;padding:10px 16px;border-radius:8px;white-space:nowrap}
+.next{background:#FBF2EC;border:1px solid #E8CDBB;border-radius:12px;padding:20px 22px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="card">
+    <div class="done"><span class="tick">✓</span> Tudo pronto</div>
+    <h1>Seu acesso está liberado</h1>
+    <p class="muted">Também mandamos tudo para o seu e-mail. Se não chegar em 5 minutos,
+    olhe no spam ou na aba Promoções.</p>
+  </div>
+
+  <div class="card">
+    <!-- Suba os PDFs no Kiwify (ou na Netlify) e troque os # pelos links reais. -->
+    <div class="dl"><h2>O Protocolo Pele de Filtro</h2><a href="#">Baixar</a></div>
+    <div class="dl"><h2>Checklist do Espelho</h2><a href="#">Baixar</a></div>
+    <div class="dl"><h2>Mapa das Olheiras</h2><a href="#">Baixar</a></div>
+    <div class="dl"><h2>O Kit de R$ 100</h2><a href="#">Baixar</a></div>
+    <div class="dl"><h2>Bônus: Protocolo Express de 4 Minutos</h2><a href="#">Baixar</a></div>
+    <div class="dl"><h2>Bônus: 7 Erros Depois dos 35</h2><a href="#">Baixar</a></div>
+  </div>
+
+  <div class="card next">
+    <h2>Comece por aqui</h2>
+    <p class="muted" style="margin-bottom:0">Imprima o <strong>Checklist do Espelho</strong>
+    e cole no espelho do banheiro hoje à noite. Amanhã de manhã você faz o protocolo
+    olhando para ele — não precisa decorar nada.</p>
+  </div>
+
+  <!-- ══ SLOT DE UPSELL — não é para hoje ══
+       Quando existir o produto de continuidade (aula em vídeo do protocolo, R$ 67),
+       ele entra aqui, depois da entrega. Nunca antes: entregar primeiro é o que
+       segura o reembolso em low ticket. -->
+
+</div>
+</body>
+</html>
