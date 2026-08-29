@@ -13,9 +13,9 @@ Regra prática: **cada arquivo tem que ser útil em menos de 3 minutos de leitur
 
 ---
 
-## Os 7 arquivos
+## Os 8 arquivos
 
-Sete, não um. Ela abre o e-mail e vê sete downloads — é aí que a percepção de valor se
+Oito, não um. Ela abre o e-mail e vê oito downloads — é aí que a percepção de valor se
 forma, antes de ler qualquer coisa.
 
 | # | Arquivo | Páginas | Formato | Função |
@@ -27,12 +27,17 @@ forma, antes de ler qualquer coisa.
 | 5 | **Protocolo Express de 4 Minutos** | 1 | Retrato, para imprimir | A versão do dia atrasado |
 | 6 | **7 Erros Depois dos 35** | 3 | Leitura rápida | O que parar de fazer hoje |
 | 7 | **Base Talhada: o guia das bolinhas** | 1 | Diagnóstico | O problema que ninguém separa do craquelado |
+| 8 | **Efeito Lifting em 3 Movimentos** | 1 | Ilustrado | Onde subir o blush, onde pôr luz, como puxar o canto |
 
-**Total: 20 a 22 páginas em 7 arquivos.** Todo o conteúdo já está escrito em
+**Total: 21 a 23 páginas em 8 arquivos.** Todo o conteúdo já está escrito em
 `produto/pele-de-filtro.md` — falta só separar e diagramar.
 
-O arquivo 7 é o que mais rende por página produzida: é o ângulo de anúncio virgem, e
-quem chega por ele encontra exatamente o que procurava.
+Os arquivos 7 e 8 são os que mais rendem por página produzida. O 7 é o ângulo de anúncio
+virgem — quem chega por ele encontra exatamente o que procurava. O 8 entra no território
+de “efeito lifting”, que está viralizando e é o de menor risco de reprovação no Meta,
+porque promete o resultado de uma técnica em vez de apontar um defeito.
+
+O 8 é o único que precisa de ilustração: três diagramas simples de rosto com setas.
 
 ## O que NÃO fazer
 
@@ -54,10 +59,10 @@ Mesma identidade da página, para o kit parecer um kit:
 - Os dois arquivos “para imprimir” (1 e 5) em preto sobre branco, sem fundo colorido —
   ela vai imprimir em jato de tinta e não vai gastar cartucho com fundo ameixa
 
-Ferramenta: Canva. Um template de capa e um de miolo servem para os sete.
+Ferramenta: Canva. Um template de capa e um de miolo servem para os oito.
 
 ## Mockups (isto é o que vende)
 
-Produza também as imagens do kit: os 7 PDFs abertos em tablet e celular, e uma imagem
-com os sete juntos. **É o que entra no bloco de entregáveis da página e no criativo.**
+Produza também as imagens do kit: os 8 PDFs abertos em tablet e celular, e uma imagem
+com os oito juntos. **É o que entra no bloco de entregáveis da página e no criativo.**
 Produto digital sem mockup parece que não existe — em beleza, ainda mais.

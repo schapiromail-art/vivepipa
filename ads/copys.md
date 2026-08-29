@@ -1,6 +1,6 @@
 # Copys de anúncio — Pele de Filtro
 
-Nove ângulos. Os três primeiros vieram de `pesquisa/voz-do-cliente.md` e usam frases
+Doze ângulos. Os três primeiros vieram de `pesquisa/voz-do-cliente.md` e usam frases
 literais do nicho — **são os que devem ir ao ar primeiro.** Os seis seguintes eram os
 originais e continuam válidos, um degrau abaixo em intensidade.
 
@@ -128,6 +128,81 @@ nada específico.*
 
 **Título:** Por que o bigode chinês fica mais marcado com base
 **Descrição:** Não é passar menos ali — R$ 47
+**CTA:** Saiba mais
+
+---
+
+## Ângulo D — “Ninguém te diz quantos minutos” ★★ mata a objeção
+
+*Responde ao “isso eu acho no Google”, que é a objeção que pode matar a oferta. E é
+verdade: todo artigo de marca dá o princípio, nenhum dá o número.*
+
+**Texto principal**
+> **[P]** Você já leu que precisa hidratar antes da base. Já leu que menos é mais. E a
+> base continua craquelando do mesmo jeito.
+>
+> **[R]** É que esses conselhos não estão errados — estão incompletos. “Hidrate bem” não
+> diz nada sobre quando começar a maquiagem. “Menos é mais” não diz quanto é menos.
+>
+> **[S]** O que resolve são os números: **3 minutos** de espera depois do hidratante,
+> **3 camadas** finas de base, **40 segundos** entre uma e outra, **1 única** pressionada
+> de pó embaixo do olho. É o protocolo inteiro, e é isso que nenhum blog publica.
+>
+> **[A]** Pele de Filtro: 10 minutos, com a base que você já tem. R$ 47, acesso imediato,
+> 7 dias de garantia.
+
+**Título:** Todo mundo diz “hidrate bem”. Ninguém diz quantos minutos.
+**Descrição:** O protocolo com os números — R$ 47
+**CTA:** Saiba mais
+
+---
+
+## Ângulo E — O espelho, como pergunta ★ alto impacto, escrever com cuidado
+
+*Território de intensidade máxima. Só funciona como **pergunta sobre o resultado da
+maquiagem** — nunca como afirmação sobre o rosto dela.*
+
+**Texto principal**
+> **[P]** Você já se olhou no espelho algumas horas depois de se maquiar e achou que as
+> linhas estavam mais aparentes do que antes?
+>
+> **[R]** A reação natural é passar mais produto para cobrir. É o que faz piorar: quanto
+> mais camada, mais material para acumular dentro do vinco.
+>
+> **[S]** A maquiagem não estava marcando porque faltava cobertura. Estava marcando
+> porque a camada era grossa demais para acompanhar o movimento do rosto. Três camadas
+> finíssimas resolvem — e o resultado é um rosto que parece descansado, não coberto.
+>
+> **[A]** O protocolo completo leva 10 minutos. Pele de Filtro, R$ 47.
+
+**Título:** A maquiagem marcou mais do que disfarçou?
+**Descrição:** Não é falta de cobertura — R$ 47
+**CTA:** Saiba mais
+
+---
+
+## Ângulo F — Efeito lifting ★★ o de menor risco de reprovação
+
+*Único ângulo de **desejo** em vez de dor. Promete o resultado de uma técnica em vez de
+apontar um defeito — por isso é o mais seguro na política do Meta, e o território que
+está viralizando.*
+
+**Texto principal**
+> **[P]** No fim do dia o rosto parece que está todo pesando para baixo — o olhar caído,
+> as maçãs sem definição.
+>
+> **[R]** A tentativa comum é compensar com mais contorno e mais produto. Em pele madura
+> isso adiciona peso visual justamente onde já parece pesado.
+>
+> **[S]** O efeito lifting não vem de cobrir: vem de direção. Blush subindo em direção às
+> têmporas, luz nos pontos altos, canto externo levemente puxado. São três movimentos e
+> nenhum produto novo.
+>
+> **[A]** Está no Pele de Filtro, junto com o protocolo de 10 minutos que faz a base parar
+> de craquelar. R$ 47, acesso imediato.
+
+**Título:** Três movimentos para um rosto mais levantado
+**Descrição:** Sem produto novo e sem procedimento — R$ 47
 **CTA:** Saiba mais
 
 ---
