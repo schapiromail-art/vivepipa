@@ -84,6 +84,17 @@ export const cena = {
   gourmet: { src: "/img/u016.webp", w: 1535, h: 1024 },
 };
 
+/**
+ * Varandas: mostram o térreo com jardim e o superior com solário na mesma
+ * imagem — são as melhores fotos para os cards de tipologia (enquadre em
+ * `object-position: bottom` para o térreo, `top` para o superior).
+ */
+export const varandas = {
+  navy: { src: "/img/varanda-navy.webp", w: 1400, h: 1867 },
+  rustico: { src: "/img/varanda-rustico.webp", w: 1400, h: 1867 },
+  classico: { src: "/img/varanda-classico.webp", w: 1400, h: 1400 },
+};
+
 export const plantaBloco = { src: "/img/plantabaixahumanizadablocoa.webp", w: 1254, h: 1254 };
 export const logo = "/img/logo.png";
 /** Versão monocromática escura, para o header quando fica claro. */
