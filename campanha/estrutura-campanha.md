@@ -1,9 +1,68 @@
-# Estrutura de campanha — validação em 1 dia
+# Estrutura de campanha
 
-Objetivo de hoje **não é lucrar**. É responder uma pergunta: *existe demanda a R$ 37 para
-esta dor?* Com R$ 150 dá para responder isso com honestidade.
+> **Este documento tem duas partes.** A de cima é o método da palestra do Maxxima —
+> é o que você deve seguir. A de baixo é o teste-relâmpago de 1 dia que eu tinha montado
+> antes de ver o material dele; fica registrado porque a leitura de métricas continua
+> valendo, mas a estrutura de campanha da parte de cima substitui a de baixo.
 
 ---
+
+# PARTE 1 — O método da palestra (siga este)
+
+## Fase 1: Testadora 1-1-1 — descobrir qual criativo funciona
+
+| | |
+|---|---|
+| Estrutura | 1 Campanha · 1 Conjunto · **1 criativo isolado** |
+| Orçamento | **45% do valor do produto por dia** = R$ 16,65 |
+| Público | Aberto (Brasil, mulheres 30–60, sem interesses) |
+| Duração | 5 dias |
+| Meta | **ROI 2** |
+
+Um conjunto por criativo. Quatro criativos = quatro conjuntos = R$ 66,60/dia.
+
+**Por que isolar.** Com vários criativos no mesmo conjunto, o algoritmo concentra a
+entrega em um ou dois e os outros morrem com dados insuficientes para julgar. Você
+termina sem saber o que funcionou. Isolado custa mais e é a única forma de saber o que
+escalar — que é a informação que vale dinheiro depois.
+
+## Fase 2: Gramado 1-1-4 — escalar o que sobreviveu
+
+| | |
+|---|---|
+| Estrutura | 1 Campanha · 1 Conjunto · **os 4 criativos que bateram ROI 3** |
+| Orçamento | 1X → 2X → até R$ 500/dia, **subindo de 5 em 5 dias** |
+| Público | Aberto |
+| Meta | **ROI 1.8** |
+
+A meta cai de 2 para 1.8 na escala de propósito: volume maior sempre custa mais caro por
+venda. Se você exigir o mesmo ROI da fase de teste, nunca escala.
+
+## Como isso encaixa com "colocar algo rodando hoje"
+
+Cinco dias não é hoje. O caminho que respeita as duas coisas:
+
+- **Hoje:** suba a Testadora com os **dois** melhores criativos (ângulos A e B de
+  `ads/copys.md`), R$ 33/dia no total. Não é para concluir nada hoje — é para o relógio
+  dos 5 dias começar a correr hoje.
+- **Dias 2–5:** cada criativo novo entra como conjunto isolado.
+- **Dia 5:** quem bateu ROI 2 sobrevive. Quem bateu ROI 3 vai para a Gramado.
+- **Depois:** sobe de 5 em 5 dias até R$ 500/dia, meta ROI 1.8.
+
+> **Ajuste obrigatório para pixel frio.** A palestra assume pixel com histórico. Com zero
+> compras, otimizar por Compra a R$ 16,65/dia não sai do aprendizado. Comece otimizando
+> por **Iniciar finalização de compra** e troque para Compra quando acumular ~15 vendas.
+
+> **Sobre paciência.** O erro que mata este método é mexer no dia 2. Cinco dias é cinco
+> dias: editar orçamento, público ou criativo reinicia o aprendizado e você perde tudo o
+> que já gastou. Olhe, anote, não toque.
+
+---
+
+# PARTE 2 — O teste-relâmpago de 1 dia (substituído)
+
+*Registrado para referência. A leitura de métricas e os critérios de decisão continuam
+válidos e valem para os dois métodos.*
 
 ## A campanha
 
@@ -56,10 +115,12 @@ Use como régua para saber se está caro ou barato, não como meta:
 | Custo por clique no link | até R$ 1,20 | acima de R$ 2,00 |
 | Página → InitiateCheckout | acima de 8% | abaixo de 4% |
 | InitiateCheckout → Compra | acima de 25% | abaixo de 12% |
-| **CPA (custo por compra)** | **até R$ 25** | acima de R$ 37 |
+| **CPA (custo por compra)** | **até R$ 18,50** (ROI 2) | acima de R$ 37 |
 
-A R$ 37 de ticket, CPA de R$ 25 é ROAS 1,48 — margem apertada mas **validado**. Daí para
-frente se melhora com order bump e upsell, não com anúncio mais barato.
+A meta ROI 2 da palestra significa **CPA de até R$ 18,50**. É mais exigente que os R$ 25
+que eu tinha proposto, e ele está certo: a R$ 37 sem order bump, ROI 1,5 não paga imposto,
+taxa de plataforma e reembolso. Daí para frente se melhora a margem com order bump e
+upsell, não com anúncio mais barato.
 
 Com CPC de R$ 1,00, R$ 150 compram ~150 cliques. Com 8% de checkout e 25% de conversão,
 isso é ~3 vendas. **Três vendas não provam que você tem um negócio — provam que a oferta

@@ -117,6 +117,37 @@ ali em quantidade vai marcar. Não tem técnica que salve excesso de produto nes
 
 ---
 
+## SE A SUA BASE FAZ BOLINHAS: ISSO É OUTRO PROBLEMA
+
+Existe uma queixa que costuma ser confundida com craquelado e não é. Vale saber
+distinguir, porque a correção é completamente diferente:
+
+| | **Base craquelada** | **Base talhada** |
+|---|---|---|
+| O que você vê | linhas, fissuras, acúmulo dentro do vinco | bolinhas, manchas, textura irregular |
+| Quando aparece | ao longo do dia | **na hora de passar** |
+| Causa | pele ressecada e camada grossa | produtos que não conversam entre si |
+
+A talhada acontece por **incompatibilidade de textura**. O caso mais comum: hidratante ou
+primer em gel (à base de água) embaixo de uma base de silicone. Os dois se repelem, a
+emulsão separa, e o produto junta em bolinhas enquanto você espalha.
+
+**A correção, em uma regra:** água com água, silicone com silicone.
+
+Olhe os primeiros ingredientes do rótulo. Se o hidratante começa com *aqua/água* e a base
+tem *dimethicone* ou *cyclopentasiloxane* logo no começo da lista, eles vão brigar.
+Duas saídas:
+
+1. **Espere mais.** Três minutos de verdade entre um e outro resolve a maioria dos casos —
+   é o mesmo passo do protocolo, e não é coincidência.
+2. **Iguale as texturas.** Se a sua base é de silicone, use primer de silicone (ou nenhum).
+   Se o seu hidratante é em gel, prefira base à base de água.
+
+E vale sempre: nunca esfregue tentando desfazer as bolinhas. Isso tira a maquiagem e leva
+o hidratante junto. Limpe a área com um lenço, espere secar, e recomece do zero.
+
+---
+
 ## AO LONGO DO DIA
 
 **Não passe pó por cima da maquiagem para tirar o brilho.** Pó sobre base que já assentou
@@ -224,6 +255,10 @@ o dinheiro de volta e fica com todo o material.*
 - [ ] Blush e bronzer em creme, com o dedo
 - [ ] Pó translúcido só na zona T
 - [ ] Spray fixador, 2 borrifadas a um palmo
+
+**SE FIZER BOLINHAS**
+- [ ] Não esfregue. Limpe a área, espere secar, recomece
+- [ ] Água com água, silicone com silicone
 
 **AO LONGO DO DIA**
 - [ ] Brilho → papel absorvente, pressionar

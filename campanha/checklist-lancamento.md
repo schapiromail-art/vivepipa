@@ -103,12 +103,14 @@ Conta nova com R$ 150/dia de cara chama atenção. Se a conta nunca gastou:
 
 ## BLOCO 4 — Campanha (30 min)
 
+Estrutura **Testadora 1-1-1** da palestra — um conjunto por criativo, isolado:
+
 - [ ] Campanha: objetivo **Vendas**, sem CBO
-- [ ] Conjunto: **R$ 150/dia** (ou R$ 50 se a conta for nova)
-- [ ] Otimização: **Compra** — ou **InitiateCheckout** se o pixel tem zero compras
-- [ ] Público: Brasil · Mulheres · 30–60 · sem interesses
+- [ ] **Conjunto 1:** R$ 16,65/dia · 1 criativo só (ângulo A)
+- [ ] **Conjunto 2:** R$ 16,65/dia · 1 criativo só (ângulo B)
+- [ ] Otimização: **InitiateCheckout** (pixel frio) — Compra depois de ~15 vendas
+- [ ] Público: Brasil · Mulheres · 30–60 · sem interesses, nos dois
 - [ ] Posicionamentos: Advantage+
-- [ ] Subir 4 anúncios com as copys de `ads/copys.md` (ângulos 1, 2, 3 e 5)
 - [ ] Conferir em cada anúncio: URL de destino correta, CTA certo, título e descrição
 - [ ] **Revisar o link de destino uma vez mais.** Link errado é a forma mais comum de
       queimar um dia inteiro de orçamento
@@ -118,13 +120,14 @@ Conta nova com R$ 150/dia de cara chama atenção. Se a conta nunca gastou:
 
 ## BLOCO 5 — Leitura
 
-**Não mexa em nada nas primeiras 6 horas.**
+**Não mexa em nada durante os 5 dias.** Editar orçamento, público ou criativo reinicia o
+aprendizado e queima o que você já gastou. A leitura real é no dia 5.
 
-**Às 6 horas de veiculação:**
-- [ ] Desligar criativo que gastou R$ 25 sem clique no link ou com CTR < 0,7%
-- [ ] Não mudar orçamento, público nem otimização
+**Ao longo dos 5 dias:**
+- [ ] Anotar os números todo dia, sem tocar em nada
+- [ ] Desligar um conjunto só se ele gastar R$ 50 sem um único clique no link
 
-**No fim do dia**, anote e compare com a tabela de `campanha/estrutura-campanha.md`:
+**No dia 5**, anote e compare com a tabela de `campanha/estrutura-campanha.md`:
 
 ```
 Investido:            R$ ______
@@ -138,7 +141,8 @@ Melhor criativo:      ______________________
 ```
 
 Os quatro cenários de leitura (A, B, C, D) estão em `campanha/estrutura-campanha.md`.
-Me mande esses números e eu te digo o que fazer amanhã.
+Quem bateu ROI 2 sobrevive; quem bateu ROI 3 vai para a Gramado 1-1-4.
+Me mande esses números e eu te digo o que escalar.
 
 ---
 

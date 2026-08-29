@@ -12,6 +12,8 @@ testado em um dia com R$ 150 de mídia.
 |---|---|
 | `oferta/oferta.md` | Público, dor, mecanismo, estrutura da oferta e bônus |
 | `produto/pele-de-filtro.md` | O entregável completo — protocolo + 4 bônus, pronto para virar PDF |
+| `pesquisa/voz-do-cliente.md` | **Benchmark de dores** — frases literais do nicho, glossário e o que mudar na copy |
+| `pesquisa/palestra-maxxima.md` | Auditoria da palestra: os 14 blocos, as estruturas de campanha e a biblioteca de ofertas |
 | `estrutura/framework-maxxima.md` | **Os cimentos** — os 15 blocos do template MAXXIMA e o padrão da página de obrigado |
 | `landing/index.html` | Página de vendas nos 15 blocos, com pixel e `InitiateCheckout` |
 | `landing/obrigado.html` | Pós-compra: barra de 92% e formulário de qualificação antes da entrega |
