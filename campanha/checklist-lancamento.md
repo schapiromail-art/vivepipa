@@ -47,7 +47,7 @@ Conta nova com R$ 150/dia de cara chama atenção. Se a conta nunca gastou:
 
 ## BLOCO 1 — Produto no Kiwify (45 min)
 
-- [ ] Criar produto digital, **R$ 37**, pagamento único
+- [ ] Criar produto digital, **R$ 47**, pagamento único
 - [ ] Ativar **Pix e cartão** (Pix costuma ser 30–40% das vendas em low ticket no Brasil)
 - [ ] Ativar parcelamento no cartão
 - [ ] Subir o material: `produto/pele-de-filtro.md` exportado como PDF
@@ -60,7 +60,7 @@ Conta nova com R$ 150/dia de cara chama atenção. Se a conta nunca gastou:
 - [ ] Copiar a **URL do checkout** — vai no `landing/index.html`
 - [ ] Em Configurações do produto → **redirecionar após a compra** para
       `seudominio.com/obrigado.html`. É essa página que captura o WhatsApp e segmenta
-      a compradora — sem ela você vende R$ 37 e não fica com nada
+      a compradora — sem ela você vende R$ 47 e não fica com nada
 - [ ] **Comprar você mesmo**, com Pix, e percorrer o caminho inteiro: checkout → obrigado
       → formulário → página de acesso → e-mail. É o único teste que importa
 
@@ -106,8 +106,8 @@ Conta nova com R$ 150/dia de cara chama atenção. Se a conta nunca gastou:
 Estrutura **Testadora 1-1-1** da palestra — um conjunto por criativo, isolado:
 
 - [ ] Campanha: objetivo **Vendas**, sem CBO
-- [ ] **Conjunto 1:** R$ 16,65/dia · 1 criativo só (ângulo A)
-- [ ] **Conjunto 2:** R$ 16,65/dia · 1 criativo só (ângulo B)
+- [ ] **Conjunto 1:** R$ 21,15/dia · 1 criativo só (ângulo A)
+- [ ] **Conjunto 2:** R$ 21,15/dia · 1 criativo só (ângulo B)
 - [ ] Otimização: **InitiateCheckout** (pixel frio) — Compra depois de ~15 vendas
 - [ ] Público: Brasil · Mulheres · 30–60 · sem interesses, nos dois
 - [ ] Posicionamentos: Advantage+

@@ -6,7 +6,7 @@
 |---|---|
 | Nome | **Pele de Filtro** |
 | Subtítulo | O protocolo de 10 minutos para uma maquiagem que não craquela e não marca linha nenhuma |
-| Preço | **R$ 37** (à vista ou parcelado no cartão) |
+| Preço | **R$ 47** (à vista ou parcelado no cartão) |
 | Plataforma | Kiwify (entrega automática por e-mail + área de membros) |
 | Público | Mulheres 35–55, Brasil |
 | Entrega | PDF principal + 4 bônus, acesso imediato |
@@ -76,7 +76,9 @@ O que parar de fazer imediatamente. Serve como conteúdo de e-mail e como ângul
 - **Sem risco de política.** Maquiagem é cosmético: não cai na política de saúde, emagrecimento nem finanças do Meta. Menos rejeição de anúncio, menos risco para a conta — que é exatamente o que você quer num teste de um dia.
 - **CPM barato.** Público feminino amplo no Brasil, sem segmentação nichada.
 - **Dor visual.** Dá para mostrar o problema numa imagem estática, sem precisar de vídeo.
-- **Ticket coerente.** R$ 37 é compra por impulso para quem já gastou R$ 150 numa base que não resolveu.
+- **Ticket coerente.** R$ 47 é compra por impulso para quem já gastou R$ 150 numa base que não resolveu — e é
+o degrau intermediário da tabela dele: acima do piso de R$ 37, abaixo dos R$ 67 que ele
+marca em verde.
 
 ## Ajuste de rota
 

@@ -79,10 +79,10 @@ Regras que valem para todos:
 > faz isso — nenhuma tem espessura suficiente para quebrar.
 >
 > **[A]** O protocolo completo leva 10 minutos e funciona com a base que já está na sua
-> gaveta. Pele de Filtro, R$ 37, acesso imediato, 7 dias de garantia.
+> gaveta. Pele de Filtro, R$ 47, acesso imediato, 7 dias de garantia.
 
 **Título:** A base não é o problema. A espessura é.
-**Descrição:** Protocolo de 10 minutos — R$ 37
+**Descrição:** Protocolo de 10 minutos — R$ 47
 **CTA:** Saiba mais
 
 ---
@@ -104,10 +104,10 @@ nada específico.*
 > hora. Água com água, silicone com silicone — e a bolinha some.
 >
 > **[A]** A correção leva dez segundos e está no Pele de Filtro, junto com o protocolo
-> completo. R$ 37, acesso imediato.
+> completo. R$ 47, acesso imediato.
 
 **Título:** Base que faz bolinhas tem nome: talhada
-**Descrição:** E a causa não é a base — R$ 37
+**Descrição:** E a causa não é a base — R$ 47
 **CTA:** Saiba mais
 
 ---
@@ -124,10 +124,10 @@ nada específico.*
 > correção é aplicar mais fino no rosto **todo** e pressionar a esponja em vez de
 > arrastar: arrastar é o que empurra o produto para dentro do vinco.
 >
-> **[A]** Dez minutos, com a base que você já tem. Pele de Filtro, R$ 37.
+> **[A]** Dez minutos, com a base que você já tem. Pele de Filtro, R$ 47.
 
 **Título:** Por que o bigode chinês fica mais marcado com base
-**Descrição:** Não é passar menos ali — R$ 37
+**Descrição:** Não é passar menos ali — R$ 47
 **CTA:** Saiba mais
 
 ---
@@ -147,11 +147,11 @@ nada específico.*
 >
 > É o Método das 3 Camadas Finas. São 10 minutos e você faz com o que já tem na gaveta.
 >
-> Protocolo completo + 4 bônus por R$ 37. Teste amanhã de manhã. Se craquelar do mesmo
+> Protocolo completo + 4 bônus por R$ 47. Teste amanhã de manhã. Se craquelar do mesmo
 > jeito, você pede o dinheiro de volta em 7 dias.
 
 **Título:** A sua base não é o problema. A espessura é.
-**Descrição:** Protocolo de 10 minutos — R$ 37
+**Descrição:** Protocolo de 10 minutos — R$ 47
 **CTA:** Comprar agora
 
 ---
@@ -169,10 +169,10 @@ nada específico.*
 > um do vinco.
 >
 > Está tudo no Pele de Filtro: o protocolo de 10 minutos, passo a passo, com o tempo de
-> cada camada. R$ 37, acesso imediato, 7 dias de garantia.
+> cada camada. R$ 47, acesso imediato, 7 dias de garantia.
 
 **Título:** Menos base cobre mais. Sério.
-**Descrição:** O protocolo de 10 minutos — R$ 37
+**Descrição:** O protocolo de 10 minutos — R$ 47
 **CTA:** Saiba mais
 
 ---
@@ -192,10 +192,10 @@ nada específico.*
 > O que resolve não é base nova — é aplicar a que você já tem em três camadas finíssimas,
 > com tempo de secagem entre elas. Dez minutos.
 >
-> Pele de Filtro: protocolo completo + 4 bônus, R$ 37.
+> Pele de Filtro: protocolo completo + 4 bônus, R$ 47.
 
 **Título:** Bem no espelho, horrível na foto?
-**Descrição:** O que a câmera mostra e o espelho esconde — R$ 37
+**Descrição:** O que a câmera mostra e o espelho esconde — R$ 47
 **CTA:** Comprar agora
 
 ---
@@ -212,10 +212,10 @@ nada específico.*
 > O Pele de Filtro não pede que você compre nada. O protocolo funciona com a base que está
 > na sua gaveta agora — inclusive aquela que você achou que era ruim.
 >
-> R$ 37. Menos do que a última base que não resolveu.
+> R$ 47. Menos do que a última base que não resolveu.
 
 **Título:** Antes de comprar outra base, leia isto
-**Descrição:** Funciona com a que você já tem — R$ 37
+**Descrição:** Funciona com a que você já tem — R$ 47
 **CTA:** Saiba mais
 
 ---
@@ -232,10 +232,10 @@ nada específico.*
 > primeiro minuto, e usar primer só nas zonas oleosas para reduzir o contato.
 >
 > Essa é uma das correções do Pele de Filtro. As outras nove estão no protocolo de 10
-> minutos — R$ 37, acesso imediato.
+> minutos — R$ 47, acesso imediato.
 
 **Título:** Por que a sua base fica laranja depois de 10 minutos
-**Descrição:** Tem correção e não é trocar de base — R$ 37
+**Descrição:** Tem correção e não é trocar de base — R$ 47
 **CTA:** Saiba mais
 
 ---
@@ -252,10 +252,10 @@ nada específico.*
 >
 > Dez minutos para aprender, e vale para todos os eventos depois desse.
 >
-> Pele de Filtro — R$ 37, acesso imediato.
+> Pele de Filtro — R$ 47, acesso imediato.
 
 **Título:** Para a maquiagem durar até o fim da festa
-**Descrição:** Protocolo de 10 minutos — R$ 37
+**Descrição:** Protocolo de 10 minutos — R$ 47
 **CTA:** Comprar agora
 
 ---

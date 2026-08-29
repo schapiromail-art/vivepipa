@@ -166,10 +166,15 @@ Dois slides, transcritos:
 > 1X → 2X → R$ 500 por dia (sobe de 5 em 5 dias) · Público Aberto
 > Teste por 5 dias · Meta ROI 1.8
 
-### O que isso significa a R$ 37
+### O que isso significa no nosso preço
 
-45% de R$ 37 = **R$ 16,65 por dia, por criativo isolado**.
-Quatro criativos testados em paralelo = R$ 66,60/dia. Cinco dias = **R$ 333**.
+Fechamos em **R$ 47** — o degrau intermediário da tabela dele.
+
+45% de R$ 47 = **R$ 21,15 por dia, por criativo isolado**.
+Dois criativos = R$ 42,30/dia. Quatro = R$ 84,60/dia; cinco dias = **R$ 423**.
+
+*(Este arquivo documenta os slides dele: a tabela acima é a dele, com R$ 37 no piso.
+O nosso preço está em `oferta/oferta.md`.)*
 
 ### Onde isso conflita com o que eu te propus
 
