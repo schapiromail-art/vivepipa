@@ -1,8 +1,99 @@
 # Auditoria do material da palestra — Ricardo Maxxima
 
-22 fotos da palestra no Drive. **11 saíram legíveis; 11 voltaram vazias do OCR** (são as
-que têm mais foto do palco do que texto de slide). Se alguma dessas tiver estrutura ou
-número, me diga o que aparece nela e eu incorporo.
+22 fotos da palestra no Drive (evento **Subido**), todas lidas. O OCR do Drive devolveu
+11 delas vazias; baixadas direto pelo link de compartilhamento e lidas como imagem,
+saíram inteiras.
+
+---
+
+## 0. As regras do produto — e onde nós estamos errando
+
+Quatro slides definem o que um low ticket pode ser. São os mais importantes do material
+e são os que mais mexem no nosso produto.
+
+> ### “Produto Low Ticket a pessoa não compra para aprender nada, **ela compra para usar**.”
+
+> ### “Produto Low Ticket **não tem Curva de Aprendizagem**!”
+
+> ### “O aluno precisa consumir em **no máximo 48 horas**!”
+
+E a lista do que **não funciona mais**:
+> ✗ Métodos com siglas ✗ Cursos com muitas aulas ✗ Precise estudar
+
+**Formatos que ele lista como low ticket:** Mini Curso · Template · Pack de Prompts ·
+Scripts e Roteiros · Mapa Mental · Calculadora · Planilha · Ebook · Áudio · Checklist.
+
+### O que isso quer dizer para o Pele de Filtro
+
+O produto hoje é um guia de ~1.800 palavras com o Checklist do Espelho no fim. Pela régua
+dele, isso está invertido: o guia é material de **estudo**, e o checklist é o material de
+**uso**. Quem compra às 22h quer aplicar às 7h da manhã seguinte, não ler um capítulo
+sobre por que a pele retém menos água.
+
+**Correção:** o Checklist do Espelho vira o produto principal e abre a entrega. O guia
+passa a ser o material de apoio, para quem quiser entender o porquê depois de já ter
+aplicado. Nada some — muda a ordem e muda o que a página promete entregar.
+
+Duas coisas que já estão certas: “Método das 3 Camadas Finas” não é sigla (o que ele
+condena é PRSA-tipo-nome-de-método, não nome descritivo), e o protocolo inteiro se
+consome em 10 minutos, muito abaixo do teto de 48 horas.
+
+---
+
+## 0b. A tabela de preços — R$ 67 é o ponto marcado em verde
+
+Slide com duas colunas:
+
+| **Low Ticket Frio** 🥶 (tráfego frio) | **Low Ticket Branding** (Instagram, público quente) |
+|---|---|
+| R$ 37 | R$ 147 |
+| R$ 47 | **R$ 197** ← verde |
+| **R$ 67** ← verde | |
+| R$ 87 ← laranja | |
+| R$ 97 ← laranja | |
+
+O verde marca o recomendado; o laranja, a zona de atrito. Para **tráfego frio**, que é
+exatamente o nosso caso, ele aponta **R$ 67**. R$ 37 é o piso da faixa, não o alvo.
+
+Isso tem consequência direta na conta: com a meta ROI 2 dele, R$ 37 te dá **CPA máximo de
+R$ 18,50**, enquanto R$ 67 te dá **R$ 33,50**. O CPM é o mesmo nos dois casos — você
+compra o mesmo clique e tem quase o dobro de margem para pagá-lo.
+
+---
+
+## 0c. PRSA — a fórmula dos criativos
+
+Dois slides, um com a sigla e outro aberto:
+
+> **P** — Problema
+> **R** — Rota
+> **S** — Solução
+> **A** — Ação
+
+É a estrutura de cada anúncio: nomear o problema, mostrar o caminho errado que ela está
+seguindo (a Rota), apresentar a solução, pedir a ação. As copys em `ads/copys.md` foram
+reescritas nessa ordem.
+
+---
+
+## 0d. O funil — Fase 02
+
+Diagrama do slide, transcrito:
+
+```
+Produto → Anúncios → Página de Venda → Checkout → Página Obrigado
+             ↓            ↑                        “Qualifico Lead (PORTA)”
+         Instagram ──────┘                                ↓
+                                                   Página Obrigado ✓
+```
+
+**A obrigado de qualificação aparece no diagrama com o nome “PORTA”** — é uma etapa
+desenhada do funil, não um detalhe da página dele. É exatamente o que construímos em
+`landing/obrigado.html` → `landing/acesso.html`, e confirma que a leitura que fizemos da
+página de obrigado dele estava certa.
+
+Note também a seta pontilhada: **Instagram alimenta a página de venda** em paralelo aos
+anúncios. O perfil não é decoração — é fonte de tráfego no mesmo funil.
 
 ---
 

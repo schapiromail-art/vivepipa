@@ -8,6 +8,52 @@ Suba hoje os **ângulos A e B**, cada um em seu próprio conjunto isolado (estru
 Testadora 1-1-1 da palestra, R$ 16,65/dia cada). Os outros entram nos dias seguintes,
 conforme os criativos ficarem prontos.
 
+## ⚠️ A regra que decide se o anúncio roda
+
+Da auditoria de políticas: **o que derruba anúncio de beleza quase nunca é o produto — é
+o enquadramento.** Três coisas reprovam:
+
+1. Apresentar um traço normal como defeito a corrigir
+2. **Abrir com a insegurança de quem está vendo**
+3. Prometer resultado garantido
+
+O enquadramento seguro é **o produto e a experiência de usá-lo**, nunca a carência da
+pessoa.
+
+Isso reprova a headline mais forte que a pesquisa encontrou. *“Sua pele parece mais velha
+com maquiagem do que sem”* é exatamente o item 2 — abre falando da aparência dela, em
+tom negativo. Converte, e é justamente por isso que o Meta derruba.
+
+**A divisão que resolve:**
+
+| | Fala de | Exemplo |
+|---|---|---|
+| **Anúncio** | a **base** | “A base craquela porque a camada é grossa demais” |
+| **Página** | a **experiência dela** | “Sua pele parece mais velha com maquiagem do que sem” |
+
+O anúncio precisa passar pela revisão automática do Meta; a página, não. Ela chega na
+página já tendo clicado — a identificação forte funciona ali, com risco muito menor.
+Por isso a headline da pesquisa continua sendo o hero da landing e **não** aparece em
+nenhum anúncio.
+
+Sinal prático: se a frase tem “você” + adjetivo sobre a aparência dela, reescreva com a
+base como sujeito.
+
+---
+
+## A fórmula: PRSA
+
+Todo criativo segue a estrutura da palestra:
+
+| | | |
+|---|---|---|
+| **P** | Problema | o que a base faz de errado |
+| **R** | Rota | o caminho errado que ela está seguindo hoje |
+| **S** | Solução | o mecanismo, em uma frase |
+| **A** | Ação | o pedido, com preço e garantia |
+
+---
+
 Regras que valem para todos:
 - Primeira linha é 100% do trabalho. Ela aparece antes do "ver mais".
 - Falar **com ela**, não sobre ela. "A sua base", não "as bases".
@@ -17,56 +63,51 @@ Regras que valem para todos:
 
 ---
 
-## Ângulo A — “Mais velha com maquiagem do que sem” ★★ o mais forte
+## Ângulo A — A camada grossa ★★ principal
 
-*Nível 1 da taxonomia: identidade. A dor não é a base durar pouco — é o esforço de se
-arrumar produzir o contrário do resultado.*
+*PRSA. Sujeito da frase: a base. Nunca ela.*
 
 **Texto principal**
-> Você passa trinta minutos se arrumando e sai de casa parecendo mais cansada do que
-> quando começou.
+> **[P]** A base craquela ao longo do dia e se acumula dentro do bigode chinês.
 >
-> A base marca o bigode chinês. O corretivo acumula embaixo do olho. E aquilo que era
-> para te deixar bonita está te deixando com alguns anos a mais.
+> **[R]** A correção que todo mundo tenta é trocar de base. Já foram três, e nenhuma
+> resolveu — porque nenhuma delas ia resolver.
 >
-> Não é a sua base. É a espessura.
+> **[S]** O problema não é a fórmula, é a espessura. Depois dos 35 a pele retém menos
+> água, e camada grossa não acompanha o movimento do rosto: ela trava dentro da linha e
+> quebra ali. A mesma base, em três camadas finíssimas com 40 segundos entre elas, não
+> faz isso — nenhuma tem espessura suficiente para quebrar.
 >
-> Depois dos 35 a pele retém menos água, e camada grossa não acompanha o movimento do
-> rosto: ela se acumula dentro da linha e trava ali. A mesma base, em três camadas
-> finíssimas com 40 segundos entre elas, não faz isso.
->
-> São 10 minutos e você faz com o que já tem na gaveta.
->
-> Pele de Filtro — R$ 37, acesso imediato, 7 dias de garantia.
+> **[A]** O protocolo completo leva 10 minutos e funciona com a base que já está na sua
+> gaveta. Pele de Filtro, R$ 37, acesso imediato, 7 dias de garantia.
 
-**Título:** Mais velha com maquiagem do que sem?
-**Descrição:** Não é a base. É a espessura — R$ 37
+**Título:** A base não é o problema. A espessura é.
+**Descrição:** Protocolo de 10 minutos — R$ 37
 **CTA:** Saiba mais
 
 ---
 
-## Ângulo B — A base que faz bolinhas (talhada) ★★ ângulo virgem
+## Ângulo B — A base que faz bolinhas ★★ ângulo virgem
 
-*Problema que quase ninguém separa do craquelado. Quem sofre disso procura solução e não
-encontra nada específico — por isso deve converter bem e barato.*
+*Quase ninguém separa talhada de craquelada. Quem sofre disso procura e não encontra
+nada específico.*
 
 **Texto principal**
-> A base faz bolinhas na hora de passar. Você espalha, ela junta, e o rosto fica com
-> aquela textura irregular que não tem como sair de casa.
+> **[P]** A base faz bolinhas na hora de passar. Você espalha, ela junta, e o rosto fica
+> com textura irregular.
 >
-> Isso não é base craquelada. É base **talhada** — e é outro problema, com outra causa.
+> **[R]** A reação natural é esfregar para desfazer — e isso tira a maquiagem e leva o
+> hidratante junto. Depois vem a conclusão errada: “essa base é ruim”.
 >
-> Acontece quando o que você passa antes não conversa com a base: hidratante em gel
-> embaixo de base de silicone, por exemplo, separa na hora. Não é qualidade do produto,
-> é incompatibilidade de textura.
+> **[S]** Isso não é base craquelada, é base **talhada**, e a causa é outra:
+> incompatibilidade de textura. Hidratante em gel embaixo de base de silicone separa na
+> hora. Água com água, silicone com silicone — e a bolinha some.
 >
-> A correção leva dez segundos e está no Pele de Filtro, junto com o protocolo completo
-> de 10 minutos.
->
-> R$ 37, acesso imediato.
+> **[A]** A correção leva dez segundos e está no Pele de Filtro, junto com o protocolo
+> completo. R$ 37, acesso imediato.
 
-**Título:** Sua base faz bolinhas? Não é a base.
-**Descrição:** O problema é o que você passou antes dela — R$ 37
+**Título:** Base que faz bolinhas tem nome: talhada
+**Descrição:** E a causa não é a base — R$ 37
 **CTA:** Saiba mais
 
 ---
@@ -74,19 +115,19 @@ encontra nada específico — por isso deve converter bem e barato.*
 ## Ângulo C — O bigode chinês ★ específico
 
 **Texto principal**
-> Repare no seu bigode chinês no fim do dia.
+> **[P]** No fim do dia o bigode chinês fica mais marcado com base do que sem.
 >
-> A base foi escorrendo, se acumulou dentro do vinco e agora ele está mais marcado do que
-> estava de manhã — sem maquiagem nenhuma.
+> **[R]** A tentativa óbvia é passar menos produto ali. Não resolve — e ainda deixa a
+> área desigual em relação ao resto do rosto.
 >
-> É o lugar do rosto que mais se move, e por isso é o primeiro a entregar camada grossa.
-> A correção não é passar menos base ali: é passar em camadas mais finas no rosto todo, e
-> pressionar em vez de arrastar. Arrastar empurra o produto para dentro do vinco.
+> **[S]** É o ponto que mais se move, então é o primeiro a entregar camada grossa. A
+> correção é aplicar mais fino no rosto **todo** e pressionar a esponja em vez de
+> arrastar: arrastar é o que empurra o produto para dentro do vinco.
 >
-> Dez minutos, com a base que você já tem. Pele de Filtro, R$ 37.
+> **[A]** Dez minutos, com a base que você já tem. Pele de Filtro, R$ 37.
 
 **Título:** Por que o bigode chinês fica mais marcado com base
-**Descrição:** Não é passar menos ali. É outra coisa — R$ 37
+**Descrição:** Não é passar menos ali — R$ 37
 **CTA:** Saiba mais
 
 ---
@@ -237,6 +278,9 @@ Se o CTR ficar baixo mas a copy parecer boa, troque só o título antes de matar
 - O pó é o que está marcando o seu olho
 - Bem no espelho, horrível na foto?
 - Menos base cobre mais
-- Mais velha com maquiagem do que sem?
 - Sua base faz bolinhas? Não é a base
-- Fica bonito de manhã e piora o dia inteiro
+- Fica bonito de manhã e some ao longo do dia
+- A camada grossa é que trava dentro da linha
+
+*(Nenhum destes fala da aparência dela — todos têm a base como sujeito. Ver a regra de
+política no topo do arquivo.)*
