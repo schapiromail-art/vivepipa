@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- ═══ META PIXEL — troque SEU_PIXEL_ID (3 ocorrências no arquivo) ═══ -->
 <script>
@@ -26,12 +26,14 @@ fbq('track','PageView');
 src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
 <style>
-/* Estrutura: framework MAXXIMA (15 blocos). Tipografia: Poppins, como o template.
-   Paleta: terracota da oferta — o #AD1F1F é a marca da MAXXIMA, não uma regra. */
+/* Estrutura: framework MAXXIMA (15 blocos). Poppins no corpo, como o template.
+   Fraunces nos títulos e rosa-berry no acento: o #AD1F1F é a marca da MAXXIMA,
+   não uma regra, e vermelho de tráfego pago destoa em beleza feminina. */
 :root{
-  --bg:#FFFFFF; --alt:#F4EDE6; --ink:#303030; --muted:#707070;
-  --accent:#C0714F; --accent-dark:#A65C3D; --deep:#2B2320;
-  --line:#E3D7CB; --green:#049A6A; --max:660px;
+  --bg:#FBF6F4; --alt:#F5EBE9; --ink:#3A2B31; --muted:#7A6670;
+  --accent:#C03A63; --accent-dark:#A22E51; --deep:#2B1A22;
+  --line:#EBDCDE; --green:#2F8F6B; --max:660px;
+  --display:"Fraunces",Georgia,serif;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Poppins,system-ui,sans-serif;
@@ -39,14 +41,15 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:Poppins,system-u
 .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
 section{padding:54px 0}
 section.alt{background:var(--alt)}
-section.dark{background:var(--deep);color:#F4EDE6}
-h1,h2,h3{line-height:1.25;margin:0 0 .6em;font-weight:600}
+section.dark{background:var(--deep);color:#F4E7EB}
+h1,h2,h3{line-height:1.25;margin:0 0 .6em;font-weight:600;text-wrap:balance}
+h1,h2{font-family:var(--display);font-weight:700;letter-spacing:-.015em}
 h1{font-size:2rem}
 h2{font-size:1.6rem;text-align:center;margin-bottom:1.2em}
 h3{font-size:1.12rem;margin-bottom:.3em}
 p{margin:0 0 1.1em}
 em{font-style:normal;color:var(--accent-dark);font-weight:600}
-.dark em{color:#E0A182}
+.dark em{color:#F0A6BC}
 .center{text-align:center}
 .muted{color:var(--muted)}
 .kicker{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;
@@ -59,9 +62,9 @@ em{font-style:normal;color:var(--accent-dark);font-weight:600}
 .cta small{display:block;font-weight:400;font-size:.8rem;opacity:.92;margin-top:4px}
 
 /* B1 */
-header{background:var(--deep);color:#F4EDE6;padding:52px 0 46px;text-align:center}
+header{background:var(--deep);color:#F4E7EB;padding:52px 0 46px;text-align:center}
 header h1{color:#fff}
-header .sub{color:#CDBBAD;font-size:1.05rem;max-width:520px;margin:0 auto}
+header .sub{color:#CBB2BD;font-size:1.05rem;max-width:520px;margin:0 auto}
 
 /* B3 ruminação */
 .think{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;
@@ -116,11 +119,11 @@ header .sub{color:#CDBBAD;font-size:1.05rem;max-width:520px;margin:0 auto}
 .stack .sum .old{text-decoration:line-through;color:var(--muted)}
 
 /* B9 preço */
-.price{background:var(--deep);color:#F4EDE6;border-radius:16px;padding:36px 24px;
+.price{background:var(--deep);color:#F4E7EB;border-radius:16px;padding:36px 24px;
   text-align:center}
-.price .from{color:#9C8B80;text-decoration:line-through;font-size:1rem}
+.price .from{color:#A88C97;text-decoration:line-through;font-size:1rem}
 .price .now{font-size:3.2rem;font-weight:700;line-height:1;margin:6px 0 2px;color:#fff}
-.price .inst{color:#CDBBAD;font-size:.92rem;margin-bottom:6px}
+.price .inst{color:#CBB2BD;font-size:.92rem;margin-bottom:6px}
 
 /* B10 como acessar */
 .how{display:grid;gap:16px;grid-template-columns:1fr;text-align:center}
@@ -137,10 +140,10 @@ header .sub{color:#CDBBAD;font-size:1.05rem;max-width:520px;margin:0 auto}
 
 /* B12 duas opções */
 .opt{border-radius:12px;padding:20px 22px;margin-bottom:14px}
-.opt.bad{background:#F2EAE6;border:1px solid #E0CFC6}
-.opt.good{background:#E8F4EE;border:1px solid #BFE0CE}
+.opt.bad{background:#F5EBE9;border:1px solid #DCC7CB}
+.opt.good{background:#E7F3EE;border:1px solid #2F8F6B}
 .opt h3{margin-bottom:.2em}
-.opt.bad h3{color:#8A5A48}.opt.good h3{color:#1F7A57}
+.opt.bad h3{color:#7A6670}.opt.good h3{color:#2F8F6B}
 .opt p{margin:0;font-size:.96rem;color:var(--muted)}
 
 /* garantia */
@@ -158,9 +161,9 @@ details[open] summary::after{content:"–"}
 details p{margin:12px 0 2px;color:var(--muted);font-size:.95rem}
 
 /* B15 rodapé */
-footer{background:var(--deep);color:#8A7B71;font-size:.8rem;padding:36px 0 120px;
+footer{background:var(--deep);color:#9C8290;font-size:.8rem;padding:36px 0 120px;
   text-align:center;line-height:1.6}
-footer a{color:#CDBBAD}
+footer a{color:#CBB2BD}
 footer .disc{margin-top:16px;font-size:.72rem;opacity:.8}
 
 .sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.97);

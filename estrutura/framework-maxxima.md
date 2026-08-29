@@ -60,8 +60,21 @@ Parece óbvio e não é: em low ticket, a dúvida "vou receber mesmo?" mata vend
 | Verde de confirmação | `#049A6A` |
 
 O `#AD1F1F` é a marca da MAXXIMA, não uma regra. **Estrutura se copia, paleta não** —
-vermelho agressivo funciona para tráfego pago e destoa em beleza feminina. A landing usa
-a paleta terracota da oferta e mantém Poppins e os tamanhos.
+vermelho de tráfego pago destoa em beleza feminina. A landing mantém Poppins no corpo e
+os tamanhos do template, e troca o resto:
+
+| | |
+|---|---|
+| Fundo | `#FBF6F4` claro · `#F5EBE9` alternado |
+| Escuro | `#2B1A22` (ameixa) com texto `#F4E7EB` |
+| Acento | `#C03A63` (rosa-berry) · `#A22E51` no hover |
+| Texto | `#3A2B31` · `#7A6670` secundário |
+| Confirmação | `#2F8F6B` |
+| Títulos | **Fraunces** · Corpo **Poppins** |
+
+A ameixa e o rosa-berry vêm da embalagem de cosmético, não do genérico bege-e-serifada
+que toda página de infoproduto usa hoje. E o acento tem saturação suficiente para o botão
+brigar por atenção em tráfego frio, que é o trabalho dele.
 
 ---
 

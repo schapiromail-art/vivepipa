@@ -21,7 +21,7 @@ os outros posicionamentos. Faça no Canva. Tempo estimado: 60–90 minutos para 
 
 ## Criativo 1 — Manchete pura (o mais rápido de fazer)
 
-Fundo bege claro sólido. Sem foto.
+Fundo `#FBF6F4` sólido. Sem foto.
 
 ```
         A SUA BASE
@@ -57,7 +57,7 @@ horários — o conceito funciona sem a comparação visual.
 
 ## Criativo 3 — O erro numerado
 
-Fundo escuro (grafite). Texto branco.
+Fundo ameixa `#2B1A22`. Texto claro.
 
 ```
    ERRO Nº 1 DEPOIS DOS 35
@@ -69,7 +69,7 @@ Fundo escuro (grafite). Texto branco.
    A correção leva 10 minutos
 ```
 
-Numeração grande, em cor de destaque (terracota ou dourado envelhecido). Funciona bem
+Numeração grande, em rosa-berry `#C03A63`. Funciona bem
 porque parece conteúdo, não anúncio.
 
 ---
@@ -114,12 +114,13 @@ converte melhor — costuma ter CTR menor e taxa de checkout maior que os estát
 
 ## Paleta e tipografia (use a mesma nos 6 e na página)
 
-- Fundo claro: `#F7F1EA` (bege)
-- Texto escuro: `#2B2320`
-- Destaque: `#C0714F` (terracota)
-- Fundo escuro: `#2B2320` com texto `#F7F1EA`
-- Fonte de manchete: uma serifada de peso alto (Playfair Display, Lora)
-- Fonte de corpo: uma sem serifa neutra (Inter, Montserrat)
+- Fundo claro: `#FBF6F4` (branco com fundo rosado)
+- Fundo alternado: `#F5EBE9`
+- Texto escuro: `#3A2B31`
+- Destaque: `#C03A63` (rosa-berry)
+- Fundo escuro: `#2B1A22` (ameixa) com texto `#F4E7EB`
+- Fonte de manchete: **Fraunces** (serifada, no Google Fonts e no Canva)
+- Fonte de corpo: **Poppins** — a mesma do template MAXXIMA
 
 A consistência entre anúncio e página de vendas reduz o abandono: ela clica e reconhece
 que chegou no lugar certo.
