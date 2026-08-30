@@ -2,16 +2,23 @@
 
 ## Pele de Filtro — validação de low ticket
 
-Produto digital de R$ 37 para o mercado brasileiro: um protocolo de maquiagem para
-mulheres 35+ cuja base craquela e marca linha de expressão. Montado para ser lançado e
-testado em um dia com R$ 150 de mídia.
+Produto digital de **R$ 37** para o mercado brasileiro: um protocolo de maquiagem para
+mulheres 35+ cuja base craquela e marca linha de expressão. Oito arquivos curtos, 21
+páginas, consumo em 10 minutos.
+
+Marca sem pessoa: não há autora e não vamos inventar uma. A autoridade vem da
+especificidade — todo blog de marca dá o princípio, nenhum dá os tempos exatos.
 
 ### Arquivos
 
 | Arquivo | O que é |
 |---|---|
 | `oferta/oferta.md` | Público, dor, mecanismo, estrutura da oferta e bônus |
-| `produto/pele-de-filtro.md` | O entregável completo — protocolo + 4 bônus, pronto para virar PDF |
+| `produto/pdfs/` | **Os 8 entregáveis escritos e finais**, página a página, prontos para diagramação |
+| `produto/entregaveis.md` | Especificação dos 8 arquivos: formato, extensão e função |
+| `design/briefing.md` | **Briefing de design** — marca, sistema visual, mockups, criativos e checklist de entrega |
+| `pesquisa/gaps-e-dores.md` | **Matriz mestre** — 15 dores com origem, risco de política e onde cada uma é usada, mais os gaps abertos |
+| `pesquisa/comparativo-mercado.md` | O que já se vende em Hotmart e Kiwify, e onde esta oferta se encaixa |
 | `pesquisa/voz-do-cliente.md` | **Benchmark de dores** — frases literais do nicho, glossário e o que mudar na copy |
 | `pesquisa/palestra-maxxima.md` | Auditoria da palestra: os 14 blocos, as estruturas de campanha e a biblioteca de ofertas |
 | `estrutura/framework-maxxima.md` | **Os cimentos** — os 15 blocos do template MAXXIMA e o padrão da página de obrigado |
