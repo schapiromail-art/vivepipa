@@ -3,7 +3,7 @@
 ## Pele de Filtro — validação de low ticket
 
 Produto digital de **R$ 37** para o mercado brasileiro: um protocolo de maquiagem para
-mulheres 35+ cuja base craquela e marca linha de expressão. **Dez arquivos, 78 páginas.** O protocolo se aplica em 10 minutos; o material
+mulheres 35+ cuja base craquela e marca linha de expressão. **Dez arquivos, 76 páginas.** O protocolo se aplica em 10 minutos; o material
 responde às dúvidas que aparecem depois.
 
 Marca sem pessoa: não há autora e não vamos inventar uma. A autoridade vem da

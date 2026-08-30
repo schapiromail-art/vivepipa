@@ -60,7 +60,7 @@ atenção em tráfego frio — que é o trabalho dele.
 ## 3. Os 10 PDFs
 
 Conteúdo final em `produto/pdfs/`. Cada arquivo tem no topo um bloco com páginas, formato
-e observações de diagramação. **78 páginas em 10 arquivos.**
+e observações de diagramação. **76 páginas em 10 arquivos.**
 
 | # | Arquivo | Pág. | Observação de design |
 |---|---|---|---|

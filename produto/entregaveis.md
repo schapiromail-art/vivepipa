@@ -1,4 +1,4 @@
-# Os entregáveis — 10 arquivos, 78 páginas
+# Os entregáveis — 10 arquivos, 76 páginas
 
 ## A regra que define o formato
 
@@ -6,7 +6,7 @@ Da palestra: *“a pessoa não compra para aprender nada, ela compra para usar�
 curva de aprendizagem”*, *“precisa consumir em no máximo 48 horas”*.
 
 Isso não significa pouco conteúdo — significa **conteúdo que se usa**. Cada arquivo tem
-uma função única e se resolve numa sessão. O kit inteiro tem 78 páginas, e nenhuma delas
+uma função única e se resolve numa sessão. O kit inteiro tem 76 páginas, e nenhuma delas
 pede que ela estude: ela abre o arquivo que responde à dúvida daquele dia.
 
 **Overdelivery é número de peças utilizáveis × profundidade real de cada uma.** Dez
@@ -28,7 +28,7 @@ arquivos rasos geram reembolso igual a um arquivo raso.
 | 08 | **7 Erros Depois dos 35** | 8 | Uma página por erro, em ordem de impacto | R$ 27 |
 | 09 | **Diagnóstico** | 8 | Índice de 14 problemas → causa provável → onde resolver | R$ 47 |
 | 10 | **Protocolo Express** | 2 | A versão do dia atrasado | R$ 17 |
-| | **Total** | **78** | | **R$ 400** |
+| | **Total** | **76** | | **R$ 400** |
 
 **Dois imprimíveis:** 01 e 10, em preto sobre branco.
 **Um com ilustração:** 07, quatro diagramas de rosto.
@@ -40,7 +40,7 @@ arquivos rasos geram reembolso igual a um arquivo raso.
 São 10,8× o preço. É alto, e antes era o tipo de exagero que derruba conversão em vez de
 aumentar — com 21 páginas em 8 arquivos, R$ 326 já estava esticado.
 
-Com 78 páginas em 10 arquivos, cada linha da lista corresponde a algo que existe e tem
+Com 76 páginas em 10 arquivos, cada linha da lista corresponde a algo que existe e tem
 tamanho. **A âncora só quebra quando a lista não corresponde ao que chega.** Se ainda
 parecer demais no teste, o ajuste é baixar a âncora para ~R$ 300, nunca cortar arquivo.
 
