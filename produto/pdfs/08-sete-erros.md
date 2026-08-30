@@ -113,10 +113,17 @@ quando você sorri.
 **O sinal de que é isso:** a linha que aparece embaixo do olho ao longo do dia está mais
 para o lado de fora, não perto do nariz.
 
+**Como testar se é o seu caso:** olhe onde a linha aparece ao longo do dia. Perto do
+nariz é falta de correção de cor; do lado de fora, na metade externa do olho, é excesso de
+produto onde ele não precisava estar.
+
 > ### Faça assim
 > **Um traço fino, do canto interno até a metade.** Espalhe com a pontinha da esponja,
 > pressionando, 3 ou 4 toques. E pare — a vontade de dar mais dois toques é o que gera o
 > vinco.
+>
+> Se a olheira continuar aparecendo, **não aumente a quantidade**: o caminho é corrigir a
+> cor antes, no arquivo 04.
 
 <!-- ══ PÁGINA 6 ══ -->
 

@@ -60,12 +60,12 @@ atenção em tráfego frio — que é o trabalho dele.
 ## 3. Os 10 PDFs
 
 Conteúdo final em `produto/pdfs/`. Cada arquivo tem no topo um bloco com páginas, formato
-e observações de diagramação. **76 páginas em 10 arquivos.**
+e observações de diagramação. **79 páginas em 10 arquivos.**
 
 | # | Arquivo | Pág. | Observação de design |
 |---|---|---|---|
 | 01 | Checklist do Espelho | 2 | **Preto sobre branco.** Imprimível em jato de tinta |
-| 02 | O Protocolo Pele de Filtro | 22 | Uma seção por página. Os tempos de espera são o elemento gráfico mais forte. Tabelas nas páginas 4, 7, 9, 14, 21 e 22 |
+| 02 | O Protocolo Pele de Filtro | 25 | Uma seção por página. Os tempos de espera são o elemento gráfico mais forte. Tabelas nas páginas 4, 7, 9, 14, 21 e 22 |
 | 03 | Rosto Desinchado | 10 | As duas sequências (gelo e drenagem) pedem numeração forte e muito ar. Avisos de segurança em caixa destacada |
 | 04 | Mapa das Olheiras | 6 | A tabela da página 3 é o coração: amostra de cor real em círculo ao lado de cada linha |
 | 05 | Guia de Texturas | 7 | A tabela de compatibilidade da página 6 é a mais consultada. Destacar com fundo |

@@ -1,4 +1,4 @@
-# Os entregáveis — 10 arquivos, 76 páginas
+# Os entregáveis — 10 arquivos, 79 páginas
 
 ## A regra que define o formato
 
@@ -6,7 +6,7 @@ Da palestra: *“a pessoa não compra para aprender nada, ela compra para usar�
 curva de aprendizagem”*, *“precisa consumir em no máximo 48 horas”*.
 
 Isso não significa pouco conteúdo — significa **conteúdo que se usa**. Cada arquivo tem
-uma função única e se resolve numa sessão. O kit inteiro tem 76 páginas, e nenhuma delas
+uma função única e se resolve numa sessão. O kit inteiro tem 79 páginas, e nenhuma delas
 pede que ela estude: ela abre o arquivo que responde à dúvida daquele dia.
 
 **Overdelivery é número de peças utilizáveis × profundidade real de cada uma.** Dez
@@ -19,7 +19,7 @@ arquivos rasos geram reembolso igual a um arquivo raso.
 | # | Arquivo | Pág. | Função | Âncora |
 |---|---|---|---|---|
 | 01 | **Checklist do Espelho** | 2 | O produto de verdade. Cola no espelho e usa amanhã | R$ 27 |
-| 02 | **O Protocolo Pele de Filtro** | 22 | O guia principal: mecanismo, preparo, camadas, olhos, zona por zona, o que fazer quando dá errado | R$ 87 |
+| 02 | **O Protocolo Pele de Filtro** | 25 | O guia principal: mecanismo, limpeza, preparo, camadas, olhos, boca, zona por zona, o que fazer quando dá errado | R$ 87 |
 | 03 | **Rosto Desinchado** | 10 | **Bônus de cuidado natural.** Gelo e drenagem linfática antes da maquiagem | R$ 57 |
 | 04 | **Mapa das Olheiras** | 6 | Os 4 tipos, correção de cor, e o caso em que corretor não resolve | R$ 37 |
 | 05 | **Guia de Texturas** | 7 | Por que a base faz bolinhas. Água × silicone, ler rótulo, tabela de compatibilidade | R$ 37 |
@@ -28,7 +28,7 @@ arquivos rasos geram reembolso igual a um arquivo raso.
 | 08 | **7 Erros Depois dos 35** | 8 | Uma página por erro, em ordem de impacto | R$ 27 |
 | 09 | **Diagnóstico** | 8 | Índice de 14 problemas → causa provável → onde resolver | R$ 47 |
 | 10 | **Protocolo Express** | 2 | A versão do dia atrasado | R$ 17 |
-| | **Total** | **76** | | **R$ 400** |
+| | **Total** | **79** | | **R$ 400** |
 
 **Dois imprimíveis:** 01 e 10, em preto sobre branco.
 **Um com ilustração:** 07, quatro diagramas de rosto.
@@ -40,7 +40,7 @@ arquivos rasos geram reembolso igual a um arquivo raso.
 São 10,8× o preço. É alto, e antes era o tipo de exagero que derruba conversão em vez de
 aumentar — com 21 páginas em 8 arquivos, R$ 326 já estava esticado.
 
-Com 76 páginas em 10 arquivos, cada linha da lista corresponde a algo que existe e tem
+Com 79 páginas em 10 arquivos, cada linha da lista corresponde a algo que existe e tem
 tamanho. **A âncora só quebra quando a lista não corresponde ao que chega.** Se ainda
 parecer demais no teste, o ajuste é baixar a âncora para ~R$ 300, nunca cortar arquivo.
 
@@ -58,7 +58,8 @@ kit e recebe um panfleto.
 - **09 · Diagnóstico** — índice de 14 problemas, o arquivo que ela mais vai reabrir
 
 **Expandidos:**
-- 02 foi de 11 para 22 páginas
+- 02 foi de 11 para 25 páginas, ganhando dois capítulos novos: a limpeza e o pH
+  da pele, e a boca — por que o batom sangra pelas linhas do código de barras
 - 04 foi de 2 para 6 · 05 de 1 para 7 · 06 de 2 para 5 · 07 de 1 para 6 · 08 de 3 para 8
 
 **Corrigido — era um furo real:** o protocolo não incluía **protetor solar**. Ele vai

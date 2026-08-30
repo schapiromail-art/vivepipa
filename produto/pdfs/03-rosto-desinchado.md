@@ -32,7 +32,17 @@ porque a superfície onde ele está sendo aplicado mudou de forma durante a noit
 leva seis minutos. Nos dias em que você acordar com o rosto pesado, é a diferença entre
 maquiar um rosto e maquiar um rosto inchado.
 
-> Se você tem cinco minutos e não seis, faça só o gelo. Se tem dez, faça os dois.
+## Como saber se é o seu caso
+
+Olhe uma foto sua de fim de tarde e outra de manhã cedo, do mesmo período. Se o rosto da
+tarde parece mais definido — maçã mais alta, mandíbula mais visível, olho mais aberto — o
+que você vê de manhã é inchaço, não o seu rosto.
+
+Outro teste, mais rápido: passe o dedo ao longo da mandíbula assim que acordar e repita
+duas horas depois. Se o osso ficou mais fácil de sentir, era líquido.
+
+> **Se tem cinco minutos e não seis, faça só o gelo.** Ele sozinho resolve boa parte, e é
+> o passo mais rápido do kit inteiro.
 
 <!-- ══ PÁGINA 3 ══ -->
 
@@ -139,11 +149,29 @@ O gelo é seguro para a maioria das pessoas, e não é para todo mundo.
 - **Lesões abertas, feridas ou pele descamando.**
 - **Alguma condição circulatória** diagnosticada.
 
-**Sinais de que passou do ponto:** vermelhidão que não sai depois de dez minutos, ardência,
-formigamento persistente, sensação de queimação. Se aparecer qualquer um, pare e não repita.
+## Como saber se passou do ponto
+
+A pele deve ficar levemente rosada por dois ou três minutos e voltar ao normal. Isso é
+circulação, e é o efeito esperado.
+
+**Pare e não repita se aparecer:**
+
+- Vermelhidão que não sai depois de dez minutos
+- Ardência ou sensação de queimação
+- Formigamento que persiste
+- Manchas esbranquiçadas, que são sinal de vasoconstrição excessiva
+- Pele áspera ou descamando no dia seguinte
+
+## Se você nunca fez
+
+Comece pela metade: dois mergulhos em vez de cinco, ou um minuto de pedra em vez de dois.
+Veja como a sua pele responde no dia seguinte antes de fazer o protocolo completo.
+
+O frio é seguro e é cumulativo — não há vantagem nenhuma em forçar na primeira vez.
 
 > Este guia é sobre técnica de maquiagem e cuidado cosmético. Não substitui avaliação
-> médica, não trata condição de pele e não diagnostica nada.
+> médica, não trata condição de pele e não diagnostica nada. Qualquer condição de pele
+> diagnosticada, ou qualquer dúvida, é conversa para um dermatologista.
 
 <!-- ══ PÁGINA 7 ══ -->
 

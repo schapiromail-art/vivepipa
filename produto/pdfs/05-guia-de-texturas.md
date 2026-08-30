@@ -23,7 +23,23 @@ Este arquivo é sobre a coisa que ninguém explica: produtos de skincare e de ma
 têm bases químicas diferentes, e nem todas se misturam. Quando duas incompatíveis se
 encontram na sua pele, elas se separam — e a separação é aquilo que você vê como bolinha.
 
-Depois de entender isso, você vai olhar para a sua gaveta de outro jeito.
+## Por que isso quase nunca é explicado
+
+Cada marca fala do próprio produto. O rótulo do hidratante não sabe qual base você vai
+usar em cima, e o da base não sabe o que você passou embaixo. O problema só existe na
+combinação — e a combinação é só sua.
+
+Por isso trocar de produto às vezes resolve por acaso: você mudou um dos dois lados sem
+saber qual era o culpado. E por isso, algumas semanas depois, o problema volta com uma
+compra nova.
+
+## O que você vai conseguir fazer depois destas sete páginas
+
+- Olhar um rótulo e saber, em dez segundos, se aquilo é água, silicone ou óleo
+- Descobrir em um minuto qual par da sua gaveta está brigando
+- Montar uma sequência que não talha, com os produtos que você já tem
+
+**Depois de entender isso, você vai olhar para a sua gaveta de outro jeito.**
 
 <!-- ══ PÁGINA 2 ══ -->
 

@@ -146,6 +146,23 @@ movimentos tentaram remover.
 claro e com brilho ajuda a equilibrar. Se você ama o escuro, compense com mais luz nos
 pontos altos.
 
+---
+
+## Como conferir se funcionou
+
+Faça os três movimentos em **metade do rosto** e olhe no espelho antes de fazer o outro
+lado. É o único jeito honesto de ver a diferença — de um dia para o outro a memória engana.
+
+O que você deve ver no lado feito: a maçã parecendo um pouco mais alta, o olho um pouco
+mais aberto, e o conjunto mais leve. Se o lado feito parece **mais maquiado** em vez de
+mais descansado, tem produto demais em algum dos três movimentos.
+
+## O erro de dose mais comum
+
+Fazer os três movimentos com a intensidade que você usaria para uma festa. Estes três são
+para o dia — a graça é que ninguém consiga apontar o que você fez, só perceber que você
+parece descansada.
+
 <!-- ══ PÁGINA 6 ══ -->
 
 # Como encaixar na rotina

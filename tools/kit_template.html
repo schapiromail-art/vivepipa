@@ -1,0 +1,313 @@
+<title>Kit Pele de Filtro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Poppins:wght@400;500;600&display=swap">
+<style>
+/* ── Sistema do projeto (design/briefing.md). O papel nunca muda de tema;
+      só a bancada em volta responde ao tema do leitor. ── */
+:root{
+  --paper:#FBF6F4; --plum:#2B1A22; --plum-ink:#F4E7EB;
+  --ink:#3A2B31; --muted:#7A6670; --berry:#C03A63; --berry-soft:#FBEDF1;
+  --rule:#EBDCDE; --rule-2:#DCC7CB; --green:#2F8F6B;
+  --print-bg:#FFFFFF; --print-ink:#1A1A1A;
+
+  --bench:#E7DEDB; --bench-2:#F2ECEA; --bench-ink:#3A2B31; --bench-muted:#7A6670;
+  --bench-line:#D5C7C3; --bench-raise:#FFFFFF;
+  --sheet-shadow:0 1px 2px rgba(43,26,34,.10), 0 14px 34px -14px rgba(43,26,34,.30);
+
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --pw:min(33rem, calc(100vw - 2.5rem));
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bench:#171015; --bench-2:#20161C; --bench-ink:#EFE3E7; --bench-muted:#A9959E;
+    --bench-line:#33242C; --bench-raise:#20161C;
+    --sheet-shadow:0 1px 2px rgba(0,0,0,.5), 0 18px 40px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --bench:#171015; --bench-2:#20161C; --bench-ink:#EFE3E7; --bench-muted:#A9959E;
+  --bench-line:#33242C; --bench-raise:#20161C;
+  --sheet-shadow:0 1px 2px rgba(0,0,0,.5), 0 18px 40px -14px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body{margin:0;background:var(--bench);color:var(--bench-ink);font-family:var(--body);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:2px solid var(--berry);outline-offset:3px;border-radius:5px}
+
+/* ── cabeçalho ── */
+header{border-bottom:1px solid var(--bench-line);background:var(--bench-2)}
+header .in{max-width:70rem;margin:0 auto;padding:22px 24px}
+h1{font-family:var(--display);font-weight:700;font-size:1.5rem;margin:0 0 .2em;
+  letter-spacing:-.015em;text-wrap:balance}
+header p{margin:0;color:var(--bench-muted);font-size:.9rem;max-width:44rem}
+header code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;
+  background:var(--bench);padding:.1em .4em;border-radius:4px;border:1px solid var(--bench-line)}
+.meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:16px;
+  font-variant-numeric:tabular-nums}
+.meta div{font-size:.78rem;color:var(--bench-muted)}
+.meta b{display:block;font-family:var(--display);font-weight:700;font-size:1.3rem;
+  color:var(--bench-ink);line-height:1.1}
+
+/* ── layout ── */
+.shell{max-width:70rem;margin:0 auto;padding:26px 24px 80px;
+  display:grid;gap:30px;grid-template-columns:1fr}
+@media(min-width:900px){.shell{grid-template-columns:15rem 1fr;align-items:start}}
+
+/* ── trilho de arquivos ── */
+.rail{position:sticky;top:16px}
+@media(max-width:899px){.rail{position:static}}
+.rail h2{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--bench-muted);font-weight:600;margin:0 0 10px}
+.files{display:flex;flex-direction:column;gap:4px;list-style:none;padding:0;margin:0}
+@media(max-width:899px){.files{flex-direction:row;overflow-x:auto;padding-bottom:6px;
+  scrollbar-width:thin}}
+.files button{display:flex;gap:10px;align-items:baseline;width:100%;text-align:left;
+  font:inherit;font-size:.86rem;background:none;border:1px solid transparent;
+  color:var(--bench-ink);padding:9px 11px;border-radius:8px;cursor:pointer;
+  transition:background .12s}
+@media(max-width:899px){.files button{white-space:nowrap;width:auto}}
+.files button:hover{background:var(--bench-raise)}
+.files button[aria-current="true"]{background:var(--berry);color:#fff;border-color:var(--berry)}
+.files .num{font-variant-numeric:tabular-nums;font-size:.72rem;opacity:.65;font-weight:600}
+.files button[aria-current="true"] .num{opacity:.85}
+.files .pg{margin-left:auto;font-size:.7rem;opacity:.6;font-variant-numeric:tabular-nums}
+@media(max-width:899px){.files .pg{display:none}}
+.rail .allbtn{margin-top:12px;width:100%;font:inherit;font-size:.8rem;font-weight:500;
+  padding:10px;border-radius:8px;border:1px solid var(--bench-line);
+  background:var(--bench-raise);color:var(--bench-ink);cursor:pointer}
+.rail .allbtn[aria-pressed="true"]{background:var(--plum);color:var(--plum-ink);
+  border-color:var(--plum)}
+
+/* ── área das folhas ── */
+.stage h3{font-family:var(--display);font-weight:700;font-size:1.15rem;margin:0 0 .15em}
+.stage .cap{color:var(--bench-muted);font-size:.82rem;margin:0 0 12px}
+.sample{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;
+  color:var(--bench-muted);background:var(--bench-raise);border:1px solid var(--bench-line);
+  padding:7px 12px;border-radius:99px;margin:0 0 20px}
+.sample b{color:var(--bench-ink);font-weight:600;font-variant-numeric:tabular-nums}
+.gap{width:var(--pw);text-align:center;font-size:.72rem;color:var(--bench-muted);
+  letter-spacing:.08em;text-transform:uppercase;padding:4px 0;
+  border-top:1px dashed var(--bench-line);border-bottom:1px dashed var(--bench-line)}
+.sheets{display:flex;flex-direction:column;gap:26px;align-items:center}
+.holder{width:var(--pw)}
+.pgnum{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--bench-muted);margin:8px 0 0;text-align:center;
+  font-variant-numeric:tabular-nums}
+
+/* ── a folha ── */
+.page{width:var(--pw);aspect-ratio:1/1.414;background:var(--paper);color:var(--ink);
+  box-shadow:var(--sheet-shadow);border-radius:2px;overflow:hidden;
+  font-size:calc(var(--pw)/48);line-height:1.5;position:relative;
+  display:flex;flex-direction:column;padding:2.6em 2.4em 2em}
+.page *{letter-spacing:0}
+.page h4{font-family:var(--display);font-weight:700;font-size:1.75em;line-height:1.12;
+  margin:0 0 .35em;letter-spacing:-.015em;text-wrap:balance}
+.page h5{font-family:var(--body);font-weight:600;font-size:1.02em;margin:0 0 .25em;
+  color:var(--ink)}
+.page .sub{font-size:.95em;color:var(--muted);margin:0 0 1.5em;line-height:1.45}
+.page p{margin:0 0 .85em;font-size:.92em}
+.page .lead{font-size:1em}
+.page b,.page strong{font-weight:600}
+.page em{font-style:normal;color:var(--berry);font-weight:600}
+.page .foot{margin-top:auto;padding-top:1.2em;border-top:1px solid var(--rule);
+  font-size:.68em;color:var(--muted);display:flex;justify-content:space-between;
+  letter-spacing:.06em;text-transform:uppercase}
+
+/* capa */
+.page.cover{background:var(--plum);color:var(--plum-ink);justify-content:center;
+  padding:3em 2.6em}
+.page.cover .kick{font-size:.7em;letter-spacing:.22em;text-transform:uppercase;
+  color:#E08AA6;font-weight:600;margin:0 0 2.4em}
+.page.cover h4{color:#fff;font-size:2.5em;margin-bottom:.3em}
+.page.cover .sub{color:#CBAEBB;font-size:1em;margin:0}
+.page.cover .filenum{position:absolute;right:1.6em;bottom:1.4em;
+  font-family:var(--display);font-weight:700;font-size:3.4em;color:#3E2732;line-height:1}
+
+/* imprimível */
+.page.print{background:var(--print-bg);color:var(--print-ink)}
+.page.print .sub,.page.print .foot{color:#5A5A5A}
+.page.print h4{font-family:var(--body);font-weight:600;font-size:1.35em;
+  letter-spacing:.02em}
+.page.print em{color:var(--print-ink);text-decoration:underline;text-underline-offset:2px}
+.page.print .grp{border-top:1px solid #C9C9C9}
+
+/* listas de checklist */
+.grp{margin:0 0 1.05em;padding-top:.7em;border-top:1px solid var(--rule)}
+.grp:first-of-type{border-top:0;padding-top:0}
+.grp .lbl{font-size:.7em;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  margin:0 0 .55em;display:flex;justify-content:space-between}
+.grp .lbl span{opacity:.55;letter-spacing:.06em}
+.grp ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.32em}
+.grp li{font-size:.86em;padding-left:1.5em;position:relative;line-height:1.35}
+.grp li::before{content:"";position:absolute;left:0;top:.18em;width:.85em;height:.85em;
+  border:1.5px solid currentColor;opacity:.45;border-radius:2px}
+.grp li.no::before{content:"✗";border:0;opacity:.55;font-weight:700;font-size:.9em;top:0}
+
+/* passos numerados */
+.steps{counter-reset:st;list-style:none;padding:0;margin:0 0 1em;
+  display:flex;flex-direction:column;gap:.75em}
+.steps li{counter-increment:st;position:relative;padding-left:2.1em;font-size:.9em;
+  line-height:1.4}
+.steps li::before{content:counter(st);position:absolute;left:0;top:.05em;
+  width:1.45em;height:1.45em;border-radius:50%;background:var(--berry);color:#fff;
+  display:grid;place-items:center;font-size:.74em;font-weight:600;
+  font-variant-numeric:tabular-nums}
+
+/* caixa de destaque */
+.box{background:var(--berry-soft);border-left:2.5px solid var(--berry);
+  padding:.85em 1.1em;margin:0 0 1em;border-radius:0 4px 4px 0}
+.box p{margin:0;font-size:.86em}
+.box p + p{margin-top:.5em}
+.box .big{font-family:var(--display);font-weight:700;font-size:1.3em;line-height:1.2;
+  color:var(--plum)}
+
+/* espera cronometrada */
+.wait{text-align:center;font-family:var(--display);font-weight:700;font-size:1.45em;
+  color:var(--berry);margin:.7em 0;padding:.35em 0;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+
+/* tabelas */
+table{width:100%;border-collapse:collapse;font-size:.82em;margin:0 0 1em}
+th{text-align:left;font-weight:600;font-size:.85em;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);padding:0 .6em .5em 0;
+  border-bottom:1.5px solid var(--rule-2)}
+td{padding:.55em .6em .55em 0;border-bottom:1px solid var(--rule);vertical-align:top;
+  line-height:1.35}
+td:last-child,th:last-child{padding-right:0}
+.swatch{display:inline-block;width:.9em;height:.9em;border-radius:50%;
+  vertical-align:-.08em;margin-right:.45em;border:1px solid rgba(0,0,0,.12)}
+
+/* duas colunas */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.4em}
+.two h5{font-size:.78em;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5em}
+.two .yes h5{color:var(--green)}
+.two .no h5{color:var(--berry)}
+.two p{font-size:.82em;margin-bottom:.6em;line-height:1.35}
+
+/* erros numerados grandes */
+.err{margin:0 0 1.3em}
+.err .n{font-family:var(--display);font-weight:700;font-size:2.1em;color:var(--berry);
+  line-height:1;float:left;margin:-.05em .35em 0 0;font-variant-numeric:tabular-nums}
+.err h5{font-size:1em;margin-bottom:.2em;overflow:hidden}
+.err p{font-size:.85em;margin:0 0 .35em;overflow:hidden}
+.err .fix{font-size:.85em;font-weight:600;color:var(--green);overflow:hidden;margin:0}
+
+/* figura svg */
+figure{margin:0 0 .9em;text-align:center}
+figure svg{width:100%;max-width:8.5em;height:auto;color:var(--ink)}
+figcaption{font-size:.76em;color:var(--muted);margin-top:.35em;line-height:1.35}
+.mv{display:grid;grid-template-columns:auto 1fr;gap:1.1em;align-items:start;
+  margin:0 0 1.1em}
+.mv h5{font-size:.95em}
+.mv p{font-size:.84em;margin:0 0 .4em;line-height:1.38}
+.mv .tag{font-size:.68em;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--berry);font-weight:600;margin:0 0 .2em}
+
+/* grade do kit completo */
+.kit{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(9.5rem,1fr))}
+.kit .holder{width:100%}
+.kit .page{width:100%;font-size:calc(var(--pw)/96);padding:1.8em 1.5em}
+.kit .page.cover h4{font-size:2.1em}
+.kit .page .filenum{font-size:2.6em}
+.kit .cardlbl{font-size:.72rem;color:var(--bench-muted);margin:8px 0 0;text-align:center;
+  line-height:1.35}
+.kit .cardlbl b{display:block;color:var(--bench-ink);font-weight:500;font-size:.78rem}
+
+/* ── elementos gerados a partir do markdown ── */
+.page hr{border:0;border-top:1px solid var(--rule);margin:1.1em 0}
+.page code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;
+  background:var(--sunk);padding:.05em .3em;border-radius:3px}
+ul.bul{margin:0 0 1em;padding-left:1.15em;display:flex;flex-direction:column;gap:.3em}
+ul.bul li{font-size:.88em;line-height:1.4}
+ul.bul li::marker{color:var(--berry)}
+ul.chk{list-style:none;margin:0 0 .9em;padding:0;display:flex;flex-direction:column;gap:.34em}
+ul.chk li{font-size:.86em;padding-left:1.5em;position:relative;line-height:1.38}
+ul.chk li::before{content:"";position:absolute;left:0;top:.2em;width:.85em;height:.85em;
+  border:1.5px solid currentColor;opacity:.4;border-radius:2px}
+ul.chk li.no::before{content:"✗";border:0;opacity:.55;font-weight:700;font-size:.92em;top:0}
+.page .box p.big + p{margin-top:.45em}
+.page h5 + p{margin-top:0}
+.page figure svg{max-width:7.5em}
+.stage .cap{max-width:44rem}
+</style>
+
+<header>
+  <div class="in">
+    <h1>Kit Pele de Filtro</h1>
+    <p>Os __NFILES__ entregáveis, página por página, com o conteúdo completo e final.
+    Sistema visual do <code>design/briefing.md</code>. É isto que vai para o designer — e é
+    isto que ela recebe no e-mail.</p>
+    <div class="meta">
+      <div><b>__NFILES__</b>arquivos</div>
+      <div><b>__NPAGES__</b>páginas</div>
+      <div><b>2</b>imprimíveis</div>
+      <div><b>4</b>ilustrações</div>
+      <div><b>R$ 400</b>valor de âncora</div>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="rail" aria-label="Arquivos do kit">
+    <h2>Os arquivos</h2>
+    <ul class="files" id="files"></ul>
+    <button class="allbtn" id="allbtn" aria-pressed="false">Ver o kit completo</button>
+  </nav>
+  <main class="stage">
+    <h3 id="stageTitle"></h3>
+    <p class="cap" id="stageCap"></p>
+    <div class="sheets" id="sheets"></div>
+  </main>
+</div>
+
+<script>
+const FILES = __FILES__;
+const PAGES = __PAGES__;
+
+const railEl=document.getElementById('files'), sheetsEl=document.getElementById('sheets'),
+      titleEl=document.getElementById('stageTitle'), capEl=document.getElementById('stageCap'),
+      allBtn=document.getElementById('allbtn');
+let current="02";
+
+FILES.forEach(f=>{
+  const li=document.createElement('li');
+  li.innerHTML=`<button data-f="${f.n}"><span class="num">${f.n}</span>
+    <span>${f.t}</span><span class="pg">${f.pg}p</span></button>`;
+  railEl.appendChild(li);
+});
+
+function renderFile(n){
+  const f=FILES.find(x=>x.n===n), pages=PAGES[n];
+  titleEl.textContent=`${f.n} · ${f.t}`;
+  capEl.textContent=f.cap;
+  sheetsEl.className='sheets';
+  sheetsEl.innerHTML=pages.map(pg=>`<div class="holder">${pg.h}
+    <p class="pgnum">Página ${pg.p} de ${f.pg}</p></div>`).join('');
+}
+function renderKit(){
+  titleEl.textContent='O kit completo';
+  capEl.textContent='A primeira página de cada arquivo. É esta grade que vira o mockup do bloco de entregáveis da página de vendas — e é o que ela vê no e-mail.';
+  sheetsEl.className='sheets kit';
+  sheetsEl.innerHTML=FILES.map(f=>`<div class="holder">${PAGES[f.n][0].h}
+    <p class="cardlbl"><b>${f.n} · ${f.t}</b>${f.pg} ${f.pg===1?'página':'páginas'}</p></div>`).join('');
+}
+function select(n){
+  current=n; allBtn.setAttribute('aria-pressed','false');
+  document.querySelectorAll('.files button').forEach(b=>
+    b.setAttribute('aria-current', b.dataset.f===n?'true':'false'));
+  renderFile(n); window.scrollTo({top:0,behavior:'instant'});
+}
+railEl.addEventListener('click',e=>{const b=e.target.closest('button'); if(b) select(b.dataset.f);});
+allBtn.addEventListener('click',()=>{
+  const on = allBtn.getAttribute('aria-pressed')!=='true';
+  allBtn.setAttribute('aria-pressed',String(on));
+  if(on){document.querySelectorAll('.files button').forEach(b=>b.setAttribute('aria-current','false')); renderKit();}
+  else select(current);
+  window.scrollTo({top:0,behavior:'instant'});
+});
+select("02");
+</script>

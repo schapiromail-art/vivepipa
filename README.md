@@ -3,7 +3,7 @@
 ## Pele de Filtro — validação de low ticket
 
 Produto digital de **R$ 37** para o mercado brasileiro: um protocolo de maquiagem para
-mulheres 35+ cuja base craquela e marca linha de expressão. **Dez arquivos, 76 páginas.** O protocolo se aplica em 10 minutos; o material
+mulheres 35+ cuja base craquela e marca linha de expressão. **Dez arquivos, 79 páginas.** O protocolo se aplica em 10 minutos; o material
 responde às dúvidas que aparecem depois.
 
 Marca sem pessoa: não há autora e não vamos inventar uma. A autoridade vem da
@@ -16,12 +16,15 @@ especificidade — todo blog de marca dá o princípio, nenhum dá os tempos exa
 | `oferta/oferta.md` | Público, dor, mecanismo, estrutura da oferta e bônus |
 | `produto/pdfs/` | **Os 10 entregáveis escritos e finais**, página a página, prontos para diagramação |
 | `produto/entregaveis.md` | Especificação dos 10 arquivos: formato, extensão, função e âncora de preço |
+| `checkout/informe-checkout.md` | **Informe de checkout** — cada campo a configurar, e-mail de entrega, pixel, textos legais e o teste que não se pula |
+| `landing/copy-completa.md` | A copy da landing bloco a bloco, final, pronta para diagramar |
 | `design/briefing.md` | **Briefing de design** — marca, sistema visual, mockups, criativos e checklist de entrega |
 | `pesquisa/gaps-e-dores.md` | **Matriz mestre** — 15 dores com origem, risco de política e onde cada uma é usada, mais os gaps abertos |
 | `pesquisa/comparativo-mercado.md` | O que já se vende em Hotmart e Kiwify, e onde esta oferta se encaixa |
 | `pesquisa/voz-do-cliente.md` | **Benchmark de dores** — frases literais do nicho, glossário e o que mudar na copy |
 | `pesquisa/palestra-maxxima.md` | Auditoria da palestra: os 14 blocos, as estruturas de campanha e a biblioteca de ofertas |
 | `estrutura/framework-maxxima.md` | **Os cimentos** — os 15 blocos do template MAXXIMA e o padrão da página de obrigado |
+| `tools/gerar_kit.py` | Gera o preview do kit a partir dos markdown — regenere depois de editar qualquer PDF |
 | `landing/index.html` | Página de vendas nos 15 blocos, com pixel e `InitiateCheckout` |
 | `landing/obrigado.html` | Pós-compra: barra de 92% e formulário de qualificação antes da entrega |
 | `landing/acesso.html` | Entrega dos arquivos, depois do formulário |
