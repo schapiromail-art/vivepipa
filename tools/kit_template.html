@@ -54,11 +54,11 @@ header code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8
 
 /* ── layout ── */
 .shell{max-width:70rem;margin:0 auto;padding:26px 24px 80px;
-  display:grid;gap:30px;grid-template-columns:1fr}
-@media(min-width:900px){.shell{grid-template-columns:15rem 1fr;align-items:start}}
+  display:grid;gap:30px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){.shell{grid-template-columns:15rem minmax(0,1fr);align-items:start}}
 
 /* ── trilho de arquivos ── */
-.rail{position:sticky;top:16px}
+.rail{position:sticky;top:16px;min-width:0}
 @media(max-width:899px){.rail{position:static}}
 .rail h2{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
   color:var(--bench-muted);font-weight:600;margin:0 0 10px}
@@ -71,18 +71,18 @@ header code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8
   transition:background .12s}
 @media(max-width:899px){.files button{white-space:nowrap;width:auto}}
 .files button:hover{background:var(--bench-raise)}
-.files button[aria-current="true"]{background:var(--berry);color:#fff;border-color:var(--berry)}
+
 .files .num{font-variant-numeric:tabular-nums;font-size:.72rem;opacity:.65;font-weight:600}
-.files button[aria-current="true"] .num{opacity:.85}
+
 .files .pg{margin-left:auto;font-size:.7rem;opacity:.6;font-variant-numeric:tabular-nums}
 @media(max-width:899px){.files .pg{display:none}}
 .rail .allbtn{margin-top:12px;width:100%;font:inherit;font-size:.8rem;font-weight:500;
   padding:10px;border-radius:8px;border:1px solid var(--bench-line);
   background:var(--bench-raise);color:var(--bench-ink);cursor:pointer}
-.rail .allbtn[aria-pressed="true"]{background:var(--plum);color:var(--plum-ink);
-  border-color:var(--plum)}
+
 
 /* ── área das folhas ── */
+.stage{min-width:0}
 .stage h3{font-family:var(--display);font-weight:700;font-size:1.15rem;margin:0 0 .15em}
 .stage .cap{color:var(--bench-muted);font-size:.82rem;margin:0 0 12px}
 .sample{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;
@@ -92,7 +92,7 @@ header code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8
 .gap{width:var(--pw);text-align:center;font-size:.72rem;color:var(--bench-muted);
   letter-spacing:.08em;text-transform:uppercase;padding:4px 0;
   border-top:1px dashed var(--bench-line);border-bottom:1px dashed var(--bench-line)}
-.sheets{display:flex;flex-direction:column;gap:26px;align-items:center}
+.sheets{display:flex;flex-direction:column;gap:26px;align-items:flex-start}
 .holder{width:var(--pw)}
 .pgnum{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
   color:var(--bench-muted);margin:8px 0 0;text-align:center;
@@ -233,6 +233,37 @@ ul.chk li.no::before{content:"✗";border:0;opacity:.55;font-weight:700;font-siz
 .page h5 + p{margin-top:0}
 .page figure svg{max-width:7.5em}
 .stage .cap{max-width:44rem}
+
+/* ── índice estático ── */
+.files{counter-reset:none;list-style:none;min-width:0}
+.files a{display:flex;gap:10px;align-items:baseline;text-decoration:none;
+  font-size:.86rem;color:var(--bench-ink);padding:9px 11px;border-radius:8px;
+  border:1px solid transparent;transition:background .12s}
+.files a:hover{background:var(--bench-raise)}
+.files a .num{font-variant-numeric:tabular-nums;font-size:.72rem;opacity:.6;font-weight:600}
+.files a .pg{margin-left:auto;font-size:.7rem;opacity:.55;font-variant-numeric:tabular-nums}
+@media(max-width:899px){.files a{white-space:nowrap}.files a .pg{display:none}}
+.railnote{font-size:.72rem;color:var(--bench-muted);line-height:1.45;margin:12px 2px 0}
+@media(max-width:899px){.railnote{display:none}}
+
+/* ── seções de arquivo ── */
+.filesec{scroll-margin-top:16px;padding-bottom:52px}
+.filesec + .filesec{border-top:1px solid var(--bench-line);padding-top:44px}
+.filehd{margin-bottom:22px}
+.filehd .fnum{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--berry);font-weight:600;font-variant-numeric:tabular-nums}
+.filehd h3{font-family:var(--display);font-weight:700;font-size:1.45rem;margin:.15em 0 .3em;
+  letter-spacing:-.015em}
+.filehd p{color:var(--bench-muted);font-size:.85rem;margin:0;max-width:44rem}
+.filehd .chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.chip{font-size:.68rem;letter-spacing:.04em;padding:4px 10px;border-radius:99px;
+  background:var(--bench-raise);border:1px solid var(--bench-line);color:var(--bench-muted);
+  font-variant-numeric:tabular-nums}
+.chip.print{background:#fff;color:#1A1A1A;border-color:#C9C9C9}
+.chip.ilu{background:var(--berry);color:#fff;border-color:var(--berry)}
+.totop{display:inline-block;margin-top:18px;font-size:.75rem;color:var(--bench-muted);
+  text-decoration:none;border-bottom:1px solid var(--bench-line)}
+.totop:hover{color:var(--berry)}
 </style>
 
 <header>
@@ -252,62 +283,10 @@ ul.chk li.no::before{content:"✗";border:0;opacity:.55;font-weight:700;font-siz
 </header>
 
 <div class="shell">
-  <nav class="rail" aria-label="Arquivos do kit">
+  <nav class="rail" aria-label="Índice do kit">
     <h2>Os arquivos</h2>
-    <ul class="files" id="files"></ul>
-    <button class="allbtn" id="allbtn" aria-pressed="false">Ver o kit completo</button>
+    <ol class="files">__RAIL__</ol>
+    <p class="railnote">Role a página para ler tudo, ou clique para ir direto a um arquivo.</p>
   </nav>
-  <main class="stage">
-    <h3 id="stageTitle"></h3>
-    <p class="cap" id="stageCap"></p>
-    <div class="sheets" id="sheets"></div>
-  </main>
+  <main class="stage">__BODY__</main>
 </div>
-
-<script>
-const FILES = __FILES__;
-const PAGES = __PAGES__;
-
-const railEl=document.getElementById('files'), sheetsEl=document.getElementById('sheets'),
-      titleEl=document.getElementById('stageTitle'), capEl=document.getElementById('stageCap'),
-      allBtn=document.getElementById('allbtn');
-let current="02";
-
-FILES.forEach(f=>{
-  const li=document.createElement('li');
-  li.innerHTML=`<button data-f="${f.n}"><span class="num">${f.n}</span>
-    <span>${f.t}</span><span class="pg">${f.pg}p</span></button>`;
-  railEl.appendChild(li);
-});
-
-function renderFile(n){
-  const f=FILES.find(x=>x.n===n), pages=PAGES[n];
-  titleEl.textContent=`${f.n} · ${f.t}`;
-  capEl.textContent=f.cap;
-  sheetsEl.className='sheets';
-  sheetsEl.innerHTML=pages.map(pg=>`<div class="holder">${pg.h}
-    <p class="pgnum">Página ${pg.p} de ${f.pg}</p></div>`).join('');
-}
-function renderKit(){
-  titleEl.textContent='O kit completo';
-  capEl.textContent='A primeira página de cada arquivo. É esta grade que vira o mockup do bloco de entregáveis da página de vendas — e é o que ela vê no e-mail.';
-  sheetsEl.className='sheets kit';
-  sheetsEl.innerHTML=FILES.map(f=>`<div class="holder">${PAGES[f.n][0].h}
-    <p class="cardlbl"><b>${f.n} · ${f.t}</b>${f.pg} ${f.pg===1?'página':'páginas'}</p></div>`).join('');
-}
-function select(n){
-  current=n; allBtn.setAttribute('aria-pressed','false');
-  document.querySelectorAll('.files button').forEach(b=>
-    b.setAttribute('aria-current', b.dataset.f===n?'true':'false'));
-  renderFile(n); window.scrollTo({top:0,behavior:'instant'});
-}
-railEl.addEventListener('click',e=>{const b=e.target.closest('button'); if(b) select(b.dataset.f);});
-allBtn.addEventListener('click',()=>{
-  const on = allBtn.getAttribute('aria-pressed')!=='true';
-  allBtn.setAttribute('aria-pressed',String(on));
-  if(on){document.querySelectorAll('.files button').forEach(b=>b.setAttribute('aria-current','false')); renderKit();}
-  else select(current);
-  window.scrollTo({top:0,behavior:'instant'});
-});
-select("02");
-</script>

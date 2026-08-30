@@ -173,9 +173,37 @@ for path in sorted(glob.glob(f'{PDF_DIR}/*.md')):
     files.append({'n': num, 't': title, 'pg': len(rendered), 'cap': func})
 
 total = sum(f['pg'] for f in files)
+
+# ── montagem estática: nada depende de JavaScript ──
+rail = ''.join(
+    f'<li><a href="#f{f["n"]}"><span class="num">{f["n"]}</span>'
+    f'<span>{html.escape(f["t"])}</span><span class="pg">{f["pg"]}p</span></a></li>'
+    for f in files)
+
+body = []
+for f in files:
+    chips = [f'<span class="chip">{f["pg"]} página{"s" if f["pg"]>1 else ""}</span>']
+    if any('page print' in pg['h'] for pg in pages[f['n']]):
+        chips.append('<span class="chip print">imprimível · preto sobre branco</span>')
+    n_ilu = sum(pg['h'].count('<figure>') for pg in pages[f['n']])
+    if n_ilu:
+        chips.append(f'<span class="chip ilu">{n_ilu} ilustraç{"ões" if n_ilu>1 else "ão"}</span>')
+    sheets = ''.join(
+        f'<div class="holder">{pg["h"]}'
+        f'<p class="pgnum">Página {pg["p"]} de {f["pg"]}</p></div>'
+        for pg in pages[f['n']])
+    body.append(
+        f'<section class="filesec" id="f{f["n"]}">'
+        f'<div class="filehd"><div class="fnum">Arquivo {f["n"]}</div>'
+        f'<h3>{html.escape(f["t"])}</h3>'
+        f'<p>{html.escape(f["cap"])}</p>'
+        f'<div class="chips">{"".join(chips)}</div></div>'
+        f'<div class="sheets">{sheets}</div>'
+        f'<a class="totop" href="#">Voltar ao topo</a></section>')
+
 tpl = open('tools/kit_template.html', encoding='utf-8').read()
-out = (tpl.replace('__FILES__', json.dumps(files, ensure_ascii=False))
-          .replace('__PAGES__', json.dumps(pages, ensure_ascii=False))
+out = (tpl.replace('__RAIL__', rail)
+          .replace('__BODY__', ''.join(body))
           .replace('__NFILES__', str(len(files)))
           .replace('__NPAGES__', str(total)))
 open(OUT, 'w', encoding='utf-8').write(out)
