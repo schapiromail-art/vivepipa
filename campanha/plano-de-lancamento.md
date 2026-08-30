@@ -87,7 +87,7 @@ que a própria palestra resolve: com vários criativos juntos, o algoritmo conce
 entrega em um ou dois e você termina sem saber qual funcionou.
 
 Use a **Testadora 1-1-1**: um conjunto por criativo, 45% do preço do produto por dia cada.
-A R$ 47 são **R$ 21,15 por criativo**; dois criativos = R$ 42/dia — logo abaixo da faixa
+A R$ 37 são **R$ 16,65 por criativo**; dois criativos = R$ 33/dia — logo abaixo da faixa
 de R$ 60–80 que a auditoria propõe, e com a vantagem de você saber qual dos dois funcionou.
 Quando um terceiro criativo entrar, o total já cai dentro dessa faixa.
 

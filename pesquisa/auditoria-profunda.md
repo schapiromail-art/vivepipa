@@ -59,8 +59,8 @@ nenhum**. O mercado está servido por cursos de R$ 197 e por conteúdo gratuito 
 Entre os dois não tem nada.
 
 **Essa é a tese do negócio, e ela é boa:** entrar por baixo de R$ 197 com um formato que
-nenhum concorrente usa. A R$ 47 você não está competindo com a Dani Godoy — está
-competindo com a indecisão de quem acha R$ 197 muito para uma dúvida de R$ 47.
+nenhum concorrente usa. A R$ 37 você não está competindo com a Dani Godoy — está
+competindo com a indecisão de quem acha R$ 197 muito para uma dúvida de R$ 37.
 
 ## O risco que ninguém do lado de cá está olhando
 

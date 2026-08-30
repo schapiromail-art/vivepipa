@@ -41,7 +41,7 @@ preço individual e soma tudo. Quando o preço real aparece no bloco 9, ele já 
 contra uma somatória muito maior. Invertida, a ordem não funciona.
 
 **"Como acessar" é um bloco inteiro.** Três ícones explicando que o acesso chega no e-mail.
-Parece óbvio e não é: em low ticket, a dúvida "vou receber mesmo?" mata venda de R$ 47.
+Parece óbvio e não é: em low ticket, a dúvida "vou receber mesmo?" mata venda de R$ 37.
 
 **Ruminação antes de solução.** O bloco 3 não vende nada — só descreve a dor e pergunta
 "Estou certo?". A venda começa depois que ela concordou duas vezes.
@@ -92,7 +92,7 @@ Botão: `BAIXAR MINHA CARTILHA`. Sem upsell, sem order bump, sem grupo.
 **O que isso significa:** o produto de entrada não é o negócio. É o filtro. Quem preenche
 "faturamento acima de R$ 70 mil" e "já tenho produto low ticket" vira lista de alto
 ticket; o resto vira e-mail. O ativo que sai dessa página é o **telefone qualificado**,
-não os R$ 47.
+não os R$ 37.
 
 Os dois detalhes que fazem o formulário ser preenchido:
 1. **A barra em 92%.** Efeito de progresso incompleto — parar ali custa mais do que seguir.
@@ -124,9 +124,10 @@ Junto disso: o template pede "antes e depois" duas vezes. O Meta restringe esse 
 para pele. Se um dia usar, que a comparação seja da **maquiagem aplicada**, nunca da pele.
 
 **O ticket de referência do template é R$ 67** (`9x de 8,80`), e o value stack dele soma
-6 entregáveis a R$ 147 e R$ 97. A R$ 47 a somatória precisa ser proporcionalmente menor,
+6 entregáveis a R$ 147 e R$ 97. A R$ 37 a somatória precisa ser proporcionalmente menor,
 senão a âncora fica inacreditável e derruba a conversão em vez de aumentar. Na landing a
-soma fecha em **R$ 262** — cerca de 5,6x o preço, que é a faixa que sustenta.
+soma fecha em **R$ 326** — cerca de 8,8x o preço. É alto, e a R$ 37 se sustenta
+porque são oito peças reais: a âncora só quebra quando a lista não corresponde ao que chega.
 
 ---
 

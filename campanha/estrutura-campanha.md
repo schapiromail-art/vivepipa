@@ -14,12 +14,12 @@
 | | |
 |---|---|
 | Estrutura | 1 Campanha · 1 Conjunto · **1 criativo isolado** |
-| Orçamento | **45% do valor do produto por dia** = R$ 21,15 |
+| Orçamento | **45% do valor do produto por dia** = R$ 16,65 |
 | Público | Aberto (Brasil, mulheres 30–60, sem interesses) |
 | Duração | 5 dias |
 | Meta | **ROI 2** |
 
-Um conjunto por criativo. Quatro criativos = quatro conjuntos = R$ 84,60/dia.
+Um conjunto por criativo. Quatro criativos = quatro conjuntos = R$ 66,60/dia.
 
 **Por que isolar.** Com vários criativos no mesmo conjunto, o algoritmo concentra a
 entrega em um ou dois e os outros morrem com dados insuficientes para julgar. Você
@@ -43,14 +43,14 @@ venda. Se você exigir o mesmo ROI da fase de teste, nunca escala.
 Cinco dias não é hoje. O caminho que respeita as duas coisas:
 
 - **Hoje:** suba a Testadora com os **dois** melhores criativos (ângulos A e B de
-  `ads/copys.md`), R$ 42/dia no total. Não é para concluir nada hoje — é para o relógio
+  `ads/copys.md`), R$ 33/dia no total. Não é para concluir nada hoje — é para o relógio
   dos 5 dias começar a correr hoje.
 - **Dias 2–5:** cada criativo novo entra como conjunto isolado.
 - **Dia 5:** quem bateu ROI 2 sobrevive. Quem bateu ROI 3 vai para a Gramado.
 - **Depois:** sobe de 5 em 5 dias até R$ 500/dia, meta ROI 1.8.
 
 > **Ajuste obrigatório para pixel frio.** A palestra assume pixel com histórico. Com zero
-> compras, otimizar por Compra a R$ 21,15/dia não sai do aprendizado. Comece otimizando
+> compras, otimizar por Compra a R$ 16,65/dia não sai do aprendizado. Comece otimizando
 > por **Iniciar finalização de compra** e troque para Compra quando acumular ~15 vendas.
 
 > **Sobre paciência.** O erro que mata este método é mexer no dia 2. Cinco dias é cinco
@@ -115,9 +115,9 @@ Use como régua para saber se está caro ou barato, não como meta:
 | Custo por clique no link | até R$ 1,20 | acima de R$ 2,00 |
 | Página → InitiateCheckout | acima de 8% | abaixo de 4% |
 | InitiateCheckout → Compra | acima de 25% | abaixo de 12% |
-| **CPA (custo por compra)** | **até R$ 23,50** (ROI 2) | acima de R$ 47 |
+| **CPA (custo por compra)** | **até R$ 18,50** (ROI 2) | acima de R$ 37 |
 
-A meta ROI 2 da palestra significa **CPA de até R$ 23,50**. É mais exigente que os R$ 25
+A meta ROI 2 da palestra significa **CPA de até R$ 18,50**. É mais exigente que os R$ 25
 que eu tinha proposto, e ele está certo: ROI 1,5 não paga imposto, taxa de plataforma e
 reembolso. Daí para frente se melhora a margem com order bump e
 upsell, não com anúncio mais barato.

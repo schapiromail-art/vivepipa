@@ -2,7 +2,7 @@
 
 ## Pele de Filtro — validação de low ticket
 
-Produto digital de R$ 47 para o mercado brasileiro: um protocolo de maquiagem para
+Produto digital de R$ 37 para o mercado brasileiro: um protocolo de maquiagem para
 mulheres 35+ cuja base craquela e marca linha de expressão. Montado para ser lançado e
 testado em um dia com R$ 150 de mídia.
 
