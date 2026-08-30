@@ -3,8 +3,8 @@
 ## Pele de Filtro — validação de low ticket
 
 Produto digital de **R$ 37** para o mercado brasileiro: um protocolo de maquiagem para
-mulheres 35+ cuja base craquela e marca linha de expressão. Oito arquivos curtos, 21
-páginas, consumo em 10 minutos.
+mulheres 35+ cuja base craquela e marca linha de expressão. **Dez arquivos, 78 páginas.** O protocolo se aplica em 10 minutos; o material
+responde às dúvidas que aparecem depois.
 
 Marca sem pessoa: não há autora e não vamos inventar uma. A autoridade vem da
 especificidade — todo blog de marca dá o princípio, nenhum dá os tempos exatos.
@@ -14,8 +14,8 @@ especificidade — todo blog de marca dá o princípio, nenhum dá os tempos exa
 | Arquivo | O que é |
 |---|---|
 | `oferta/oferta.md` | Público, dor, mecanismo, estrutura da oferta e bônus |
-| `produto/pdfs/` | **Os 8 entregáveis escritos e finais**, página a página, prontos para diagramação |
-| `produto/entregaveis.md` | Especificação dos 8 arquivos: formato, extensão e função |
+| `produto/pdfs/` | **Os 10 entregáveis escritos e finais**, página a página, prontos para diagramação |
+| `produto/entregaveis.md` | Especificação dos 10 arquivos: formato, extensão, função e âncora de preço |
 | `design/briefing.md` | **Briefing de design** — marca, sistema visual, mockups, criativos e checklist de entrega |
 | `pesquisa/gaps-e-dores.md` | **Matriz mestre** — 15 dores com origem, risco de política e onde cada uma é usada, mais os gaps abertos |
 | `pesquisa/comparativo-mercado.md` | O que já se vende em Hotmart e Kiwify, e onde esta oferta se encaixa |

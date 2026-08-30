@@ -57,48 +57,53 @@ atenção em tráfego frio — que é o trabalho dele.
 
 ---
 
-## 3. Os 8 PDFs
+## 3. Os 10 PDFs
 
 Conteúdo final em `produto/pdfs/`. Cada arquivo tem no topo um bloco com páginas, formato
-e observações de diagramação. **21 a 23 páginas em 8 arquivos.**
+e observações de diagramação. **78 páginas em 10 arquivos.**
 
 | # | Arquivo | Pág. | Observação de design |
 |---|---|---|---|
-| 01 | Checklist do Espelho | 1 | **Preto sobre branco.** Imprimível em jato de tinta |
-| 02 | O Protocolo Pele de Filtro | 11 | Uma seção por página. Os tempos de espera são o elemento gráfico mais forte |
-| 03 | Mapa das Olheiras | 2 | A tabela é o produto. Amostra de cor real ao lado de cada linha |
-| 04 | O Kit de R$ 100 | 2 | Pág. 2 em duas colunas: “vale” / “não vale” |
-| 05 | Protocolo Express | 1 | **Preto sobre branco.** Segundo imprimível |
-| 06 | 7 Erros Depois dos 35 | 3 | Numeração grande em rosa-berry, 2–3 erros por página |
-| 07 | Base Talhada | 1 | A tabela comparativa é o centro |
-| 08 | Efeito Lifting | 1 | **Precisa de 3 ilustrações** — ver abaixo |
+| 01 | Checklist do Espelho | 2 | **Preto sobre branco.** Imprimível em jato de tinta |
+| 02 | O Protocolo Pele de Filtro | 22 | Uma seção por página. Os tempos de espera são o elemento gráfico mais forte. Tabelas nas páginas 4, 7, 9, 14, 21 e 22 |
+| 03 | Rosto Desinchado | 10 | As duas sequências (gelo e drenagem) pedem numeração forte e muito ar. Avisos de segurança em caixa destacada |
+| 04 | Mapa das Olheiras | 6 | A tabela da página 3 é o coração: amostra de cor real em círculo ao lado de cada linha |
+| 05 | Guia de Texturas | 7 | A tabela de compatibilidade da página 6 é a mais consultada. Destacar com fundo |
+| 06 | O Kit de R$ 100 | 5 | Glossário na página 2, comparativo em duas colunas na 3 |
+| 07 | Efeito Lifting | 6 | **Precisa de 4 ilustrações** — ver abaixo |
+| 08 | 7 Erros Depois dos 35 | 8 | Uma página por erro. Numeração muito grande em rosa-berry no topo. Bloco “Faça assim” em caixa verde |
+| 09 | Diagnóstico | 8 | O índice da página 2 é o mais consultado do kit — escaneável em três segundos |
+| 10 | Protocolo Express | 2 | **Preto sobre branco.** Segundo imprimível |
 
-**Templates:** um de capa e um de miolo servem para os oito. Capa em ameixa com título em
+**Templates:** um de capa e um de miolo servem para os dez. Capa em ameixa com título em
 Fraunces e o número do arquivo. Miolo em `#FBF6F4`, Poppins 11–12pt, entrelinha generosa,
 rodapé com “Pele de Filtro” em todas as páginas.
 
 **Espaço em branco não é desperdício** — é o que faz o protocolo parecer fácil. Se uma
 página parece cheia, tire conteúdo dela.
 
-### As 3 ilustrações do arquivo 08
+**Caixas de segurança:** os arquivos 03 e 04 têm avisos sobre quando procurar um médico.
+Eles precisam de tratamento visual distinto das caixas de destaque comuns — borda em vez
+de fundo, ou um tom mais sóbrio. Não podem parecer marketing.
+
+### As 4 ilustrações do arquivo 07
 
 Únicas ilustrações do kit. Rosto feminino estilizado, traço fino, linha em `#3A2B31` com
 setas em `#C03A63`. Sem sombreamento, sem realismo.
 
 1. Rosto de frente, seta diagonal da maçã do rosto em direção à têmpora
-2. Rosto de frente com 4 pontos marcados: topo da maçã, osso da sobrancelha externo, canto
-   interno do olho, arco do lábio
+2. Rosto de frente com 4 pontos numerados: topo da maçã, osso da sobrancelha externo,
+   canto interno do olho, arco do lábio
 3. Detalhe do olho, traço curto ascendente no canto externo
-
----
+4. Duas sobrancelhas lado a lado — uma com a ponta caindo, outra terminando na horizontal
 
 ## 4. Mockups — a peça que mais vende
 
 **Produto digital sem mockup parece que não existe.** Isto entra na landing (bloco 5) e
 nos criativos.
 
-- Os 8 PDFs abertos em **tablet** e em **celular**
-- Uma imagem com **os oito juntos**, em leque ou grade — é o retrato do overdelivery
+- Os 10 PDFs abertos em **tablet** e em **celular**
+- Uma imagem com **os dez juntos**, em leque ou grade — é o retrato do overdelivery
 - O Checklist do Espelho **impresso e colado num espelho de banheiro** — a única imagem
   que mostra o produto em uso, e provavelmente a melhor do kit
 
@@ -111,7 +116,7 @@ perde para qualquer concorrente. Em ordem de impacto:
 
 | Onde | O quê |
 |---|---|
-| Bloco 5 (entregáveis) | A imagem dos 8 juntos |
+| Bloco 5 (entregáveis) | A imagem dos 10 juntos |
 | Bloco 1 (hero) | Mulher **40+ real**, não modelo de 22. Ela precisa se reconhecer |
 | Bloco 3 (ruminação) | Detalhe de textura: esponja, base, pó. Rompe o muro de texto |
 | Bloco 4 (passo a passo) | 3 ícones em linha fina, rosa-berry |
@@ -134,7 +139,7 @@ Solução, Ação). Produzir primeiro:
 | 1 | **A** — a camada grossa | Estático, texto puro sobre `#FBF6F4` |
 | 2 | **D** — “ninguém te diz quantos minutos” | Estático, os números como elemento gráfico |
 | 3 | **B** — a base que faz bolinhas | Estático com a tabela craquelada × talhada |
-| 4 | **F** — efeito lifting | Estático, reaproveita as ilustrações do PDF 08 |
+| 4 | **F** — efeito lifting | Estático, reaproveita as ilustrações do PDF 07 |
 
 **Regras de arte:** manchete em no máximo 7 palavras. Texto grande — se não dá para ler
 com o print reduzido à metade, está pequeno. Contraste alto, sem texto sobre foto
@@ -171,9 +176,9 @@ O disclaimer do rodapé da landing é obrigatório e já está escrito.
 
 ☐ Logo em 3 versões (ameixa, clara, monocromática)
 ☐ Template de capa + template de miolo dos PDFs
-☐ Os 8 PDFs diagramados, com 01 e 05 em preto sobre branco
-☐ As 3 ilustrações do arquivo 08
-☐ Mockups: tablet, celular, os 8 juntos, checklist no espelho
+☐ Os 10 PDFs diagramados, com 01 e 10 em preto sobre branco
+☐ As 4 ilustrações do arquivo 07
+☐ Mockups: tablet, celular, os 10 juntos, checklist no espelho
 ☐ 5 imagens da landing
 ☐ 4 criativos estáticos 1080×1350
 ☐ Favicon e imagem de compartilhamento (og:image) da landing
