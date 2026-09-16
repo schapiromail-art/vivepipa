@@ -105,6 +105,9 @@ li{margin-bottom:6px}
 .sw-item .chip{height:56px}
 .sw-item .t{padding:8px 10px;font-size:13px}
 .sw-item .t b{display:block;font-family:"Barlow Semi Condensed",Arial,sans-serif;font-size:14px}
+.renders{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+figure.render{padding:10px 10px 8px;margin:0}
+figure.render img{display:block;width:100%;height:auto}
 .note{border-left:3px solid var(--gas);padding:10px 16px;background:var(--card);margin-block:14px 20px;max-width:none}
 .note.ok{border-left-color:var(--ok)}
 .note.led{border-left-color:var(--led)}
@@ -130,12 +133,12 @@ small{color:var(--muted)}
     <div><b>Etapa</b>Anteproyecto para cotizar</div>
     <div><b>Base de medidas</b>Relevamiento fotográfico, tolerancia ±5 cm</div>
     <div><b>Escala dibujos</b>Proporcional, cotas en metros</div>
-    <div><b>Costo orientativo</b>ARS 8,6 M · USD 5.600 (BNA $1.530)</div>
+    <div><b>Renders</b>Sección 8, generados sobre las fotos actuales</div>
   </div>
 </div>
 
 <nav class="toc" aria-label="Contenido">
-  <a href="#relev">1 Relevamiento</a><a href="#diag">2 Diagnóstico</a><a href="#planta">3 Planta propuesta</a><a href="#frente">4 Frente de cocina</a><a href="#lav">5 Lavadero</a><a href="#luz">6 Iluminación y eléctrica</a><a href="#mat">7 Materiales</a><a href="#presu">8 Presupuesto</a><a href="#obra">9 Etapas y verificaciones</a>
+  <a href="#relev">1 Relevamiento</a><a href="#diag">2 Diagnóstico</a><a href="#planta">3 Planta propuesta</a><a href="#frente">4 Frente de cocina</a><a href="#lav">5 Lavadero</a><a href="#luz">6 Iluminación y eléctrica</a><a href="#mat">7 Materiales</a><a href="#obra">8 Etapas y verificaciones</a><a href="#renders">9 Renders</a>
 </nav>
 
 <section id="relev">
@@ -613,7 +616,7 @@ small{color:var(--muted)}
     <li>Cielorraso: se repara el revoque, se tapa el agujero y se pinta. No conviene durlock acá porque hay dos conductos de gas que deben quedar accesibles.</li>
     <li>Plafón LED estanco de 18 W en el centro y tira LED opcional bajo el borde de la barra.</li>
   </ul></div>
-  <div class="box"><h3>Si querés conservar una pileta</h3><p>Alternativa: bacha inox compacta de 34 × 40 en el extremo derecho de la barra, sobre el módulo de 0,45. La barra útil baja a 1,15 m: alcanza para dos banquetas apretadas o para una persona cómoda y otra en la punta. Suma unos ARS 180.000 entre bacha, grifería y desagüe.</p><p>Mi recomendación es sin pileta: el lugar para dos era el pedido, y el lavarropas ya no necesita el desagüe ahí.</p></div>
+  <div class="box"><h3>Si querés conservar una pileta</h3><p>Alternativa: bacha inox compacta de 34 × 40 en el extremo derecho de la barra, sobre el módulo de 0,45. La barra útil baja a 1,15 m: alcanza para dos banquetas apretadas o para una persona cómoda y otra en la punta.</p><p>Mi recomendación es sin pileta: el lugar para dos era el pedido, y el lavarropas ya no necesita el desagüe ahí.</p></div>
 </div>
 <div class="note"><p><strong>Gas.</strong> El lavadero tiene caldera y calefón de tiro natural. Cualquier cambio de ventana tiene que mantener una ventilación permanente hacia el exterior (rejilla superior en el paño fijo e inferior en la puerta o el muro), y la puerta del lavadero no puede quedar hermética. Antes de cerrar la compra de la abertura conviene que un gasista matriculado valide el esquema; es un trámite corto y evita problemas con la administración del edificio.</p></div>
 </section>
@@ -734,36 +737,9 @@ small{color:var(--muted)}
 <div class="note led"><p><strong>Por qué Negro Brasil y no Negro Absoluto.</strong> Absoluto es más uniforme pero cuesta el doble y en 2,3 m de mesada la diferencia no se nota. Negro Brasil tiene grano fino y con la tira LED pegada se ve como una lámina negra. Pedirlo pulido, no flameado: el flameado retiene grasa.</p></div>
 </section>
 
-<section id="presu">
-<div class="sec-head"><span class="n">08</span><h2>Presupuesto orientativo</h2></div>
-<p>Valores de referencia de septiembre de 2026 para CABA, con IVA, tomados de listas públicas de proveedores y de rangos de mano de obra publicados este año. Sirven para saber en qué orden de magnitud estás y para detectar una cotización fuera de rango, no reemplazan tres presupuestos reales. Dólar BNA vendedor $1.530.</p>
-<div class="tbl"><table>
-<thead><tr><th>Rubro</th><th>Incluye</th><th class="num">ARS</th><th class="num">USD</th></tr></thead>
-<tbody>
-<tr><td>Amoblamiento Egger blanco</td><td>Bajo mesada, nicho lavarropas, alacenas, torre heladera, escobero, módulo barra; herrajes de cierre suave; colocación</td><td class="num">2.600.000</td><td class="num">1.700</td></tr>
-<tr><td>Granito Negro Brasil</td><td>3,92 ml a 0,64 / 0,50, frentines, zócalos, recorte bacha, plantilla y colocación</td><td class="num">1.300.000</td><td class="num">850</td></tr>
-<tr><td>Bacha y grifería</td><td>Bacha inox bajo mesada + monocomando</td><td class="num">270.000</td><td class="num">175</td></tr>
-<tr><td>Aberturas PVC DVH</td><td>Ventana cocina 1,60 × 0,55 + ventana lavadero 0,80 × 1,00 con paño fijo; retiro de las de aluminio, amure y sellado</td><td class="num">1.350.000</td><td class="num">880</td></tr>
-<tr><td>Cielorraso cocina</td><td>Durlock 6,7 m² con estructura, 4 spots, pintura</td><td class="num">400.000</td><td class="num">260</td></tr>
-<tr><td>Iluminación LED</td><td>Perfil + tira 2,9 m + fuente, plafón lavadero, purificador 60</td><td class="num">320.000</td><td class="num">210</td></tr>
-<tr><td>Electricidad</td><td>Circuito lavarropas 20 A, tomas nuevos, puntos de luz, cableado por cielorraso, térmicas</td><td class="num">450.000</td><td class="num">295</td></tr>
-<tr><td>Plomería</td><td>Alimentación y desagüe del lavarropas en cocina, conexión de bacha, canilla de servicio y rejilla, anulación de pileta</td><td class="num">300.000</td><td class="num">195</td></tr>
-<tr><td>Revestimiento y pintura</td><td>Subway 2,3 m² colocado, pintura de cielorrasos, paredes y guarda</td><td class="num">280.000</td><td class="num">185</td></tr>
-<tr><td>Albañilería y retiro</td><td>Desarme de muebles y pileta, reparación de cielorraso del lavadero, retiro de escombros, ayuda de gremios</td><td class="num">500.000</td><td class="num">325</td></tr>
-<tr><td>Banquetas y varios</td><td>2 banquetas, ménsulas, selladores, tornillería</td><td class="num">180.000</td><td class="num">120</td></tr>
-<tr class="sub"><td>Subtotal</td><td></td><td class="num">7.950.000</td><td class="num">5.195</td></tr>
-<tr><td>Imprevistos</td><td>10 % (en un edificio antiguo aparecen caños y cables donde no se esperaban)</td><td class="num">795.000</td><td class="num">520</td></tr>
-<tr class="total"><td>Total orientativo</td><td></td><td class="num">8.745.000</td><td class="num">5.715</td></tr>
-</tbody></table></div>
-<div class="grid2">
-  <div class="box"><h3>Versión ajustada · ≈ ARS 6,3 M</h3><p>Mismo frente y granito, pero sin durlock (se repara y pinta la losa, se usan dos plafones LED de superficie de 24 W), sin ventana nueva en el lavadero (se repara la de aluminio) y sin tira bajo barra. Se pierde el cielorraso limpio de la cocina, que es lo que más cambia la sensación del ambiente. No la recomiendo salvo que el tope sea duro.</p></div>
-  <div class="box"><h3>Upgrade que vale la pena · + ARS 1,2 M</h3><p>Reemplazar la cocina de 55 cm por anafe de 4 hornallas + horno eléctrico empotrado en un módulo de 0,60. La mesada de granito corre entera hasta el muro (2,89 m) y el frente queda uniforme. Es el único cambio que mejora el resultado visual de manera clara; todo lo demás es terminación.</p></div>
-</div>
-<p><small>Fuentes de precios consultadas: listados de mesadas de granito Negro Brasil en MercadoLibre Argentina (desde ≈ $220.000 el metro lineal), ventanas PVC DVH en Cotizá tu Ventana y Servidos (150 × 100 entre $880.000 y $1.040.000), amoblamientos en melamina en Leplac (combo 2,00 m bajo mesada + alacena $888.499 en línea estándar), calculadoradurlock.com y Ellaburante (cielorraso suspendido $32.000 a $48.000 el m² colocado, AMBA 20 a 30 % más caro), kits LED bajo alacena de Kaiser LED, y dólar BNA del 14 de septiembre de 2026 según El Cronista.</small></p>
-</section>
 
 <section id="obra">
-<div class="sec-head"><span class="n">09</span><h2>Etapas de obra y verificaciones</h2></div>
+<div class="sec-head"><span class="n">08</span><h2>Etapas de obra y verificaciones</h2></div>
 <p>Cuatro a cinco semanas de obra con gremios coordinados. El granito es lo que marca el ritmo: se plantilla con los muebles ya colocados y tarda entre 7 y 10 días.</p>
 <ol>
   <li><strong>Semana 1 · Desarme.</strong> Retiro de muebles, pileta del lavadero, tendedero interior, tubo fluorescente y las dos ventanas. Picado de la franja de azulejo entre mesada y alacena. La heladera y la cocina se tapan y se corren, no salen del departamento.</li>
@@ -774,6 +750,7 @@ small{color:var(--muted)}
   <li><strong>Semana 4–5 · Granito y terminaciones.</strong> Colocación de mesada y barra, bacha, grifería, conexión del lavarropas, tira LED, spots, plafón, purificador, zócalos de granito, sellado de silicona negra. Limpieza final.</li>
 </ol>
 <div class="note ok"><p><strong>Qué medir antes de pedir cotizaciones.</strong> Largo total del muro del frente (muro a muro, a 0,90 y a 1,60 de altura, porque los muros viejos no son paralelos). Ancho y alto interior del vano de cada ventana. Altura de losa en tres puntos. Profundidad real del lavarropas con la manguera conectada. Distancia del desagüe de la bacha al piso. Posición de los conductos de la caldera y el calefón respecto al cielorraso. Capacidad libre del tablero eléctrico. Con esos ocho datos, cualquier carpintero, marmolero y ventanero puede cotizar sobre este anteproyecto sin visitar.</p></div>
-<p><strong>Próximo paso.</strong> Tomar esas medidas y pedir tres cotizaciones de amoblamiento y dos de granito con el listado de la sección 7. Si los muebles cotizan en el rango de ARS 2,3 a 3,2 M, el resto del presupuesto se sostiene.</p>
+<p><strong>Próximo paso.</strong> Tomar esas medidas y pedir cotizaciones de amoblamiento, granito y aberturas con el listado de la sección 7 y los dibujos de las secciones 3 a 6.</p>
 </section>
+
 </div>

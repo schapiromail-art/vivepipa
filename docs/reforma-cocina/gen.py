@@ -245,7 +245,28 @@ def plan_luz():
 
 svgs = dict(actual=plan_actual(), prop=plan_propuesta(), alz=alzado_cocina(), lav=alzado_lavadero(), luz=plan_luz())
 
+import os, base64
+CAPS = {
+  "01-frente-cocina": "Frente de cocina desde el acceso: torre de heladera, lavarropas embutido, bacha, cajonera y cocina bajo la mesada de granito Negro Brasil; alacenas blancas hasta el cielorraso con tira LED.",
+  "02-heladera-lavarropas": "Extremo izquierdo del frente: heladera enmarcada por panel y alacena blancos, lavarropas a ras de los frentes bajo el granito, nicho abierto para el microondas.",
+  "03-lavadero-barra": "Lavadero convertido en desayunador: barra de granito de 1,60 bajo la ventana nueva de PVC, dos banquetas, caldera y calefón en su lugar, escobero junto a la puerta.",
+  "04-nocturna-led": "Escena nocturna con la tira LED bajo alacena como única luz principal: el granito negro refleja la línea de luz y el subway blanco la devuelve.",
+}
+def renders_section():
+    d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "renders")
+    if not os.path.isdir(d): return ""
+    items = []
+    for name in sorted(os.listdir(d)):
+        if not name.endswith(".jpg"): continue
+        key = name[:-4]
+        b64 = base64.b64encode(open(os.path.join(d, name), "rb").read()).decode()
+        items.append(f'<figure class="render"><img src="data:image/jpeg;base64,{b64}" alt="{CAPS.get(key, key)}" loading="lazy"><figcaption>{CAPS.get(key, key)}</figcaption></figure>')
+    if not items: return ""
+    return ('<section id="renders">\n<div class="sec-head"><span class="n">09</span><h2>Renders</h2></div>\n'
+            '<p>Imágenes generadas sobre las fotos actuales del departamento (imagen a imagen), manteniendo la geometría del ambiente, la posición de la cámara y los artefactos que se conservan. Son una referencia de materiales y luz, no un fotomontaje a escala: las medidas válidas son las de los planos.</p>\n'
+            '<div class="renders">' + "\n".join(items) + '</div>\n</section>')
 html = open("template.html", encoding="utf-8").read()
+html = html.replace("{{RENDERS}}", renders_section())
 for k, v in svgs.items():
     html = html.replace("{{SVG_%s}}" % k.upper(), v)
 open("remodelacion-cocina-lavadero.html", "w", encoding="utf-8").write(html)
