@@ -280,25 +280,28 @@ svgs = dict(det=detalle_lavarropas(), actual=plan_actual(), prop=plan_propuesta(
 
 import os, base64
 CAPS = {
-  "00-global": "Vista global desde el fondo de la cocina, junto a la puerta del lavadero, como la foto 9: el único frente de muebles a la derecha con la banda de ventana encima, la pared de enfrente libre con la puerta de acceso, y la heladera al fondo en su esquina, contra el muro de entrada y de frente al pasillo, con el lavarropas embutido pegado a su costado.",
-  "01-frente-cocina": "Frente visto de frente, como el alzado: puerta de melamina blanca que esconde el lavarropas (con rejilla abajo), puerta, bacha bajo la banda de ventana, cajonera y la cocina existente al final de la línea con purificador. Mesada de granito Negro Brasil, alacenas hasta el cielorraso con nicho para microondas, tira LED y spots. La banda de ventana real mide 2,30 m; el render la dibuja más corta. La heladera queda fuera de cuadro a la izquierda, en su esquina.",
-  "02-heladera-lavarropas": "Detalle del extremo izquierdo (recorte de la vista anterior): el módulo del lavarropas con su puerta de melamina cerrada, igual a las demás, con la rejilla de ventilación en el zócalo y el nicho del microondas arriba. La heladera queda fuera de cuadro, en su esquina a la izquierda.",
+  "10-pasillo-dia": "Vista global de día, generada a partir de la captura de la maqueta 3D (misma cámara, misma geometría): heladera en su esquina contra el muro de entrada, puerta de melamina del lavarropas a su lado, bacha bajo la banda de ventana, cajonera y la cocina existente al final contra el muro del lavadero. Luz natural por la ventana, LED apagada.",
+  "11-pasillo-atardecer": "La misma vista al atardecer: luz cálida entrando por la banda de ventana, tira LED bajo alacena ya encendida y spots a media intensidad.",
+  "12-pasillo-noche": "La misma vista de noche: la tira LED bajo alacena es la luz principal sobre el granito negro, spots a baja intensidad, ventana oscura.",
+  "10-lavadero-dia": "Segunda toma general de día, generada desde la captura de la maqueta tomada junto a la puerta del lavadero: heladera, puerta ancha del lavarropas con rejilla, bacha bajo la banda de ventana, cajonera y cocina.",
+  "12-lavadero-noche": "La segunda toma de noche, con la tira LED bajo alacena como luz principal y los spots a baja intensidad.",
+  "10-frontal-dia": "Vista frontal al frente de muebles, de día, como el alzado de la sección 4: lateral de la heladera a la izquierda, puerta del lavarropas, puerta, bacha, cajonera y cocina.",
   "05-lavarropas-placard": "El módulo del lavarropas con la puerta de melamina Egger abierta: el equipo va embutido en el nicho de 0,62 × 0,88 bajo la mesada, a ras de los frentes, y con la puerta cerrada no se distingue de los otros placares.",
-  "03-lavadero-barra": "Lavadero desde la puerta: ventana nueva de PVC y barra de granito de 1,60 en la pared izquierda, caldera en la pared del fondo y calefón Orbis en la derecha con el escobero debajo, todos donde están hoy. La imagen muestra la variante con bacha compacta en la barra.",
-  "04-nocturna-led": "El tramo lavarropas a cajonera de noche, con la tira LED bajo alacena como luz principal: el granito negro refleja la línea de luz, el vidrio de la banda de ventana y el subway la devuelven.",
+  "03-lavadero-barra": "Lavadero (pendiente de relevamiento, ver sección 5): barra de granito bajo la ventana, caldera al fondo y calefón Orbis a la derecha con el escobero debajo. Muestra la variante con bacha compacta en la barra.",
 }
+ORDER = ["10-pasillo-dia", "11-pasillo-atardecer", "12-pasillo-noche", "10-lavadero-dia", "12-lavadero-noche", "10-frontal-dia", "05-lavarropas-placard", "03-lavadero-barra"]
 def renders_section():
     d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "renders")
     if not os.path.isdir(d): return ""
     items = []
-    for name in sorted(os.listdir(d)):
-        if not name.endswith(".jpg"): continue
+    names = [k + ".jpg" for k in ORDER if os.path.exists(os.path.join(d, k + ".jpg"))]
+    for name in names:
         key = name[:-4]
         b64 = base64.b64encode(open(os.path.join(d, name), "rb").read()).decode()
         items.append(f'<figure class="render"><img src="data:image/jpeg;base64,{b64}" alt="{CAPS.get(key, key)}" loading="lazy"><figcaption>{CAPS.get(key, key)}</figcaption></figure>')
     if not items: return ""
     return ('<section id="renders">\n<div class="sec-head"><span class="n">10</span><h2>Renders</h2></div>\n'
-            '<p>Imágenes generadas sobre las fotos actuales (imagen a imagen). Sirven como referencia de materiales y luz. Las vistas en perspectiva del ambiente completo no respetaron la distribución (el modelo insiste en dos frentes o en una L) y quedaron afuera: para la vista global con la heladera en su lugar vale la maqueta 3D de la sección 9, que sí está a medida.</p>\n'
+            '<p>Las fotos salen de la maqueta 3D de la sección 9: cada una parte de una captura del modelo con la misma cámara y la misma geometría, y el generador de imágenes solo reemplaza materiales y luz. Por eso coinciden con los planos: heladera en su esquina, lavarropas detrás de su puerta, banda de ventana sobre la mesada y cocina al final de la línea. Tres condiciones de luz para la misma vista: día, atardecer y noche con la tira LED.</p>\n'
             '<div class="renders">' + "\n".join(items) + '</div>\n</section>')
 html = open("template.html", encoding="utf-8").read()
 html = html.replace("{{RENDERS}}", renders_section())

@@ -357,7 +357,8 @@ small{color:var(--muted)}
   plane(KZ, H, M.tile, KX, H/2, KZ/2, 0, -Math.PI/2);          // muro del lavadero
   // puertas: acceso (muro de enfrente, x 0,10-0,90) y lavadero (muro este, z 0,70-1,45)
   plane(0.80, 2.05, M.wood, 0.50, 1.025, KZ - 0.005, 0, Math.PI);
-  plane(0.75, 2.05, M.dark, KX - 0.005, 1.025, 1.075, 0, -Math.PI/2);
+  plane(0.75, 2.05, M.whiteDark, KX - 0.005, 1.025, 1.075, 0, -Math.PI/2);
+  var dfr = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.PlaneGeometry(0.75, 2.05)), edgeMat); dfr.rotation.y = -Math.PI/2; dfr.position.set(KX - 0.006, 1.025, 1.075); scene.add(dfr);
   // heladera en esquina: contra muro de entrada, frente hacia +X, con la foto real como frente
   var fridgeTex = new THREE.TextureLoader().load('data:image/jpeg;base64,{{FRIDGE_B64}}');
   fridgeTex.encoding = THREE.sRGBEncoding;
@@ -433,7 +434,7 @@ small{color:var(--muted)}
   // control de orbita simple
   var target = new THREE.Vector3(1.9, 1.0, 0.5), sph = {r: 2.2, theta: 0.9, phi: 1.25};
   var presets = {
-    'v-entrada': {t:[1.05,1.0,0.35], r: 2.4, theta: 0.5, phi: 1.2},
+    'v-entrada': {t:[1.75,1.0,0.35], r: 2.45, theta: 0.12, phi: 1.25},
     'v-lavadero': {t:[1.7,1.0,0.45], r: 3.4, theta: 0.62, phi: 1.28},
     'v-frontal': {t:[1.78,1.2,0.3], r: 3.5, theta: 0, phi: 1.50},
     'v-planta': {t:[1.78,0.0,0.95], r: 4.6, theta: 0, phi: 0.12}
@@ -463,6 +464,7 @@ small{color:var(--muted)}
   }
   if (window.ResizeObserver) new ResizeObserver(resize).observe(canvas); else window.addEventListener('resize', resize);
   resize(); setPreset('v-entrada');
+  window.__maqueta = {camera: camera, M: M, doorG: doorG, setPreset: setPreset, resize: resize, render: function(){ renderer.render(scene, camera); }, sph: sph, target: target, apply: apply};
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function loop(){ renderer.render(scene, camera); if (!reduce) requestAnimationFrame(loop); }
   loop();

@@ -34,7 +34,15 @@ BASE = ("Photorealistic architectural render of the SAME kitchen shown in the re
         "counter, no appliances. No island, no L-shaped corner, no built-in oven, no second sink; the only cooking "
         "appliance is the existing black freestanding gas stove at the far end of the single run.")
 
+GEO = 'Turn this screenshot of a 3D model into a photorealistic architectural photograph. KEEP EXACTLY the same camera, the same perspective and the same position and size of every element; do not add, remove, move or mirror anything. What the model shows: a narrow single-wall kitchen; the stainless Samsung top-freezer fridge stands in the corner against the end wall, facing along the room; directly at its side begins the single run of flat white matte Egger melamine cabinets with slim stainless bar pulls under a polished black granite counter (Negro Brasil, 2 cm with a 4 cm front edge and 7 cm granite upstand); the first door next to the fridge hides a built-in washing machine (closed door, just a slim grille at its bottom); then a door, the undermount stainless sink with a tall chrome mixer, a three-drawer unit and the existing black freestanding gas stove at the far end of the run with a slim stainless hood. Above the counter a long horizontal window band (white PVC, sliding panes) running from above the washing-machine door to above the drawers; white upper cabinets above it up to a closing panel at the ceiling, with an open niche holding a microwave right above the washing-machine door and a warm-neutral LED strip under the cabinets. White glossy subway tile only above the stove. The other walls are white 20x20 ceramic tile, the floor grey 40x40 tiles, a smooth white plasterboard ceiling with small recessed LED spots in a line. No island, no second counter, no other appliances. THE STOVE IS THE LAST ELEMENT OF THE RUN: its right side touches the end wall, which has only a dark doorway (the laundry door); NOTHING wraps around that corner, there is no counter, no cabinet and no appliance on the end wall or on the wall opposite the run. The microwave sits in the open niche of the upper cabinet, never on top of the fridge. Editorial interior photography, realistic materials and reflections, no people, no text, no watermark. '
+LIGHT = {'dia': 'LIGHTING: bright daylight coming through the window band, soft shadows, LED strip off, ceiling spots off, neutral white balance.', 'atardecer': 'LIGHTING: late afternoon, warm orange sunset light entering through the window band and grazing the granite, LED strip under the cabinets already on, ceiling spots on at low level, warm mood.', 'noche': 'LIGHTING: night, dark blue outside the window, the LED strip under the upper cabinets is the main light washing the black granite and the tiles, ceiling spots on at low level, no daylight, moody but clear exposure.'}
 VIEWS = {
+  "10-pasillo-dia": dict(ref=["FILE:ref3d-pasillo.png"], size="1536x1024", prompt=GEO + LIGHT["dia"]),
+  "11-pasillo-atardecer": dict(ref=["FILE:ref3d-pasillo.png"], size="1536x1024", prompt=GEO + LIGHT["atardecer"]),
+  "12-pasillo-noche": dict(ref=["FILE:ref3d-pasillo.png"], size="1536x1024", prompt=GEO + LIGHT["noche"]),
+  "10-lavadero-dia": dict(ref=["FILE:ref3d-lavadero.png"], size="1536x1024", prompt=GEO + LIGHT["dia"]),
+  "12-lavadero-noche": dict(ref=["FILE:ref3d-lavadero.png"], size="1536x1024", prompt=GEO + LIGHT["noche"]),
+  "10-frontal-dia": dict(ref=["FILE:ref3d-frontal.png"], size="1536x1024", prompt=GEO + LIGHT["dia"]),
   "00-global": dict(
     ref=["RENDER:01-frente-cocina.jpg", "ad56bca0-image.jpg"], size="1024x1536",
     prompt=("The first reference image is a finished render of a kitchen wall seen straight on: from left to right a "
@@ -115,7 +123,8 @@ VIEWS = {
 }
 
 def encode_ref(name, max_side=1536):
-    src = os.path.join(OUT, name[7:]) if name.startswith("RENDER:") else os.path.join(UP, name)
+    HERE = os.path.dirname(os.path.abspath(__file__))
+    src = os.path.join(OUT, name[7:]) if name.startswith("RENDER:") else (os.path.join(HERE, name[5:]) if name.startswith("FILE:") else os.path.join(UP, name))
     im = Image.open(src).convert("RGB")
     im.thumbnail((max_side, max_side))
     buf = io.BytesIO(); im.save(buf, "PNG"); buf.seek(0)
