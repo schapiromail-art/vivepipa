@@ -35,6 +35,20 @@ BASE = ("Photorealistic architectural render of the SAME kitchen shown in the re
         "appliance is the existing black freestanding gas stove at the far end of the single run.")
 
 VIEWS = {
+  "00-global": dict(
+    ref=["RENDER:01-frente-cocina.jpg", "ad56bca0-image.jpg"], size="1024x1536",
+    prompt=("The first reference image is a finished render of a kitchen wall seen straight on: from left to right a "
+            "front-loading washing machine built in under a black granite counter, a cabinet door, a sink under a long "
+            "window, a three-drawer unit and a black gas stove at the right end, with white upper cabinets and an LED strip. "
+            "Produce the SAME wall with the SAME order of elements, same materials, but photographed in perspective: camera "
+            "standing at the kitchen entrance, at the left end of this wall, looking along it, so the washing machine is the "
+            "nearest module and the stove is the farthest, the run receding into depth on the right side of the image. At "
+            "the near left, perpendicular to that run and touching the washing machine's side, stands the existing stainless "
+            "Samsung top-freezer fridge from the second reference photo, facing the camera against the end wall, with a white "
+            "cabinet above it; the wall to the left of the fridge is bare white 20x20 tile. The wall opposite the run is bare "
+            "white tile with nothing on it. Room 1.90 m wide, 3.55 m long, grey 40x40 floor tiles, white plasterboard ceiling "
+            "with recessed LED spots. No island, no L-shape, no second counter, nothing on the fridge's wall except the fridge "
+            "and its cabinet. Editorial interior photography, no people, no text, no watermark.")),
   "01-frente-cocina": dict(
     ref=["31a01a22-image.jpg", "ad56bca0-image.jpg"], size="1536x1024",
     prompt=BASE + " CAMERA: standing in the middle of the room facing the cabinet wall straight on, frontal elevation "
@@ -91,7 +105,8 @@ VIEWS = {
 }
 
 def encode_ref(name, max_side=1536):
-    im = Image.open(os.path.join(UP, name)).convert("RGB")
+    src = os.path.join(OUT, name[7:]) if name.startswith("RENDER:") else os.path.join(UP, name)
+    im = Image.open(src).convert("RGB")
     im.thumbnail((max_side, max_side))
     buf = io.BytesIO(); im.save(buf, "PNG"); buf.seek(0)
     return buf

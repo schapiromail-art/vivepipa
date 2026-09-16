@@ -83,11 +83,11 @@ def plan_shell(sv, current):
 def plan_actual():
     sv = SVG(780, 400, 60, 70, "Planta actual estimada: cocina lineal de 3,55 por 1,90 y lavadero de 1,70 por 1,30 con lavarropas, pileta, caldera y calefón")
     plan_shell(sv, True)
-    sv.rect(0.03, 0.03, 0.60, 0.66, "furn"); sv.text(0.33, 0.40, "helad.", "lbls")
-    sv.rect(0.66, 0, 2.32, 0.60, "furn")
-    sv.text(1.30, 0.34, "bajo mesada existente", "lbls")
+    sv.rect(0.02, 0.02, 0.66, 0.60, "furn"); sv.text(0.35, 0.34, "helad.", "lbls"); sv.line(0.68, 0.10, 0.68, 0.54, "handle")
+    sv.rect(0.70, 0, 2.29, 0.60, "furn")
+    sv.text(1.35, 0.34, "bajo mesada existente", "lbls")
     sv.rect(1.97, 0.10, 0.48, 0.38, "sink", 'rx="4"'); sv.text(2.21, 0.33, "bacha", "lbls")
-    sv.rect(2.98, 0.02, 0.55, 0.58, "furn"); sv.text(3.26, 0.34, "cocina", "lbls")
+    sv.rect(2.99, 0.02, 0.55, 0.58, "furn"); sv.text(3.27, 0.34, "cocina", "lbls")
     # lavadero actual
     sv.rect(LX0+0.02, 0.02, 0.60, 0.56, "furn"); sv.text(LX0+0.32, 0.33, "lavarr.", "lbls")
     sv.rect(4.70, 0.02, 0.56, 0.50, "sink", 'rx="3"'); sv.text(4.98, 0.30, "pileta", "lbls")
@@ -107,15 +107,17 @@ def plan_propuesta():
     sv = SVG(780, 430, 60, 70, "Planta propuesta: heladera, lavarropas embutido, módulo de puerta, bacha, cajonera y cocina en una sola línea; en el lavadero barra de granito bajo la ventana con dos banquetas")
     plan_shell(sv, False)
     # frente cocina
-    mods = [(0.00,0.66,"heladera","torre"),(0.66,1.28,"lavarr.","embutido"),(1.28,1.73,"puerta","residuos"),
-            (1.73,2.53,"bacha","2 puertas"),(2.53,2.98,"cajones","3"),(2.98,3.55,"cocina","57")]
+    mods = [(0.00,0.67,"heladera","esquina"),(0.67,1.29,"lavarr.","embutido"),(1.29,1.74,"puerta","residuos"),
+            (1.74,2.54,"bacha","2 puertas"),(2.54,2.99,"cajones","3"),(2.99,3.55,"cocina","56")]
     for x0,x1,a,b in mods:
         cls = "furn" if a not in ("heladera","cocina") else "furn2"
-        d = 0.60 if a!="heladera" else 0.66
-        sv.rect(x0+0.01, 0.01, x1-x0-0.02, d-0.02, cls)
+        if a == "heladera":
+            sv.rect(0.02, 0.02, 0.65, 0.60, cls); sv.line(0.67, 0.10, 0.67, 0.54, "handle")
+        else:
+            sv.rect(x0+0.01, 0.01, x1-x0-0.02, 0.58, cls)
         sv.text((x0+x1)/2, 0.28, a, "lbls"); sv.text((x0+x1)/2, 0.42, b, "lbls2")
-    sv.rect(1.88, 0.10, 0.50, 0.40, "sink", 'rx="4"')
-    sv.line(0.66, 0.64, 3.55, 0.64, "granite")   # mesada granito (frentín)
+    sv.rect(1.89, 0.10, 0.50, 0.40, "sink", 'rx="4"')
+    sv.line(0.67, 0.64, 2.99, 0.64, "granite")   # mesada granito (frentín)
     sv.text(2.10, 0.80, "mesada granito Negro Brasil 2 cm · prof. 0,64", "lbl")
     # lavadero propuesta
     sv.rect(LX0, LY0, 1.60, 0.50, "granite2"); sv.text(LX0+0.62, LY0+0.22, "barra granito", "lblw"); sv.text(LX0+0.62, LY0+0.38, "1,60 × 0,50 · h 0,90", "lblw2")
@@ -142,43 +144,42 @@ def alzado_cocina():
     def R(x, z, w, h, cls, extra=""): sv.rect(x, H-z-h, w, h, cls, extra)
     def T(x, z, s, cls="lbls", anchor="middle"): sv.text(x, H-z, s, cls, anchor)
     R(0, 0, KX, H, "floor")
-    R(3.00, 0.99, 0.55, 0.61, "tile"); R(0.66, 0.99, 0.04, 0.61, "tile")
+    R(3.00, 0.99, 0.55, 0.61, "tile"); R(0.67, 0.99, 0.03, 0.61, "tile")
     R(0, 2.52, KX, 0.08, "ceil"); T(0.06, 2.545, "cielorraso durlock 2,52", "lbls2", "start")
     # torre heladera
-    R(0.03, 0.05, 0.60, 1.72, "furn2"); T(0.33, 0.95, "heladera", "lbls"); T(0.33, 0.80, "0,60 × 1,72", "lbls2")
-    R(0.00, 1.80, 0.66, 0.60, "furn"); T(0.33, 2.08, "alacena", "lbls"); T(0.33, 1.94, "0,66 × 0,60", "lbls2")
-    R(0.63, 0.10, 0.03, 2.30, "panel")
+    R(0.03, 0.05, 0.64, 1.72, "furn2"); T(0.35, 0.95, "heladera", "lbls"); T(0.35, 0.80, "lateral · 0,67", "lbls2"); T(0.35, 0.66, "mira al pasillo", "lbls2")
+    R(0.03, 1.80, 0.64, 0.60, "furn"); T(0.35, 2.08, "alacena", "lbls"); T(0.35, 1.94, "s/ heladera", "lbls2")
     # zócalo + bajo mesada
-    R(0.66, 0.00, 2.32, 0.10, "plinth")
-    R(0.66, 0.10, 0.62, 0.78, "nicho"); sv.circle(0.97, H-0.50, 0.19, "thinc"); sv.circle(0.97, H-0.50, 0.13, "thinc")
-    T(0.97, 0.80, "lavarropas", "lbls"); T(0.97, 0.16, "nicho 62 × 88", "lbls2")
-    R(1.29, 0.10, 0.43, 0.78, "furn"); T(1.505, 0.50, "puerta", "lbls"); T(1.505, 0.37, "residuos", "lbls2")
-    R(1.74, 0.10, 0.39, 0.78, "furn"); R(2.14, 0.10, 0.38, 0.78, "furn"); T(2.13, 0.50, "bacha", "lbls"); T(2.13, 0.37, "2 puertas 0,40", "lbls2")
-    R(2.54, 0.10, 0.43, 0.20, "furn"); R(2.54, 0.31, 0.43, 0.25, "furn"); R(2.54, 0.57, 0.43, 0.31, "furn"); T(2.755, 0.44, "cajones", "lbls")
+    R(0.67, 0.00, 2.32, 0.10, "plinth")
+    R(0.67, 0.10, 0.62, 0.78, "nicho"); sv.circle(0.98, H-0.50, 0.19, "thinc"); sv.circle(0.98, H-0.50, 0.13, "thinc")
+    T(0.98, 0.80, "lavarropas", "lbls"); T(0.98, 0.16, "nicho 62 × 88", "lbls2")
+    R(1.30, 0.10, 0.43, 0.78, "furn"); T(1.515, 0.50, "puerta", "lbls"); T(1.515, 0.37, "residuos", "lbls2")
+    R(1.75, 0.10, 0.39, 0.78, "furn"); R(2.15, 0.10, 0.38, 0.78, "furn"); T(2.14, 0.50, "bacha", "lbls"); T(2.14, 0.37, "2 puertas 0,40", "lbls2")
+    R(2.55, 0.10, 0.43, 0.20, "furn"); R(2.55, 0.31, 0.43, 0.25, "furn"); R(2.55, 0.57, 0.43, 0.31, "furn"); T(2.765, 0.44, "cajones", "lbls")
     # tiradores
-    for x in (1.31, 1.76, 2.49): sv.line(x, H-0.70, x, H-0.55, "handle")
-    for z in (0.20, 0.44, 0.73): sv.line(2.66, H-z, 2.86, H-z, "handle")
+    for x in (1.32, 1.77, 2.50): sv.line(x, H-0.70, x, H-0.55, "handle")
+    for z in (0.20, 0.44, 0.73): sv.line(2.67, H-z, 2.87, H-z, "handle")
     # mesada granito
-    R(0.66, 0.88, 2.32, 0.04, "granite2"); R(0.66, 0.92, 2.32, 0.07, "granite2")
-    R(0.66, 0.99, 2.89, 0.01, "granite2")
+    R(0.67, 0.88, 2.32, 0.04, "granite2"); R(0.67, 0.92, 2.32, 0.07, "granite2")
+    R(0.67, 0.99, 2.88, 0.01, "granite2")
     # cocina
-    R(2.98, 0.00, 0.57, 0.88, "furn2"); T(3.265, 0.45, "cocina", "lbls"); T(3.265, 0.32, "0,55 existente", "lbls2")
+    R(2.99, 0.00, 0.56, 0.88, "furn2"); T(3.27, 0.45, "cocina", "lbls"); T(3.27, 0.32, "0,55 existente", "lbls2")
     # ventana
     R(0.70, 1.00, 2.30, 0.60, "winel"); sv.line(1.467, H-1.00, 1.467, H-1.60, "thin"); sv.line(2.233, H-1.00, 2.233, H-1.60, "thin")
     T(1.85, 1.38, "ventana PVC DVH 2,30 × 0,60 · banda existente", "lbls"); T(1.85, 1.24, "3 hojas corredizas · sigue en el lavadero", "lbls2")
     # alacenas
-    R(0.66, 1.60, 0.62, 0.40, "nicho"); T(0.97, 1.78, "microondas", "lbls2"); R(0.66, 2.00, 0.62, 0.40, "furn")
-    R(1.29, 1.60, 0.43, 0.80, "furn"); R(1.74, 1.60, 0.39, 0.80, "furn"); R(2.14, 1.60, 0.38, 0.80, "furn"); R(2.54, 1.60, 0.43, 0.80, "furn")
-    R(2.98, 1.75, 0.57, 0.65, "furn"); R(2.98, 1.62, 0.57, 0.12, "hood"); T(3.265, 1.665, "purificador 60", "lbls2")
-    R(0.66, 2.40, 2.89, 0.12, "panel"); T(2.10, 2.445, "tapa de cierre", "lbls2")
+    R(0.67, 1.60, 0.62, 0.40, "nicho"); T(0.98, 1.78, "microondas", "lbls2"); R(0.67, 2.00, 0.62, 0.40, "furn")
+    R(1.30, 1.60, 0.43, 0.80, "furn"); R(1.75, 1.60, 0.39, 0.80, "furn"); R(2.15, 1.60, 0.38, 0.80, "furn"); R(2.55, 1.60, 0.43, 0.80, "furn")
+    R(2.99, 1.75, 0.56, 0.65, "furn"); R(2.99, 1.62, 0.56, 0.12, "hood"); T(3.27, 1.665, "purificador 60", "lbls2")
+    R(0.67, 2.40, 2.88, 0.12, "panel"); T(2.10, 2.445, "tapa de cierre", "lbls2")
     # LED
-    sv.line(0.66, H-1.60, 2.98, H-1.60, "led"); T(1.90, 1.635, "tira LED 4000K en perfil de aluminio", "led-t")
+    sv.line(0.67, H-1.60, 2.99, H-1.60, "led"); T(1.90, 1.635, "tira LED 4000K en perfil de aluminio", "led-t")
     # spots
     for x in (0.55, 1.45, 2.35, 3.20):
         sv.circle(x, H-2.56, 0.05, "led-c")
     # cotas horizontales
     zc = -0.18
-    for x0,x1 in [(0,0.66),(0.66,1.28),(1.28,1.73),(1.73,2.53),(2.53,2.98),(2.98,3.55)]: sv.dimh(x0, x1, H-zc, below=True)
+    for x0,x1 in [(0,0.67),(0.67,1.29),(1.29,1.74),(1.74,2.54),(2.54,2.99),(2.99,3.55)]: sv.dimh(x0, x1, H-zc, below=True)
     sv.dimh(0, KX, H+0.34, below=True)
     # cotas verticales
     xd = KX+0.18
@@ -221,14 +222,14 @@ def alzado_lavadero():
 def plan_luz():
     sv = SVG(780, 400, 60, 70, "Plano de iluminación: cuatro spots LED embutidos en línea sobre el borde de la mesada, tira LED bajo alacenas, plafón estanco en el lavadero, tira opcional bajo barra y puntos de encendido junto a cada puerta")
     plan_shell(sv, False)
-    sv.rect(0.66, 0.0, 2.89, 0.35, "thinr"); sv.text(2.10, 0.20, "alacenas", "lbls2")
-    sv.rect(0.03, 0.03, 0.60, 0.66, "thinr"); sv.rect(0.66, 0.35, 2.89, 0.29, "thinr")
+    sv.rect(0.67, 0.0, 2.88, 0.35, "thinr"); sv.text(2.10, 0.20, "alacenas", "lbls2")
+    sv.rect(0.02, 0.02, 0.65, 0.60, "thinr"); sv.rect(0.67, 0.35, 2.88, 0.29, "thinr")
     sv.rect(LX0, LY0, 1.60, 0.50, "thinr")
     # spots
     for x in (0.55, 1.45, 2.35, 3.20):
         sv.circle(x, 0.85, 0.09, "led-c"); sv.circle(x, 0.85, 0.03, "led-c2")
     sv.text(2.05, 1.15, "4 spots LED 12 W · 4000K · línea a 0,85", "led-t")
-    sv.line(0.66, 0.36, 3.55, 0.36, "led"); sv.text(2.10, 0.50, "tira LED bajo alacena 9,6 W/m · 4000K · 2,9 m", "led-t")
+    sv.line(0.67, 0.36, 3.55, 0.36, "led"); sv.text(2.10, 0.50, "tira LED bajo alacena 9,6 W/m · 4000K · 2,9 m", "led-t")
     # lavadero
     sv.circle(LX0+0.85, 1.42, 0.14, "led-c"); sv.text(LX0+0.85, 1.72, "plafón 18 W", "led-t")
     sv.line(LX0, LY0+0.48, LX0+1.13, LY0+0.48, "led"); sv.text(LX0+0.56, LY0+0.66, "tira bajo barra (opc.)", "led-t")
@@ -247,7 +248,8 @@ svgs = dict(actual=plan_actual(), prop=plan_propuesta(), alz=alzado_cocina(), la
 
 import os, base64
 CAPS = {
-  "01-frente-cocina": "Frente completo de 3,55 m visto de frente, como el alzado: heladera en su nicho con alacena y microondas arriba, lavarropas embutido al lado, puerta, bacha, cajonera y la cocina existente al final de la misma línea con purificador; mesada de granito Negro Brasil, alacenas hasta el cielorraso, tira LED y spots. La banda de ventana real mide 2,30 m, desde el lavarropas hasta la cajonera; el render la dibuja algo más corta.",
+  "00-global": "Vista global desde el fondo de la cocina, junto a la puerta del lavadero, como la foto 9: el único frente de muebles a la derecha con la banda de ventana encima, la pared de enfrente libre con la puerta de acceso, y la heladera al fondo en su esquina, contra el muro de entrada y de frente al pasillo, con el lavarropas embutido pegado a su costado.",
+  "01-frente-cocina": "El frente visto de frente, del lavarropas a la cocina, como el alzado: lavarropas embutido, puerta, bacha, cajonera y la cocina existente al final de la línea con purificador; mesada de granito Negro Brasil, alacenas hasta el cielorraso, tira LED y spots. La banda de ventana real mide 2,30 m; el render la dibuja algo más corta. La heladera queda fuera de cuadro a la izquierda, en la esquina.",
   "02-heladera-lavarropas": "Detalle del extremo izquierdo (recorte de la vista anterior): heladera en su nicho con alacena de cierre y nicho de microondas, lavarropas embutido a ras de los frentes bajo el granito, arranque de la banda de ventana sobre la mesada.",
   "03-lavadero-barra": "Lavadero desde la puerta: ventana nueva de PVC y barra de granito de 1,60 en la pared izquierda, caldera en la pared del fondo y calefón Orbis en la derecha con el escobero debajo, todos donde están hoy. La imagen muestra la variante con bacha compacta en la barra.",
   "04-nocturna-led": "El tramo lavarropas a cajonera de noche, con la tira LED bajo alacena como luz principal: el granito negro refleja la línea de luz, el vidrio de la banda de ventana y el subway la devuelven.",
@@ -262,8 +264,8 @@ def renders_section():
         b64 = base64.b64encode(open(os.path.join(d, name), "rb").read()).decode()
         items.append(f'<figure class="render"><img src="data:image/jpeg;base64,{b64}" alt="{CAPS.get(key, key)}" loading="lazy"><figcaption>{CAPS.get(key, key)}</figcaption></figure>')
     if not items: return ""
-    return ('<section id="renders">\n<div class="sec-head"><span class="n">09</span><h2>Renders</h2></div>\n'
-            '<p>Imágenes generadas sobre las fotos actuales del departamento (imagen a imagen), manteniendo la geometría del ambiente, la posición de la cámara y los artefactos que se conservan. Son una referencia de materiales y luz, no un fotomontaje a escala: las medidas válidas son las de los planos.</p>\n'
+    return ('<section id="renders">\n<div class="sec-head"><span class="n">10</span><h2>Renders</h2></div>\n'
+            '<p>Imágenes generadas sobre las fotos actuales (imagen a imagen). Sirven como referencia de materiales y luz. Las vistas en perspectiva del ambiente completo no respetaron la distribución (el modelo insiste en dos frentes o en una L) y quedaron afuera: para la vista global con la heladera en su lugar vale la maqueta 3D de la sección 9, que sí está a medida.</p>\n'
             '<div class="renders">' + "\n".join(items) + '</div>\n</section>')
 html = open("template.html", encoding="utf-8").read()
 html = html.replace("{{RENDERS}}", renders_section())
