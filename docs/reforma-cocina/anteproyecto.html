@@ -1,0 +1,779 @@
+<title>Cocina Negro Brasil</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F4F5F3; --card:#FFFFFF; --ink:#16181B; --ink2:#3F444B; --muted:#6E747C;
+  --line:#D3D7D8; --line2:#B9BEC1; --granite:#2A2D32; --granite-hi:#4A4E55; --melamina:#FFFFFF; --melamina-line:#9AA0A6;
+  --floor:#E9EBE9; --tile:#F7F8F6; --led:#C9931D; --led-bg:#FFF3D6; --gas:#B8474A; --win:#8FB6D4; --win-bg:#DCEBF5; --stool:#7C8388;
+  --ok:#2F7A4F;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141618; --card:#1C1F23; --ink:#ECEDEA; --ink2:#C7CBCF; --muted:#9AA0A6;
+    --line:#2F343A; --line2:#4A5057; --granite:#0B0C0E; --granite-hi:#3A3F47; --melamina:#2A2E34; --melamina-line:#7C838B;
+    --floor:#22262B; --tile:#262A2F; --led:#E5B04A; --led-bg:#3A2F14; --gas:#D9666A; --win:#6FA3C9; --win-bg:#1F3140; --stool:#9AA0A6;
+    --ok:#6CC08B;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141618; --card:#1C1F23; --ink:#ECEDEA; --ink2:#C7CBCF; --muted:#9AA0A6;
+  --line:#2F343A; --line2:#4A5057; --granite:#0B0C0E; --granite-hi:#3A3F47; --melamina:#2A2E34; --melamina-line:#7C838B;
+  --floor:#22262B; --tile:#262A2F; --led:#E5B04A; --led-bg:#3A2F14; --gas:#D9666A; --win:#6FA3C9; --win-bg:#1F3140; --stool:#9AA0A6;
+  --ok:#6CC08B;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;margin:0;padding-block:28px 72px;padding-inline:clamp(16px,4vw,48px)}
+h1,h2,h3{font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:clamp(34px,6vw,58px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(24px,3.4vw,32px);font-weight:600}
+h3{font-size:19px;font-weight:600;margin-block:18px 6px}
+p{margin:0 0 12px;max-width:68ch}
+.wrap{max-width:1040px;margin-inline:auto}
+.eyebrow{font-family:"Barlow Semi Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:13px;color:var(--muted);font-weight:600}
+/* rótulo */
+.rotulo{border:2px solid var(--ink);display:grid;grid-template-columns:2fr 1fr;margin-block:18px 40px}
+.rotulo .main{padding:22px 24px;border-right:2px solid var(--ink)}
+.rotulo .side{display:grid;grid-template-rows:repeat(5,auto)}
+.rotulo .side div{padding:9px 16px;border-bottom:1px solid var(--line2);font-size:14px}
+.rotulo .side div:last-child{border-bottom:0}
+.rotulo .side b{display:block;font-family:"Barlow Semi Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--muted);font-weight:600}
+.lead{font-size:18px;color:var(--ink2);max-width:62ch;margin-top:14px}
+@media (max-width:640px){.rotulo{grid-template-columns:1fr}.rotulo .main{border-right:0;border-bottom:2px solid var(--ink)}}
+/* secciones */
+section{margin-block:0 48px;scroll-margin-top:16px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:18px}
+.sec-head .n{font-family:"IBM Plex Mono",monospace;color:var(--muted);font-size:14px}
+figure{margin:18px 0 26px;background:var(--card);border:1px solid var(--line);padding:14px 14px 10px}
+figure .scroll{overflow-x:auto}
+figure svg{display:block;max-width:100%;height:auto;min-width:520px;margin-inline:auto;font-family:"IBM Plex Sans",system-ui,sans-serif}
+figcaption{font-size:14px;color:var(--ink2);margin-top:10px;max-width:none}
+/* svg classes */
+.wall{fill:var(--ink)} .floor{fill:var(--floor);stroke:none}
+.furn{fill:var(--melamina);stroke:var(--melamina-line);stroke-width:1.2}
+.furn2{fill:var(--tile);stroke:var(--line2);stroke-width:1.2}
+.nicho{fill:var(--floor);stroke:var(--melamina-line);stroke-width:1.2;stroke-dasharray:4 3}
+.panel{fill:var(--melamina);stroke:var(--melamina-line);stroke-width:1}
+.plinth{fill:var(--granite-hi);stroke:none}
+.sink{fill:var(--win-bg);stroke:var(--win);stroke-width:1.2}
+.win{fill:var(--win-bg);stroke:var(--win);stroke-width:1.5}
+.winel{fill:var(--win-bg);stroke:var(--win);stroke-width:2}
+.winfix{fill:var(--win-bg);stroke:var(--win);stroke-width:2;stroke-dasharray:5 3}
+.gas{fill:none;stroke:var(--gas);stroke-width:2}
+.granite{stroke:var(--granite);stroke-width:4}
+.granite2{fill:var(--granite);stroke:none}
+.tile{fill:var(--tile);stroke:var(--line);stroke-width:1}
+.ceil{fill:var(--line);stroke:none}
+.hood{fill:var(--granite-hi);stroke:none}
+.stool{fill:var(--stool);stroke:none;opacity:.85}
+.thin{stroke:var(--ink2);stroke-width:1;fill:none}
+.thinc{fill:none;stroke:var(--ink2);stroke-width:1.2}
+.thinr{fill:none;stroke:var(--line2);stroke-width:1;stroke-dasharray:4 3}
+.handle{stroke:var(--ink2);stroke-width:2.5;stroke-linecap:round}
+.dim{stroke:var(--muted);stroke-width:1}
+.dimt{fill:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:11.5px}
+.lbl{fill:var(--ink2);font-size:11.5px}
+.lbls{fill:var(--ink);font-size:10.5px;font-weight:600}
+.lblw{fill:var(--paper);font-size:10.5px;font-weight:600}
+.lblw2{fill:var(--line2);font-size:10px}
+.thinrw{fill:none;stroke:var(--line2);stroke-width:1;stroke-dasharray:4 3}
+.lbls2{fill:var(--muted);font-size:10px}
+.room{fill:var(--ink);font-family:"Barlow Semi Condensed",Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:.06em}
+.led{stroke:var(--led);stroke-width:3;stroke-linecap:round}
+.led-t{fill:var(--led);font-size:10.5px;font-weight:600}
+.led-c{fill:var(--led-bg);stroke:var(--led);stroke-width:1.5}
+.led-c2{fill:var(--led);stroke:none}
+.sw{fill:var(--card);stroke:var(--ink);stroke-width:1.2}
+/* tablas */
+.tbl{overflow-x:auto;margin-block:8px 22px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--card)}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-family:"Barlow Semi Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--muted);border-bottom:2px solid var(--ink);font-weight:600}
+td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{border-top:2px solid var(--ink);font-weight:600}
+tr.sub td{color:var(--muted)}
+.tag{display:inline-block;font-family:"Barlow Semi Condensed",Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border:1px solid var(--line2);color:var(--ink2);border-radius:2px;margin-left:6px;vertical-align:middle}
+.tag.opc{border-color:var(--led);color:var(--led)}
+/* grids */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-block:10px 20px}
+.box{background:var(--card);border:1px solid var(--line);padding:16px 18px}
+.box h3{margin-top:0}
+.box p:last-child{margin-bottom:0}
+ul,ol{margin:0 0 14px;padding-left:22px;max-width:70ch}
+li{margin-bottom:6px}
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-block:12px 22px}
+.sw-item{border:1px solid var(--line);background:var(--card)}
+.sw-item .chip{height:56px}
+.sw-item .t{padding:8px 10px;font-size:13px}
+.sw-item .t b{display:block;font-family:"Barlow Semi Condensed",Arial,sans-serif;font-size:14px}
+.note{border-left:3px solid var(--gas);padding:10px 16px;background:var(--card);margin-block:14px 20px;max-width:none}
+.note.ok{border-left-color:var(--ok)}
+.note.led{border-left-color:var(--led)}
+.note p{max-width:none}
+.toc{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;margin-bottom:34px}
+.toc a{color:var(--ink2);text-decoration:none;border-bottom:1px solid var(--line2)}
+.toc a:hover,.toc a:focus-visible{color:var(--ink);border-color:var(--ink);outline:none}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14.5px;margin-bottom:14px}
+.kv b{font-family:"IBM Plex Mono",monospace;font-weight:500;white-space:nowrap}
+small{color:var(--muted)}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+<div class="eyebrow">Anteproyecto · reforma de cocina y lavadero</div>
+<div class="rotulo">
+  <div class="main">
+    <h1>Cocina lineal en blanco y granito Negro Brasil</h1>
+    <p class="lead">Departamento en Palermo, CABA. Cocina de 3,55 × 1,90 m con lavadero anexo de 1,70 × 1,30 m. Lavarropas embutido junto a la heladera, frente completo en melamina Egger blanca, mesada y barra en granito negro, tira LED bajo alacena, cielorraso nuevo con spots y aberturas de PVC con doble vidrio.</p>
+  </div>
+  <div class="side">
+    <div><b>Fecha</b>16 de septiembre de 2026</div>
+    <div><b>Etapa</b>Anteproyecto para cotizar</div>
+    <div><b>Base de medidas</b>Relevamiento fotográfico, tolerancia ±5 cm</div>
+    <div><b>Escala dibujos</b>Proporcional, cotas en metros</div>
+    <div><b>Costo orientativo</b>ARS 8,6 M · USD 5.600 (BNA $1.530)</div>
+  </div>
+</div>
+
+<nav class="toc" aria-label="Contenido">
+  <a href="#relev">1 Relevamiento</a><a href="#diag">2 Diagnóstico</a><a href="#planta">3 Planta propuesta</a><a href="#frente">4 Frente de cocina</a><a href="#lav">5 Lavadero</a><a href="#luz">6 Iluminación y eléctrica</a><a href="#mat">7 Materiales</a><a href="#presu">8 Presupuesto</a><a href="#obra">9 Etapas y verificaciones</a>
+</nav>
+
+<section id="relev">
+<div class="sec-head"><span class="n">01</span><h2>Relevamiento estimado</h2></div>
+<p>Las medidas salen de las fotos, tomando como regla los azulejos de pared de 20 × 20, los cerámicos de piso de 40 × 40, la heladera Samsung de 60 cm de frente y el lavarropas LG de 8,5 kg (60 × 85 × 55). Antes de encargar muebles o granito hay que confirmarlas con cinta; la sección 9 lista qué medir.</p>
+<figure><div class="scroll"><svg viewBox="0 0 780 400" role="img" aria-label="Planta actual estimada: cocina lineal de 3,55 por 1,90 y lavadero de 1,70 por 1,30 con lavarropas, pileta, caldera y calefón" xmlns="http://www.w3.org/2000/svg">
+<rect class="wall" x="43.5" y="53.5" width="423.5" height="16.5" />
+<rect class="wall" x="43.5" y="279.0" width="423.5" height="16.5" />
+<rect class="wall" x="43.5" y="53.5" width="16.5" height="242.0" />
+<rect class="wall" x="450.5" y="53.5" width="16.5" height="242.0" />
+<rect class="wall" x="450.5" y="114.0" width="220.0" height="16.5" />
+<rect class="wall" x="450.5" y="273.5" width="220.0" height="16.5" />
+<rect class="wall" x="654.0" y="114.0" width="16.5" height="176.0" />
+<rect class="floor" x="60.0" y="70.0" width="390.5" height="209.0" />
+<rect class="floor" x="467.0" y="130.5" width="187.0" height="143.0" />
+<rect class="floor" x="71.0" y="279.0" width="88.0" height="16.5" />
+<path class="thin" d="M71.0 279.0 A88.0 88.0 0 0 1 159.0 191.0" fill="none"/>
+<line class="thin" x1="159.0" y1="279.0" x2="159.0" y2="191.0" />
+<rect class="floor" x="450.5" y="180.0" width="16.5" height="82.5" />
+<path class="thin" d="M467.0 180.0 A82.5 82.5 0 0 1 549.5 262.5" fill="none"/>
+<line class="thin" x1="467.0" y1="262.5" x2="549.5" y2="262.5" />
+<rect class="win" x="164.5" y="53.5" width="176.0" height="16.5" />
+<rect class="win" x="533.0" y="114.0" width="88.0" height="16.5" />
+<rect class="gas" x="640.8" y="163.5" width="13.2" height="49.5" />
+<text class="lbls" x="648.5" y="191.0" text-anchor="end" transform="rotate(-90 648.5 191.0)">caldera</text>
+<rect class="gas" x="566.0" y="260.3" width="55.0" height="13.2" />
+<text class="lbls" x="593.5" y="255.9" text-anchor="middle" >calefón</text>
+<rect class="furn" x="63.3" y="73.3" width="66.0" height="72.6" />
+<text class="lbls" x="96.3" y="114.0" text-anchor="middle" >helad.</text>
+<rect class="furn" x="132.6" y="70.0" width="255.2" height="66.0" />
+<text class="lbls" x="203.0" y="107.4" text-anchor="middle" >bajo mesada existente</text>
+<rect class="sink" x="276.7" y="81.0" width="52.8" height="41.8" rx="4"/>
+<text class="lbls" x="303.1" y="106.3" text-anchor="middle" >bacha</text>
+<rect class="furn" x="387.8" y="72.2" width="60.5" height="63.8" />
+<text class="lbls" x="418.6" y="107.4" text-anchor="middle" >cocina</text>
+<rect class="furn" x="469.2" y="132.7" width="66.0" height="61.6" />
+<text class="lbls" x="502.2" y="166.8" text-anchor="middle" >lavarr.</text>
+<rect class="sink" x="574.8" y="132.7" width="61.6" height="55.0" rx="3"/>
+<text class="lbls" x="605.6" y="163.5" text-anchor="middle" >pileta</text>
+<rect class="furn" x="607.8" y="196.5" width="44.0" height="46.2" />
+<text class="lbls" x="629.8" y="224.0" text-anchor="middle" >cajon.</text>
+<circle class="furn" cx="549.5" cy="240.5" r="22.0" />
+<text class="lbls" x="549.5" y="243.8" text-anchor="middle" >aspir.</text>
+<line class="dim" x1="60.0" y1="23.8" x2="450.5" y2="23.8"/>
+<line class="dim" x1="60.0" y1="17.8" x2="60.0" y2="29.8"/>
+<line class="dim" x1="57.0" y1="26.8" x2="63.0" y2="20.8"/>
+<line class="dim" x1="450.5" y1="17.8" x2="450.5" y2="29.8"/>
+<line class="dim" x1="447.5" y1="26.8" x2="453.5" y2="20.8"/>
+<text class="dimt" x="255.2" y="19.8" text-anchor="middle">3,55</text>
+<line class="dim" x1="467.0" y1="23.8" x2="654.0" y2="23.8"/>
+<line class="dim" x1="467.0" y1="17.8" x2="467.0" y2="29.8"/>
+<line class="dim" x1="464.0" y1="26.8" x2="470.0" y2="20.8"/>
+<line class="dim" x1="654.0" y1="17.8" x2="654.0" y2="29.8"/>
+<line class="dim" x1="651.0" y1="26.8" x2="657.0" y2="20.8"/>
+<text class="dimt" x="560.5" y="19.8" text-anchor="middle">1,7</text>
+<line class="dim" x1="714.5" y1="70.0" x2="714.5" y2="279.0"/>
+<line class="dim" x1="708.5" y1="70.0" x2="720.5" y2="70.0"/>
+<line class="dim" x1="711.5" y1="73.0" x2="717.5" y2="67.0"/>
+<line class="dim" x1="708.5" y1="279.0" x2="720.5" y2="279.0"/>
+<line class="dim" x1="711.5" y1="282.0" x2="717.5" y2="276.0"/>
+<text class="dimt" x="719.5" y="178.5" text-anchor="start">1,9</text>
+<line class="dim" x1="683.7" y1="130.5" x2="683.7" y2="273.5"/>
+<line class="dim" x1="677.7" y1="130.5" x2="689.7" y2="130.5"/>
+<line class="dim" x1="680.7" y1="133.5" x2="686.7" y2="127.5"/>
+<line class="dim" x1="677.7" y1="273.5" x2="689.7" y2="273.5"/>
+<line class="dim" x1="680.7" y1="276.5" x2="686.7" y2="270.5"/>
+<text class="dimt" x="688.7" y="206.0" text-anchor="start">1,3</text>
+<line class="dim" x1="164.5" y1="40.3" x2="340.5" y2="40.3"/>
+<line class="dim" x1="164.5" y1="34.3" x2="164.5" y2="46.3"/>
+<line class="dim" x1="161.5" y1="43.3" x2="167.5" y2="37.3"/>
+<line class="dim" x1="340.5" y1="34.3" x2="340.5" y2="46.3"/>
+<line class="dim" x1="337.5" y1="43.3" x2="343.5" y2="37.3"/>
+<text class="dimt" x="252.5" y="36.3" text-anchor="middle">vent. 1,60</text>
+<line class="dim" x1="533.0" y1="40.3" x2="621.0" y2="40.3"/>
+<line class="dim" x1="533.0" y1="34.3" x2="533.0" y2="46.3"/>
+<line class="dim" x1="530.0" y1="43.3" x2="536.0" y2="37.3"/>
+<line class="dim" x1="621.0" y1="34.3" x2="621.0" y2="46.3"/>
+<line class="dim" x1="618.0" y1="43.3" x2="624.0" y2="37.3"/>
+<text class="dimt" x="577.0" y="36.3" text-anchor="middle">vent. 0,80</text>
+<text class="lbl" x="255.8" y="339.5" text-anchor="middle" >acceso desde living</text>
+<text class="room" x="115.0" y="218.5" text-anchor="start" >COCINA  6,7 m²</text>
+<text class="room" x="478.0" y="202.0" text-anchor="start" >LAVADERO</text>
+<text class="room" x="478.0" y="221.8" text-anchor="start" >2,2 m²</text>
+</svg></div>
+<figcaption>Estado actual. Frente único de 3,55 m con heladera en nicho, bajo mesada de 2,32 m, bacha simple y cocina de 55 cm contra el muro del lavadero. Ventana apaisada de 1,60 × 0,55 sobre la mesada. Lavadero de 2,2 m² con lavarropas, pileta de lavar bajo la ventana, caldera en el muro del fondo y calefón Orbis en el muro derecho.</figcaption></figure>
+<div class="kv">
+  <b>Cocina</b><span>3,55 × 1,90 m interior · 6,7 m² · altura de losa 2,60 m · piso cerámico gris 40 × 40 en buen estado</span>
+  <b>Frente útil</b><span>3,55 m sobre el muro norte: nicho de heladera 0,66 + mesada 2,32 + cocina 0,57</span>
+  <b>Ventana cocina</b><span>aluminio, ≈1,60 × 0,55 m, antepecho a 1,05 m, cortina veneciana roja</span>
+  <b>Lavadero</b><span>1,70 × 1,30 m interior · 2,2 m² · ventana corrediza ≈0,80 × 1,00 con paño fijo superior y tendedero exterior</span>
+  <b>Artefactos a gas</b><span>caldera mural (muro del fondo) y calefón Orbis (muro derecho), ambos con conducto de evacuación</span>
+  <b>Cielorraso</b><span>yeso sobre losa con descascarado y humedad en cocina; en lavadero, agujero y revoque suelto</span>
+</div>
+</section>
+
+<section id="diag">
+<div class="sec-head"><span class="n">02</span><h2>Diagnóstico y partido</h2></div>
+<div class="grid2">
+  <div class="box"><h3>Lo que está bien y se conserva</h3><p>El piso gris combina con el blanco y negro y se queda. La distribución lineal es la correcta para un ancho de 1,90: no entra una isla ni un frente enfrentado. La cocina negra a gas es reciente y se mantiene. Los azulejos blancos de las paredes laterales quedan; solo se cambia la franja entre mesada y alacena.</p></div>
+  <div class="box"><h3>Lo que hay que resolver</h3><p>Lavarropas en el lavadero ocupando el único lugar donde podría comer alguien. Muebles con cantos hinchados y frentes vencidos. Tubo fluorescente colgado con cable a la vista. Ventana de aluminio simple sin aislación. Cielorraso deteriorado en los dos ambientes. Tomas insuficientes y un solo circuito para todo.</p></div>
+</div>
+<p><strong>Partido.</strong> Un solo frente continuo del muro de entrada al muro del lavadero: torre de heladera, lavarropas bajo mesada, bacha, cajonera y cocina. Mesada de granito Negro Brasil pulido que sigue hasta el lavadero como barra bajo la ventana, donde almuerzan dos personas. Todo el mueble en Egger blanco para que el negro del granito y la luz cálida-neutra de la tira LED sean lo único que se ve. Cielorraso de durlock que esconde losa y cableado y recibe cuatro spots.</p>
+</section>
+
+<section id="planta">
+<div class="sec-head"><span class="n">03</span><h2>Planta propuesta</h2></div>
+<figure><div class="scroll"><svg viewBox="0 0 780 430" role="img" aria-label="Planta propuesta: heladera, lavarropas embutido, módulo de puerta, bacha, cajonera y cocina en una sola línea; en el lavadero barra de granito bajo la ventana con dos banquetas" xmlns="http://www.w3.org/2000/svg">
+<rect class="wall" x="43.5" y="53.5" width="423.5" height="16.5" />
+<rect class="wall" x="43.5" y="279.0" width="423.5" height="16.5" />
+<rect class="wall" x="43.5" y="53.5" width="16.5" height="242.0" />
+<rect class="wall" x="450.5" y="53.5" width="16.5" height="242.0" />
+<rect class="wall" x="450.5" y="114.0" width="220.0" height="16.5" />
+<rect class="wall" x="450.5" y="273.5" width="220.0" height="16.5" />
+<rect class="wall" x="654.0" y="114.0" width="16.5" height="176.0" />
+<rect class="floor" x="60.0" y="70.0" width="390.5" height="209.0" />
+<rect class="floor" x="467.0" y="130.5" width="187.0" height="143.0" />
+<rect class="floor" x="71.0" y="279.0" width="88.0" height="16.5" />
+<path class="thin" d="M71.0 279.0 A88.0 88.0 0 0 1 159.0 191.0" fill="none"/>
+<line class="thin" x1="159.0" y1="279.0" x2="159.0" y2="191.0" />
+<rect class="floor" x="450.5" y="180.0" width="16.5" height="82.5" />
+<path class="thin" d="M467.0 180.0 A82.5 82.5 0 0 1 549.5 262.5" fill="none"/>
+<line class="thin" x1="467.0" y1="262.5" x2="549.5" y2="262.5" />
+<rect class="win" x="164.5" y="53.5" width="176.0" height="16.5" />
+<rect class="win" x="533.0" y="114.0" width="88.0" height="16.5" />
+<rect class="gas" x="640.8" y="163.5" width="13.2" height="49.5" />
+<text class="lbls" x="648.5" y="191.0" text-anchor="end" transform="rotate(-90 648.5 191.0)">caldera</text>
+<rect class="gas" x="566.0" y="260.3" width="55.0" height="13.2" />
+<text class="lbls" x="593.5" y="255.9" text-anchor="middle" >calefón</text>
+<rect class="furn2" x="61.1" y="71.1" width="70.4" height="70.4" />
+<text class="lbls" x="96.3" y="100.8" text-anchor="middle" >heladera</text>
+<text class="lbls2" x="96.3" y="116.2" text-anchor="middle" >torre</text>
+<rect class="furn" x="133.7" y="71.1" width="66.0" height="63.8" />
+<text class="lbls" x="166.7" y="100.8" text-anchor="middle" >lavarr.</text>
+<text class="lbls2" x="166.7" y="116.2" text-anchor="middle" >embutido</text>
+<rect class="furn" x="201.9" y="71.1" width="47.3" height="63.8" />
+<text class="lbls" x="225.5" y="100.8" text-anchor="middle" >puerta</text>
+<text class="lbls2" x="225.5" y="116.2" text-anchor="middle" >residuos</text>
+<rect class="furn" x="251.4" y="71.1" width="85.8" height="63.8" />
+<text class="lbls" x="294.3" y="100.8" text-anchor="middle" >bacha</text>
+<text class="lbls2" x="294.3" y="116.2" text-anchor="middle" >2 puertas</text>
+<rect class="furn" x="339.4" y="71.1" width="47.3" height="63.8" />
+<text class="lbls" x="363.1" y="100.8" text-anchor="middle" >cajones</text>
+<text class="lbls2" x="363.1" y="116.2" text-anchor="middle" >3</text>
+<rect class="furn2" x="388.9" y="71.1" width="60.5" height="63.8" />
+<text class="lbls" x="419.1" y="100.8" text-anchor="middle" >cocina</text>
+<text class="lbls2" x="419.1" y="116.2" text-anchor="middle" >57</text>
+<rect class="sink" x="266.8" y="81.0" width="55.0" height="44.0" rx="4"/>
+<line class="granite" x1="132.6" y1="140.4" x2="450.5" y2="140.4" />
+<text class="lbl" x="291.0" y="158.0" text-anchor="middle" >mesada granito Negro Brasil 2 cm · prof. 0,64</text>
+<rect class="granite2" x="467.0" y="130.5" width="176.0" height="55.0" />
+<text class="lblw" x="535.2" y="154.7" text-anchor="middle" >barra granito</text>
+<text class="lblw2" x="535.2" y="172.3" text-anchor="middle" >1,60 × 0,50 · h 0,90</text>
+<rect class="thinrw" x="595.7" y="133.8" width="44.0" height="48.4" />
+<text class="lblw2" x="617.7" y="161.3" text-anchor="middle" >mód. 0,45</text>
+<circle class="stool" cx="500.0" cy="216.3" r="18.7" />
+<circle class="stool" cx="560.5" cy="216.3" r="18.7" />
+<text class="lbls2" x="529.7" y="251.5" text-anchor="middle" >2 banquetas</text>
+<circle class="sink" cx="645.2" cy="194.3" r="4.4" />
+<text class="lbls2" x="638.6" y="198.7" text-anchor="end" >canilla</text>
+<rect class="furn" x="469.2" y="233.9" width="44.0" height="37.4" />
+<text class="lbls2" x="491.2" y="253.7" text-anchor="middle" >escob.</text>
+<line class="dim" x1="645.2" y1="185.5" x2="645.2" y2="273.5"/>
+<line class="dim" x1="639.2" y1="185.5" x2="651.2" y2="185.5"/>
+<line class="dim" x1="642.2" y1="188.5" x2="648.2" y2="182.5"/>
+<line class="dim" x1="639.2" y1="273.5" x2="651.2" y2="273.5"/>
+<line class="dim" x1="642.2" y1="276.5" x2="648.2" y2="270.5"/>
+<text class="dimt" x="640.2" y="233.5" text-anchor="end">paso 0,80</text>
+<line class="dim" x1="60.0" y1="40.3" x2="132.6" y2="40.3"/>
+<line class="dim" x1="60.0" y1="34.3" x2="60.0" y2="46.3"/>
+<line class="dim" x1="57.0" y1="43.3" x2="63.0" y2="37.3"/>
+<line class="dim" x1="132.6" y1="34.3" x2="132.6" y2="46.3"/>
+<line class="dim" x1="129.6" y1="43.3" x2="135.6" y2="37.3"/>
+<text class="dimt" x="96.3" y="36.3" text-anchor="middle">0,66</text>
+<line class="dim" x1="132.6" y1="40.3" x2="200.8" y2="40.3"/>
+<line class="dim" x1="132.6" y1="34.3" x2="132.6" y2="46.3"/>
+<line class="dim" x1="129.6" y1="43.3" x2="135.6" y2="37.3"/>
+<line class="dim" x1="200.8" y1="34.3" x2="200.8" y2="46.3"/>
+<line class="dim" x1="197.8" y1="43.3" x2="203.8" y2="37.3"/>
+<text class="dimt" x="166.7" y="36.3" text-anchor="middle">0,62</text>
+<line class="dim" x1="200.8" y1="40.3" x2="250.3" y2="40.3"/>
+<line class="dim" x1="200.8" y1="34.3" x2="200.8" y2="46.3"/>
+<line class="dim" x1="197.8" y1="43.3" x2="203.8" y2="37.3"/>
+<line class="dim" x1="250.3" y1="34.3" x2="250.3" y2="46.3"/>
+<line class="dim" x1="247.3" y1="43.3" x2="253.3" y2="37.3"/>
+<text class="dimt" x="225.6" y="36.3" text-anchor="middle">0,45</text>
+<line class="dim" x1="250.3" y1="40.3" x2="338.3" y2="40.3"/>
+<line class="dim" x1="250.3" y1="34.3" x2="250.3" y2="46.3"/>
+<line class="dim" x1="247.3" y1="43.3" x2="253.3" y2="37.3"/>
+<line class="dim" x1="338.3" y1="34.3" x2="338.3" y2="46.3"/>
+<line class="dim" x1="335.3" y1="43.3" x2="341.3" y2="37.3"/>
+<text class="dimt" x="294.3" y="36.3" text-anchor="middle">0,8</text>
+<line class="dim" x1="338.3" y1="40.3" x2="387.8" y2="40.3"/>
+<line class="dim" x1="338.3" y1="34.3" x2="338.3" y2="46.3"/>
+<line class="dim" x1="335.3" y1="43.3" x2="341.3" y2="37.3"/>
+<line class="dim" x1="387.8" y1="34.3" x2="387.8" y2="46.3"/>
+<line class="dim" x1="384.8" y1="43.3" x2="390.8" y2="37.3"/>
+<text class="dimt" x="363.0" y="36.3" text-anchor="middle">0,45</text>
+<line class="dim" x1="387.8" y1="40.3" x2="450.5" y2="40.3"/>
+<line class="dim" x1="387.8" y1="34.3" x2="387.8" y2="46.3"/>
+<line class="dim" x1="384.8" y1="43.3" x2="390.8" y2="37.3"/>
+<line class="dim" x1="450.5" y1="34.3" x2="450.5" y2="46.3"/>
+<line class="dim" x1="447.5" y1="43.3" x2="453.5" y2="37.3"/>
+<text class="dimt" x="419.1" y="36.3" text-anchor="middle">0,57</text>
+<line class="dim" x1="60.0" y1="23.8" x2="450.5" y2="23.8"/>
+<line class="dim" x1="60.0" y1="17.8" x2="60.0" y2="29.8"/>
+<line class="dim" x1="57.0" y1="26.8" x2="63.0" y2="20.8"/>
+<line class="dim" x1="450.5" y1="17.8" x2="450.5" y2="29.8"/>
+<line class="dim" x1="447.5" y1="26.8" x2="453.5" y2="20.8"/>
+<text class="dimt" x="255.2" y="19.8" text-anchor="middle">3,55</text>
+<line class="dim" x1="467.0" y1="23.8" x2="643.0" y2="23.8"/>
+<line class="dim" x1="467.0" y1="17.8" x2="467.0" y2="29.8"/>
+<line class="dim" x1="464.0" y1="26.8" x2="470.0" y2="20.8"/>
+<line class="dim" x1="643.0" y1="17.8" x2="643.0" y2="29.8"/>
+<line class="dim" x1="640.0" y1="26.8" x2="646.0" y2="20.8"/>
+<text class="dimt" x="555.0" y="19.8" text-anchor="middle">barra 1,60</text>
+<line class="dim" x1="683.7" y1="70.0" x2="683.7" y2="279.0"/>
+<line class="dim" x1="677.7" y1="70.0" x2="689.7" y2="70.0"/>
+<line class="dim" x1="680.7" y1="73.0" x2="686.7" y2="67.0"/>
+<line class="dim" x1="677.7" y1="279.0" x2="689.7" y2="279.0"/>
+<line class="dim" x1="680.7" y1="282.0" x2="686.7" y2="276.0"/>
+<text class="dimt" x="688.7" y="178.5" text-anchor="start">1,9</text>
+<text class="room" x="115.0" y="218.5" text-anchor="start" >COCINA</text>
+<text class="lbl" x="255.8" y="339.5" text-anchor="middle" >acceso desde living</text>
+<text class="room" x="472.5" y="317.5" text-anchor="start" >LAVADERO / DESAYUNADOR</text>
+</svg></div>
+<figcaption>Planta propuesta. De izquierda a derecha sobre el frente: heladera 0,66 · lavarropas 0,62 · puerta 0,45 · bacha 0,80 · cajonera 0,45 · cocina 0,57 = 3,55 m. La bacha queda a 7 cm de donde está hoy, así el desagüe existente se reutiliza. En el lavadero la barra de 1,60 × 0,50 deja un paso libre de 0,80 m.</figcaption></figure>
+<div class="tbl"><table>
+<thead><tr><th>Posición desde muro de entrada</th><th>Módulo</th><th class="num">Ancho</th><th>Detalle</th></tr></thead>
+<tbody>
+<tr><td>0,00 – 0,66</td><td>Torre heladera</td><td class="num">0,66</td><td>Heladera existente 0,60 con 3 cm de aire por lado. Alacena de cierre arriba (0,66 × 0,60 h, prof. 0,60) y panel lateral de 18 mm entre heladera y lavarropas.</td></tr>
+<tr><td>0,66 – 1,28</td><td>Lavarropas embutido</td><td class="num">0,62</td><td>Nicho libre 0,61 × 0,88 h bajo la mesada. Frente del equipo a la vista, alineado con las puertas; sin puerta de mueble para no perder profundidad ni ventilación. Mesada de 0,64 de profundidad absorbe mangueras y puerta del tambor.</td></tr>
+<tr><td>1,28 – 1,73</td><td>Puerta</td><td class="num">0,45</td><td>Cesto de residuos extraíble con dos tachos.</td></tr>
+<tr><td>1,73 – 2,53</td><td>Módulo bacha</td><td class="num">0,80</td><td>Bacha bajo mesada inox 50 × 40 × 20, dos puertas de 0,40, grifería monocomando cuello alto.</td></tr>
+<tr><td>2,53 – 2,98</td><td>Cajonera</td><td class="num">0,45</td><td>Tres cajones (20 / 25 / 31 cm) con correderas telescópicas de cierre suave. Cubiertos arriba, ollas abajo.</td></tr>
+<tr><td>2,98 – 3,55</td><td>Cocina</td><td class="num">0,57</td><td>Cocina existente de 0,55 con 1 cm por lado. Zócalo de granito de 7 cm a los dos lados para tapar la junta.</td></tr>
+</tbody></table></div>
+<p>La mesada mide 2,32 m de largo y 0,64 de profundidad (4 cm más que hoy): eso permite que el lavarropas entre con sus conexiones y da 2 cm de voladizo sobre los frentes. La alacena va de 1,60 a 2,40 m de altura con una tapa de cierre hasta el cielorraso, de modo que no queda ranura que junte grasa arriba.</p>
+</section>
+
+<section id="frente">
+<div class="sec-head"><span class="n">04</span><h2>Frente de cocina</h2></div>
+<figure><div class="scroll"><svg viewBox="0 0 720 470" role="img" aria-label="Alzado del frente de cocina: torre de heladera, lavarropas embutido bajo mesada, módulos blancos, mesada de granito negro, ventana PVC, alacenas con tira LED y cielorraso de durlock" xmlns="http://www.w3.org/2000/svg">
+<rect class="floor" x="70.0" y="40.0" width="390.5" height="286.0" />
+<rect class="tile" x="142.6" y="150.0" width="317.9" height="67.1" />
+<rect class="ceil" x="70.0" y="40.0" width="390.5" height="8.8" />
+<text class="lbls2" x="76.6" y="46.1" text-anchor="start" >cielorraso durlock 2,52</text>
+<rect class="furn2" x="73.3" y="131.3" width="66.0" height="189.2" />
+<text class="lbls" x="106.3" y="221.5" text-anchor="middle" >heladera</text>
+<text class="lbls2" x="106.3" y="238.0" text-anchor="middle" >0,60 × 1,72</text>
+<rect class="furn" x="70.0" y="62.0" width="72.6" height="66.0" />
+<text class="lbls" x="106.3" y="97.2" text-anchor="middle" >alacena</text>
+<text class="lbls2" x="106.3" y="112.6" text-anchor="middle" >0,66 × 0,60</text>
+<rect class="panel" x="139.3" y="62.0" width="3.3" height="253.0" />
+<rect class="plinth" x="142.6" y="315.0" width="255.2" height="11.0" />
+<rect class="nicho" x="142.6" y="229.2" width="68.2" height="85.8" />
+<circle class="thinc" cx="176.7" cy="271.0" r="20.9" />
+<circle class="thinc" cx="176.7" cy="271.0" r="14.3" />
+<text class="lbls" x="176.7" y="238.0" text-anchor="middle" >lavarropas</text>
+<text class="lbls2" x="176.7" y="308.4" text-anchor="middle" >nicho 62 × 88</text>
+<rect class="furn" x="211.9" y="229.2" width="47.3" height="85.8" />
+<text class="lbls" x="235.5" y="271.0" text-anchor="middle" >puerta</text>
+<text class="lbls2" x="235.5" y="285.3" text-anchor="middle" >residuos</text>
+<rect class="furn" x="261.4" y="229.2" width="42.9" height="85.8" />
+<rect class="furn" x="305.4" y="229.2" width="41.8" height="85.8" />
+<text class="lbls" x="304.3" y="271.0" text-anchor="middle" >bacha</text>
+<text class="lbls2" x="304.3" y="285.3" text-anchor="middle" >2 puertas 0,40</text>
+<rect class="furn" x="349.4" y="293.0" width="47.3" height="22.0" />
+<rect class="furn" x="349.4" y="264.4" width="47.3" height="27.5" />
+<rect class="furn" x="349.4" y="229.2" width="47.3" height="34.1" />
+<text class="lbls" x="373.1" y="277.6" text-anchor="middle" >cajones</text>
+<line class="handle" x1="214.1" y1="249.0" x2="214.1" y2="265.5" />
+<line class="handle" x1="263.6" y1="249.0" x2="263.6" y2="265.5" />
+<line class="handle" x1="343.9" y1="249.0" x2="343.9" y2="265.5" />
+<line class="handle" x1="362.6" y1="304.0" x2="384.6" y2="304.0" />
+<line class="handle" x1="362.6" y1="277.6" x2="384.6" y2="277.6" />
+<line class="handle" x1="362.6" y1="245.7" x2="384.6" y2="245.7" />
+<rect class="granite2" x="142.6" y="224.8" width="255.2" height="4.4" />
+<rect class="granite2" x="142.6" y="217.1" width="255.2" height="7.7" />
+<text class="lbls2" x="265.8" y="213.8" text-anchor="middle" >granito Negro Brasil 2 cm · frentín 4 · zócalo 7</text>
+<rect class="furn2" x="397.8" y="229.2" width="62.7" height="96.8" />
+<text class="lbls" x="429.2" y="276.5" text-anchor="middle" >cocina</text>
+<text class="lbls2" x="429.2" y="290.8" text-anchor="middle" >0,55 existente</text>
+<rect class="winel" x="174.5" y="150.0" width="176.0" height="60.5" />
+<line class="thin" x1="262.5" y1="210.5" x2="262.5" y2="150.0" />
+<text class="lbls" x="262.5" y="174.2" text-anchor="middle" >ventana PVC DVH 1,60 × 0,55</text>
+<text class="lbls2" x="262.5" y="189.6" text-anchor="middle" >corrediza 2 hojas</text>
+<rect class="nicho" x="142.6" y="106.0" width="68.2" height="44.0" />
+<text class="lbls2" x="176.7" y="130.2" text-anchor="middle" >microondas</text>
+<rect class="furn" x="142.6" y="62.0" width="68.2" height="44.0" />
+<rect class="furn" x="211.9" y="62.0" width="47.3" height="88.0" />
+<rect class="furn" x="261.4" y="62.0" width="42.9" height="88.0" />
+<rect class="furn" x="305.4" y="62.0" width="41.8" height="88.0" />
+<rect class="furn" x="349.4" y="62.0" width="47.3" height="88.0" />
+<rect class="furn" x="397.8" y="62.0" width="62.7" height="71.5" />
+<rect class="hood" x="397.8" y="134.6" width="62.7" height="13.2" />
+<text class="lbls2" x="429.2" y="142.9" text-anchor="middle" >purificador 60</text>
+<rect class="panel" x="142.6" y="48.8" width="317.9" height="13.2" />
+<text class="lbls2" x="301.0" y="57.1" text-anchor="middle" >tapa de cierre</text>
+<line class="led" x1="142.6" y1="150.0" x2="397.8" y2="150.0" />
+<text class="led-t" x="279.0" y="146.2" text-anchor="middle" >tira LED 4000K en perfil de aluminio</text>
+<circle class="led-c" cx="130.5" cy="44.4" r="5.5" />
+<circle class="led-c" cx="229.5" cy="44.4" r="5.5" />
+<circle class="led-c" cx="328.5" cy="44.4" r="5.5" />
+<circle class="led-c" cx="422.0" cy="44.4" r="5.5" />
+<line class="dim" x1="70.0" y1="345.8" x2="142.6" y2="345.8"/>
+<line class="dim" x1="70.0" y1="339.8" x2="70.0" y2="351.8"/>
+<line class="dim" x1="67.0" y1="348.8" x2="73.0" y2="342.8"/>
+<line class="dim" x1="142.6" y1="339.8" x2="142.6" y2="351.8"/>
+<line class="dim" x1="139.6" y1="348.8" x2="145.6" y2="342.8"/>
+<text class="dimt" x="106.3" y="358.8" text-anchor="middle">0,66</text>
+<line class="dim" x1="142.6" y1="345.8" x2="210.8" y2="345.8"/>
+<line class="dim" x1="142.6" y1="339.8" x2="142.6" y2="351.8"/>
+<line class="dim" x1="139.6" y1="348.8" x2="145.6" y2="342.8"/>
+<line class="dim" x1="210.8" y1="339.8" x2="210.8" y2="351.8"/>
+<line class="dim" x1="207.8" y1="348.8" x2="213.8" y2="342.8"/>
+<text class="dimt" x="176.7" y="358.8" text-anchor="middle">0,62</text>
+<line class="dim" x1="210.8" y1="345.8" x2="260.3" y2="345.8"/>
+<line class="dim" x1="210.8" y1="339.8" x2="210.8" y2="351.8"/>
+<line class="dim" x1="207.8" y1="348.8" x2="213.8" y2="342.8"/>
+<line class="dim" x1="260.3" y1="339.8" x2="260.3" y2="351.8"/>
+<line class="dim" x1="257.3" y1="348.8" x2="263.3" y2="342.8"/>
+<text class="dimt" x="235.6" y="358.8" text-anchor="middle">0,45</text>
+<line class="dim" x1="260.3" y1="345.8" x2="348.3" y2="345.8"/>
+<line class="dim" x1="260.3" y1="339.8" x2="260.3" y2="351.8"/>
+<line class="dim" x1="257.3" y1="348.8" x2="263.3" y2="342.8"/>
+<line class="dim" x1="348.3" y1="339.8" x2="348.3" y2="351.8"/>
+<line class="dim" x1="345.3" y1="348.8" x2="351.3" y2="342.8"/>
+<text class="dimt" x="304.3" y="358.8" text-anchor="middle">0,8</text>
+<line class="dim" x1="348.3" y1="345.8" x2="397.8" y2="345.8"/>
+<line class="dim" x1="348.3" y1="339.8" x2="348.3" y2="351.8"/>
+<line class="dim" x1="345.3" y1="348.8" x2="351.3" y2="342.8"/>
+<line class="dim" x1="397.8" y1="339.8" x2="397.8" y2="351.8"/>
+<line class="dim" x1="394.8" y1="348.8" x2="400.8" y2="342.8"/>
+<text class="dimt" x="373.0" y="358.8" text-anchor="middle">0,45</text>
+<line class="dim" x1="397.8" y1="345.8" x2="460.5" y2="345.8"/>
+<line class="dim" x1="397.8" y1="339.8" x2="397.8" y2="351.8"/>
+<line class="dim" x1="394.8" y1="348.8" x2="400.8" y2="342.8"/>
+<line class="dim" x1="460.5" y1="339.8" x2="460.5" y2="351.8"/>
+<line class="dim" x1="457.5" y1="348.8" x2="463.5" y2="342.8"/>
+<text class="dimt" x="429.1" y="358.8" text-anchor="middle">0,57</text>
+<line class="dim" x1="70.0" y1="363.4" x2="460.5" y2="363.4"/>
+<line class="dim" x1="70.0" y1="357.4" x2="70.0" y2="369.4"/>
+<line class="dim" x1="67.0" y1="366.4" x2="73.0" y2="360.4"/>
+<line class="dim" x1="460.5" y1="357.4" x2="460.5" y2="369.4"/>
+<line class="dim" x1="457.5" y1="366.4" x2="463.5" y2="360.4"/>
+<text class="dimt" x="265.2" y="376.4" text-anchor="middle">3,55</text>
+<line class="dim" x1="480.3" y1="227.0" x2="480.3" y2="326.0"/>
+<line class="dim" x1="474.3" y1="227.0" x2="486.3" y2="227.0"/>
+<line class="dim" x1="477.3" y1="230.0" x2="483.3" y2="224.0"/>
+<line class="dim" x1="474.3" y1="326.0" x2="486.3" y2="326.0"/>
+<line class="dim" x1="477.3" y1="329.0" x2="483.3" y2="323.0"/>
+<text class="dimt" x="485.3" y="280.5" text-anchor="start">0,90</text>
+<line class="dim" x1="480.3" y1="150.0" x2="480.3" y2="227.0"/>
+<line class="dim" x1="474.3" y1="150.0" x2="486.3" y2="150.0"/>
+<line class="dim" x1="477.3" y1="153.0" x2="483.3" y2="147.0"/>
+<line class="dim" x1="474.3" y1="227.0" x2="486.3" y2="227.0"/>
+<line class="dim" x1="477.3" y1="230.0" x2="483.3" y2="224.0"/>
+<text class="dimt" x="485.3" y="192.5" text-anchor="start">0,70</text>
+<line class="dim" x1="480.3" y1="62.0" x2="480.3" y2="150.0"/>
+<line class="dim" x1="474.3" y1="62.0" x2="486.3" y2="62.0"/>
+<line class="dim" x1="477.3" y1="65.0" x2="483.3" y2="59.0"/>
+<line class="dim" x1="474.3" y1="150.0" x2="486.3" y2="150.0"/>
+<line class="dim" x1="477.3" y1="153.0" x2="483.3" y2="147.0"/>
+<text class="dimt" x="485.3" y="110.0" text-anchor="start">0,80</text>
+<line class="dim" x1="480.3" y1="48.8" x2="480.3" y2="62.0"/>
+<line class="dim" x1="474.3" y1="48.8" x2="486.3" y2="48.8"/>
+<line class="dim" x1="477.3" y1="51.8" x2="483.3" y2="45.8"/>
+<line class="dim" x1="474.3" y1="62.0" x2="486.3" y2="62.0"/>
+<line class="dim" x1="477.3" y1="65.0" x2="483.3" y2="59.0"/>
+<text class="dimt" x="485.3" y="59.4" text-anchor="start">0,12</text>
+<line class="dim" x1="526.5" y1="40.0" x2="526.5" y2="326.0"/>
+<line class="dim" x1="520.5" y1="40.0" x2="532.5" y2="40.0"/>
+<line class="dim" x1="523.5" y1="43.0" x2="529.5" y2="37.0"/>
+<line class="dim" x1="520.5" y1="326.0" x2="532.5" y2="326.0"/>
+<line class="dim" x1="523.5" y1="329.0" x2="529.5" y2="323.0"/>
+<text class="dimt" x="531.5" y="187.0" text-anchor="start">2,60</text>
+</svg></div>
+<figcaption>Alzado del muro norte. Bajo mesada a 0,90; franja de revestimiento subway blanco de 0,70; alacenas de 0,80 de alto con nicho abierto para el microondas sobre el lavarropas y purificador de 60 cm sobre la cocina. La tira LED corre por todo el borde inferior de las alacenas, escondida detrás de un listón de 4 cm.</figcaption></figure>
+<div class="grid2">
+  <div class="box"><h3>Bajo mesada</h3><p>Cuerpos y frentes en Egger 18 mm Blanco W1000 ST9, cantos ABS de 1 mm a tono, zócalo de 10 cm rehundido en el mismo blanco o en aluminio. Bisagras de cierre suave y tiradores de barra inox de 20 cm colocados horizontales, como los actuales pero sin desnivel.</p></div>
+  <div class="box"><h3>Alacenas</h3><p>Profundidad 0,35, altura 0,80, fondo de 18 mm. Sobre el lavarropas el módulo tiene la mitad inferior abierta (0,62 × 0,40) para el microondas, con toma interior. Sobre la cocina el módulo es más corto (0,65) y lleva el purificador colgado debajo. Tapa de cierre hasta el durlock.</p></div>
+  <div class="box"><h3>Franja entre mesada y alacena</h3><p>Se retira el azulejo de 20 × 20 solo en esa franja de 0,70 × 2,90 m y se coloca subway blanco brillante 7,5 × 15 con pastina gris grafito. Es la superficie que refleja el LED: con el granito negro abajo y el blanco arriba, la luz queda contenida en la mesada.</p></div>
+  <div class="box"><h3>Torre de heladera</h3><p>La heladera queda enmarcada: panel lateral blanco a la altura de la alacena y módulo superior que cierra el nicho. Rejilla de ventilación de 60 × 6 cm en la tapa de arriba para que el condensador respire.</p></div>
+</div>
+</section>
+
+<section id="lav">
+<div class="sec-head"><span class="n">05</span><h2>Lavadero como desayunador</h2></div>
+<p>Con el lavarropas en la cocina, el lavadero queda para la caldera, el calefón y una barra donde almorzar. En 1,70 × 1,30 no entran barra y pileta de lavar cómodas a la vez, así que la propuesta elimina la pileta y deja una canilla de servicio con rejilla de piso en el rincón para llenar un balde. La bacha de la cocina queda a dos metros para el resto.</p>
+<figure><div class="scroll"><svg viewBox="0 0 520 430" role="img" aria-label="Alzado de la pared de la ventana del lavadero: barra de granito a 0,90 con dos banquetas, ventana PVC con paño fijo ventilado arriba, canilla de servicio y estante bajo barra para la aspiradora" xmlns="http://www.w3.org/2000/svg">
+<rect class="floor" x="70.0" y="40.0" width="187.0" height="264.0" />
+<rect class="tile" x="70.0" y="188.5" width="187.0" height="115.5" />
+<rect class="winel" x="130.5" y="73.0" width="88.0" height="110.0" />
+<line class="thin" x1="174.5" y1="183.0" x2="174.5" y2="73.0" />
+<text class="lbls" x="174.5" y="122.5" text-anchor="middle" >PVC DVH 0,80 × 1,00</text>
+<text class="lbls2" x="174.5" y="136.8" text-anchor="middle" >corrediza 2 hojas</text>
+<rect class="winfix" x="130.5" y="40.0" width="88.0" height="33.0" />
+<text class="lbls2" x="174.5" y="58.2" text-anchor="middle" >paño fijo + rejilla vent.</text>
+<rect class="granite2" x="70.0" y="202.8" width="176.0" height="4.4" />
+<rect class="granite2" x="70.0" y="195.1" width="176.0" height="7.7" />
+<text class="lbls2" x="158.0" y="194.0" text-anchor="middle" >barra granito Negro Brasil 1,60 × 0,50</text>
+<rect class="nicho" x="196.5" y="209.4" width="49.5" height="81.4" />
+<text class="lbls2" x="221.2" y="233.6" text-anchor="middle" >aspiradora</text>
+<text class="lbls2" x="221.2" y="246.8" text-anchor="middle" >balde</text>
+<rect class="plinth" x="196.5" y="290.8" width="49.5" height="13.2" />
+<rect class="stool" x="89.8" y="230.3" width="37.4" height="5.5" />
+<rect class="stool" x="106.3" y="235.8" width="4.4" height="63.8" />
+<rect class="stool" x="92.0" y="299.6" width="33.0" height="4.4" />
+<rect class="stool" x="144.8" y="230.3" width="37.4" height="5.5" />
+<rect class="stool" x="161.3" y="235.8" width="4.4" height="63.8" />
+<rect class="stool" x="147.0" y="299.6" width="33.0" height="4.4" />
+<text class="lbls2" x="136.0" y="271.0" text-anchor="middle" >banquetas h 0,65</text>
+<rect class="sink" x="248.2" y="242.4" width="6.6" height="4.4" />
+<line class="thin" x1="251.5" y1="246.8" x2="251.5" y2="260.0" />
+<text class="lbls2" x="255.9" y="271.0" text-anchor="end" >canilla</text>
+<rect class="hood" x="224.0" y="302.9" width="33.0" height="3.3" />
+<text class="lbls2" x="240.5" y="297.4" text-anchor="middle" >rejilla</text>
+<line class="led" x1="72.2" y1="209.4" x2="194.3" y2="209.4" />
+<text class="led-t" x="132.7" y="216.0" text-anchor="middle" >tira LED opcional bajo barra</text>
+<line class="dim" x1="70.0" y1="323.8" x2="130.5" y2="323.8"/>
+<line class="dim" x1="70.0" y1="317.8" x2="70.0" y2="329.8"/>
+<line class="dim" x1="67.0" y1="326.8" x2="73.0" y2="320.8"/>
+<line class="dim" x1="130.5" y1="317.8" x2="130.5" y2="329.8"/>
+<line class="dim" x1="127.5" y1="326.8" x2="133.5" y2="320.8"/>
+<text class="dimt" x="100.2" y="336.8" text-anchor="middle">0,55</text>
+<line class="dim" x1="130.5" y1="323.8" x2="218.5" y2="323.8"/>
+<line class="dim" x1="130.5" y1="317.8" x2="130.5" y2="329.8"/>
+<line class="dim" x1="127.5" y1="326.8" x2="133.5" y2="320.8"/>
+<line class="dim" x1="218.5" y1="317.8" x2="218.5" y2="329.8"/>
+<line class="dim" x1="215.5" y1="326.8" x2="221.5" y2="320.8"/>
+<text class="dimt" x="174.5" y="336.8" text-anchor="middle">0,8</text>
+<line class="dim" x1="218.5" y1="323.8" x2="257.0" y2="323.8"/>
+<line class="dim" x1="218.5" y1="317.8" x2="218.5" y2="329.8"/>
+<line class="dim" x1="215.5" y1="326.8" x2="221.5" y2="320.8"/>
+<line class="dim" x1="257.0" y1="317.8" x2="257.0" y2="329.8"/>
+<line class="dim" x1="254.0" y1="326.8" x2="260.0" y2="320.8"/>
+<text class="dimt" x="237.8" y="336.8" text-anchor="middle">0,35</text>
+<line class="dim" x1="70.0" y1="341.4" x2="246.0" y2="341.4"/>
+<line class="dim" x1="70.0" y1="335.4" x2="70.0" y2="347.4"/>
+<line class="dim" x1="67.0" y1="344.4" x2="73.0" y2="338.4"/>
+<line class="dim" x1="246.0" y1="335.4" x2="246.0" y2="347.4"/>
+<line class="dim" x1="243.0" y1="344.4" x2="249.0" y2="338.4"/>
+<text class="dimt" x="158.0" y="354.4" text-anchor="middle">barra 1,60</text>
+<line class="dim" x1="276.8" y1="205.0" x2="276.8" y2="304.0"/>
+<line class="dim" x1="270.8" y1="205.0" x2="282.8" y2="205.0"/>
+<line class="dim" x1="273.8" y1="208.0" x2="279.8" y2="202.0"/>
+<line class="dim" x1="270.8" y1="304.0" x2="282.8" y2="304.0"/>
+<line class="dim" x1="273.8" y1="307.0" x2="279.8" y2="301.0"/>
+<text class="dimt" x="281.8" y="258.5" text-anchor="start">0,90</text>
+<line class="dim" x1="276.8" y1="183.0" x2="276.8" y2="205.0"/>
+<line class="dim" x1="270.8" y1="183.0" x2="282.8" y2="183.0"/>
+<line class="dim" x1="273.8" y1="186.0" x2="279.8" y2="180.0"/>
+<line class="dim" x1="270.8" y1="205.0" x2="282.8" y2="205.0"/>
+<line class="dim" x1="273.8" y1="208.0" x2="279.8" y2="202.0"/>
+<text class="dimt" x="281.8" y="198.0" text-anchor="start">0,20</text>
+<line class="dim" x1="276.8" y1="73.0" x2="276.8" y2="183.0"/>
+<line class="dim" x1="270.8" y1="73.0" x2="282.8" y2="73.0"/>
+<line class="dim" x1="273.8" y1="76.0" x2="279.8" y2="70.0"/>
+<line class="dim" x1="270.8" y1="183.0" x2="282.8" y2="183.0"/>
+<line class="dim" x1="273.8" y1="186.0" x2="279.8" y2="180.0"/>
+<text class="dimt" x="281.8" y="132.0" text-anchor="start">1,00</text>
+<line class="dim" x1="276.8" y1="40.0" x2="276.8" y2="73.0"/>
+<line class="dim" x1="270.8" y1="40.0" x2="282.8" y2="40.0"/>
+<line class="dim" x1="273.8" y1="43.0" x2="279.8" y2="37.0"/>
+<line class="dim" x1="270.8" y1="73.0" x2="282.8" y2="73.0"/>
+<line class="dim" x1="273.8" y1="76.0" x2="279.8" y2="70.0"/>
+<text class="dimt" x="281.8" y="60.5" text-anchor="start">0,30</text>
+</svg></div>
+<figcaption>Alzado de la pared de la ventana del lavadero. Barra de granito Negro Brasil de 1,60 × 0,50 a 0,90 m con frentín de 4 cm y dos banquetas de 0,65 que se guardan debajo. Ventana PVC de 0,80 × 1,00 con paño fijo superior que conserva la rejilla de ventilación permanente exigida por los artefactos a gas. Estante abierto bajo la barra para la aspiradora y el balde.</figcaption></figure>
+<div class="grid2">
+  <div class="box"><h3>Qué cambia</h3><ul>
+    <li>Sale la pileta de cemento, el tendedero interior de techo y el lavarropas.</li>
+    <li>Barra de granito de 1,60 × 0,50 apoyada en dos ménsulas de hierro pintadas blanco y un módulo lateral de 0,45 con estante abierto.</li>
+    <li>Escobero de 0,40 × 0,35 × 2,00 en Egger blanco junto a la puerta para escoba, secador y productos.</li>
+    <li>Cielorraso: se repara el revoque, se tapa el agujero y se pinta. No conviene durlock acá porque hay dos conductos de gas que deben quedar accesibles.</li>
+    <li>Plafón LED estanco de 18 W en el centro y tira LED opcional bajo el borde de la barra.</li>
+  </ul></div>
+  <div class="box"><h3>Si querés conservar una pileta</h3><p>Alternativa: bacha inox compacta de 34 × 40 en el extremo derecho de la barra, sobre el módulo de 0,45. La barra útil baja a 1,15 m: alcanza para dos banquetas apretadas o para una persona cómoda y otra en la punta. Suma unos ARS 180.000 entre bacha, grifería y desagüe.</p><p>Mi recomendación es sin pileta: el lugar para dos era el pedido, y el lavarropas ya no necesita el desagüe ahí.</p></div>
+</div>
+<div class="note"><p><strong>Gas.</strong> El lavadero tiene caldera y calefón de tiro natural. Cualquier cambio de ventana tiene que mantener una ventilación permanente hacia el exterior (rejilla superior en el paño fijo e inferior en la puerta o el muro), y la puerta del lavadero no puede quedar hermética. Antes de cerrar la compra de la abertura conviene que un gasista matriculado valide el esquema; es un trámite corto y evita problemas con la administración del edificio.</p></div>
+</section>
+
+<section id="luz">
+<div class="sec-head"><span class="n">06</span><h2>Iluminación y eléctrica</h2></div>
+<figure><div class="scroll"><svg viewBox="0 0 780 400" role="img" aria-label="Plano de iluminación: cuatro spots LED embutidos en línea sobre el borde de la mesada, tira LED bajo alacenas, plafón estanco en el lavadero, tira opcional bajo barra y puntos de encendido junto a cada puerta" xmlns="http://www.w3.org/2000/svg">
+<rect class="wall" x="43.5" y="53.5" width="423.5" height="16.5" />
+<rect class="wall" x="43.5" y="279.0" width="423.5" height="16.5" />
+<rect class="wall" x="43.5" y="53.5" width="16.5" height="242.0" />
+<rect class="wall" x="450.5" y="53.5" width="16.5" height="242.0" />
+<rect class="wall" x="450.5" y="114.0" width="220.0" height="16.5" />
+<rect class="wall" x="450.5" y="273.5" width="220.0" height="16.5" />
+<rect class="wall" x="654.0" y="114.0" width="16.5" height="176.0" />
+<rect class="floor" x="60.0" y="70.0" width="390.5" height="209.0" />
+<rect class="floor" x="467.0" y="130.5" width="187.0" height="143.0" />
+<rect class="floor" x="71.0" y="279.0" width="88.0" height="16.5" />
+<path class="thin" d="M71.0 279.0 A88.0 88.0 0 0 1 159.0 191.0" fill="none"/>
+<line class="thin" x1="159.0" y1="279.0" x2="159.0" y2="191.0" />
+<rect class="floor" x="450.5" y="180.0" width="16.5" height="82.5" />
+<path class="thin" d="M467.0 180.0 A82.5 82.5 0 0 1 549.5 262.5" fill="none"/>
+<line class="thin" x1="467.0" y1="262.5" x2="549.5" y2="262.5" />
+<rect class="win" x="164.5" y="53.5" width="176.0" height="16.5" />
+<rect class="win" x="533.0" y="114.0" width="88.0" height="16.5" />
+<rect class="gas" x="640.8" y="163.5" width="13.2" height="49.5" />
+<text class="lbls" x="648.5" y="191.0" text-anchor="end" transform="rotate(-90 648.5 191.0)">caldera</text>
+<rect class="gas" x="566.0" y="260.3" width="55.0" height="13.2" />
+<text class="lbls" x="593.5" y="255.9" text-anchor="middle" >calefón</text>
+<rect class="thinr" x="132.6" y="70.0" width="317.9" height="38.5" />
+<text class="lbls2" x="291.0" y="92.0" text-anchor="middle" >alacenas</text>
+<rect class="thinr" x="63.3" y="73.3" width="66.0" height="72.6" />
+<rect class="thinr" x="132.6" y="108.5" width="317.9" height="31.9" />
+<rect class="thinr" x="467.0" y="130.5" width="176.0" height="55.0" />
+<circle class="led-c" cx="120.5" cy="163.5" r="9.9" />
+<circle class="led-c2" cx="120.5" cy="163.5" r="3.3" />
+<circle class="led-c" cx="219.5" cy="163.5" r="9.9" />
+<circle class="led-c2" cx="219.5" cy="163.5" r="3.3" />
+<circle class="led-c" cx="318.5" cy="163.5" r="9.9" />
+<circle class="led-c2" cx="318.5" cy="163.5" r="3.3" />
+<circle class="led-c" cx="412.0" cy="163.5" r="9.9" />
+<circle class="led-c2" cx="412.0" cy="163.5" r="3.3" />
+<text class="led-t" x="285.5" y="196.5" text-anchor="middle" >4 spots LED 12 W · 4000K · línea a 0,85</text>
+<line class="led" x1="132.6" y1="109.6" x2="450.5" y2="109.6" />
+<text class="led-t" x="291.0" y="125.0" text-anchor="middle" >tira LED bajo alacena 9,6 W/m · 4000K · 2,9 m</text>
+<circle class="led-c" cx="560.5" cy="226.2" r="15.4" />
+<text class="led-t" x="560.5" y="259.2" text-anchor="middle" >plafón 18 W</text>
+<line class="led" x1="467.0" y1="183.3" x2="591.3" y2="183.3" />
+<text class="led-t" x="528.6" y="203.1" text-anchor="middle" >tira bajo barra (opc.)</text>
+<rect class="sw" x="164.5" y="268.0" width="11.0" height="11.0" />
+<text class="lbls2" x="172.2" y="261.4" text-anchor="start" >llave 2 pts + LED</text>
+<rect class="sw" x="439.5" y="166.8" width="11.0" height="11.0" />
+<text class="lbls2" x="436.2" y="191.0" text-anchor="end" >llave lav.</text>
+<rect class="sw" x="87.5" y="72.2" width="11.0" height="6.6" />
+<rect class="sw" x="161.2" y="72.2" width="11.0" height="6.6" />
+<rect class="sw" x="219.5" y="72.2" width="11.0" height="6.6" />
+<rect class="sw" x="357.0" y="72.2" width="11.0" height="6.6" />
+<rect class="sw" x="413.1" y="72.2" width="11.0" height="6.6" />
+<rect class="sw" x="161.2" y="111.8" width="11.0" height="6.6" />
+<text class="lbls2" x="255.8" y="328.5" text-anchor="middle" >tomas: heladera · lavarropas 20 A dedicado · 2 dobles a 1,15 · microondas · purificador</text>
+<line class="dim" x1="60.0" y1="23.8" x2="450.5" y2="23.8"/>
+<line class="dim" x1="60.0" y1="17.8" x2="60.0" y2="29.8"/>
+<line class="dim" x1="57.0" y1="26.8" x2="63.0" y2="20.8"/>
+<line class="dim" x1="450.5" y1="17.8" x2="450.5" y2="29.8"/>
+<line class="dim" x1="447.5" y1="26.8" x2="453.5" y2="20.8"/>
+<text class="dimt" x="255.2" y="19.8" text-anchor="middle">3,55</text>
+<line class="dim" x1="467.0" y1="23.8" x2="654.0" y2="23.8"/>
+<line class="dim" x1="467.0" y1="17.8" x2="467.0" y2="29.8"/>
+<line class="dim" x1="464.0" y1="26.8" x2="470.0" y2="20.8"/>
+<line class="dim" x1="654.0" y1="17.8" x2="654.0" y2="29.8"/>
+<line class="dim" x1="651.0" y1="26.8" x2="657.0" y2="20.8"/>
+<text class="dimt" x="560.5" y="19.8" text-anchor="middle">1,7</text>
+</svg></div>
+<figcaption>Plano de iluminación y tomas. Tres capas de luz en la cocina: spots generales en línea sobre el borde de la mesada, tira LED bajo alacena para trabajar, y el microondas y el purificador con sus propias luces. En el lavadero, plafón central y tira opcional bajo la barra.</figcaption></figure>
+<div class="tbl"><table>
+<thead><tr><th>Capa</th><th>Artefacto</th><th>Especificación</th><th>Encendido</th></tr></thead>
+<tbody>
+<tr><td>General cocina</td><td>4 spots LED embutidos en durlock</td><td>12 W, 4000K, Ø 9 cm, ángulo 60°, en línea a 0,85 m del muro del frente (sobre el borde de la mesada, no sobre la cabeza de quien cocina)</td><td>Llave junto a la puerta de entrada</td></tr>
+<tr><td>Tarea</td><td>Tira LED bajo alacena</td><td>2,9 m de tira 4000K 9,6 W/m en perfil de aluminio con difusor opal, fuente 24 V 60 W en la alacena sobre el lavarropas. Listón frontal de 4 cm para que no se vea el punto de luz. Mismo tono que los spots para que el granito no cambie de color.</td><td>Segundo punto de la misma llave o sensor táctil en el perfil</td></tr>
+<tr><td>Lavadero</td><td>Plafón LED estanco 18 W</td><td>4000K, IP44 por vapor de la ventana</td><td>Llave dentro del lavadero</td></tr>
+<tr><td>Acento</td><td>Tira LED bajo barra <span class="tag opc">opcional</span></td><td>1,1 m 3000K en perfil empotrado en el frentín de la barra; da el efecto flotante sobre el granito</td><td>Con el plafón</td></tr>
+</tbody></table></div>
+<h3>Tomas y circuitos</h3>
+<ul>
+  <li>Circuito dedicado para el lavarropas: toma de 20 A con disyuntor propio, ubicada en el nicho a 0,40 m del piso, accesible sin sacar el equipo.</li>
+  <li>Heladera en toma propia dentro del nicho. Microondas con toma en el nicho de la alacena. Purificador con toma en la alacena sobre la cocina.</li>
+  <li>Dos tomas dobles sobre mesada a 1,15 m (uno cerca de la bacha, otro cerca de la cocina). Se elimina el toma colgado del muro de la heladera.</li>
+  <li>Cableado nuevo por el cielorraso de durlock hasta el tablero; verificar si el tablero admite dos térmicas más o hay que ampliarlo.</li>
+</ul>
+</section>
+
+<section id="mat">
+<div class="sec-head"><span class="n">07</span><h2>Materiales y terminaciones</h2></div>
+<div class="swatches">
+  <div class="sw-item"><div class="chip" style="background:#1B1C1E"></div><div class="t"><b>Granito Negro Brasil</b>pulido, 2 cm, canto recto doble</div></div>
+  <div class="sw-item"><div class="chip" style="background:#FAFAF8;border-bottom:1px solid #d0d0d0"></div><div class="t"><b>Egger Blanco W1000 ST9</b>18 mm, canto ABS 1 mm</div></div>
+  <div class="sw-item"><div class="chip" style="background:linear-gradient(90deg,#F5F5F3 0 48%,#9a9a9a 48% 52%,#F5F5F3 52%)"></div><div class="t"><b>Subway blanco brillo</b>7,5 × 15, pastina grafito</div></div>
+  <div class="sw-item"><div class="chip" style="background:#FFE9B8"></div><div class="t"><b>LED 4000K</b>spots y tira, misma temperatura</div></div>
+  <div class="sw-item"><div class="chip" style="background:#E6E7E6"></div><div class="t"><b>PVC blanco DVH 4/9/4</b>corrediza, herraje bipunto</div></div>
+  <div class="sw-item"><div class="chip" style="background:#7d8085"></div><div class="t"><b>Piso existente</b>cerámico gris 40 × 40, se conserva</div></div>
+</div>
+<div class="tbl"><table>
+<thead><tr><th>Rubro</th><th>Especificación</th><th class="num">Cantidad</th></tr></thead>
+<tbody>
+<tr><td>Mesada cocina</td><td>Granito Negro Brasil 2 cm pulido, 2,32 × 0,64, frentín 4 cm, zócalo 7 cm en todo el perímetro, recorte para bacha bajo mesada con canto pulido</td><td class="num">2,32 ml</td></tr>
+<tr><td>Barra lavadero</td><td>Mismo granito, 1,60 × 0,50, frentín 4 cm, zócalo 7 cm contra pared, canto pulido en la punta libre</td><td class="num">1,60 ml</td></tr>
+<tr><td>Bajo mesada</td><td>Egger 18 mm blanco, 4 módulos (0,45 / 0,80 / 0,45) + nicho lavarropas 0,62, zócalo 10 cm, bisagras cierre suave, correderas telescópicas</td><td class="num">2,32 ml</td></tr>
+<tr><td>Alacenas</td><td>Egger 18 mm blanco, prof. 0,35, h 0,80 (0,65 sobre cocina), nicho microondas, tapa de cierre 0,12</td><td class="num">2,89 ml</td></tr>
+<tr><td>Torre heladera</td><td>Alacena superior 0,66 × 0,60 × 0,60 + panel lateral 0,60 × 2,40</td><td class="num">1 u</td></tr>
+<tr><td>Lavadero</td><td>Escobero 0,40 × 0,35 × 2,00 + módulo bajo barra 0,45 con estante + 2 ménsulas</td><td class="num">1 juego</td></tr>
+<tr><td>Bacha y grifería</td><td>Bacha inox AISI 304 bajo mesada 50 × 40 × 20, monocomando cuello alto cromo</td><td class="num">1 + 1</td></tr>
+<tr><td>Aberturas</td><td>Ventana PVC DVH cocina 1,60 × 0,55 corrediza 2 hojas; ventana lavadero 0,80 × 1,00 corrediza + paño fijo 0,80 × 0,30 con rejilla</td><td class="num">2 u</td></tr>
+<tr><td>Cielorraso cocina</td><td>Durlock suspendido a 2,52 (baja 8 cm), 4 recortes para spots, junta tomada y pintura látex antihongo</td><td class="num">6,7 m²</td></tr>
+<tr><td>Revestimiento</td><td>Subway 7,5 × 15 blanco brillo, franja 2,90 × 0,70 + 10 % desperdicio, pastina grafito</td><td class="num">2,3 m²</td></tr>
+<tr><td>Pintura</td><td>Látex antihongo blanco en cielorrasos y paredes sobre azulejo; pintura para azulejos blanca sobre la guarda de frutas en las paredes laterales</td><td class="num">≈ 18 m²</td></tr>
+<tr><td>Iluminación</td><td>4 spots 12 W 4000K, plafón 18 W IP44, 2,9 m perfil + tira 4000K + fuente 24 V, purificador 60 cm inox</td><td class="num">ver plano</td></tr>
+<tr><td>Extras</td><td>2 banquetas h 0,65 apilables, canilla de servicio + rejilla</td><td class="num">—</td></tr>
+</tbody></table></div>
+<div class="note led"><p><strong>Por qué Negro Brasil y no Negro Absoluto.</strong> Absoluto es más uniforme pero cuesta el doble y en 2,3 m de mesada la diferencia no se nota. Negro Brasil tiene grano fino y con la tira LED pegada se ve como una lámina negra. Pedirlo pulido, no flameado: el flameado retiene grasa.</p></div>
+</section>
+
+<section id="presu">
+<div class="sec-head"><span class="n">08</span><h2>Presupuesto orientativo</h2></div>
+<p>Valores de referencia de septiembre de 2026 para CABA, con IVA, tomados de listas públicas de proveedores y de rangos de mano de obra publicados este año. Sirven para saber en qué orden de magnitud estás y para detectar una cotización fuera de rango, no reemplazan tres presupuestos reales. Dólar BNA vendedor $1.530.</p>
+<div class="tbl"><table>
+<thead><tr><th>Rubro</th><th>Incluye</th><th class="num">ARS</th><th class="num">USD</th></tr></thead>
+<tbody>
+<tr><td>Amoblamiento Egger blanco</td><td>Bajo mesada, nicho lavarropas, alacenas, torre heladera, escobero, módulo barra; herrajes de cierre suave; colocación</td><td class="num">2.600.000</td><td class="num">1.700</td></tr>
+<tr><td>Granito Negro Brasil</td><td>3,92 ml a 0,64 / 0,50, frentines, zócalos, recorte bacha, plantilla y colocación</td><td class="num">1.300.000</td><td class="num">850</td></tr>
+<tr><td>Bacha y grifería</td><td>Bacha inox bajo mesada + monocomando</td><td class="num">270.000</td><td class="num">175</td></tr>
+<tr><td>Aberturas PVC DVH</td><td>Ventana cocina 1,60 × 0,55 + ventana lavadero 0,80 × 1,00 con paño fijo; retiro de las de aluminio, amure y sellado</td><td class="num">1.350.000</td><td class="num">880</td></tr>
+<tr><td>Cielorraso cocina</td><td>Durlock 6,7 m² con estructura, 4 spots, pintura</td><td class="num">400.000</td><td class="num">260</td></tr>
+<tr><td>Iluminación LED</td><td>Perfil + tira 2,9 m + fuente, plafón lavadero, purificador 60</td><td class="num">320.000</td><td class="num">210</td></tr>
+<tr><td>Electricidad</td><td>Circuito lavarropas 20 A, tomas nuevos, puntos de luz, cableado por cielorraso, térmicas</td><td class="num">450.000</td><td class="num">295</td></tr>
+<tr><td>Plomería</td><td>Alimentación y desagüe del lavarropas en cocina, conexión de bacha, canilla de servicio y rejilla, anulación de pileta</td><td class="num">300.000</td><td class="num">195</td></tr>
+<tr><td>Revestimiento y pintura</td><td>Subway 2,3 m² colocado, pintura de cielorrasos, paredes y guarda</td><td class="num">280.000</td><td class="num">185</td></tr>
+<tr><td>Albañilería y retiro</td><td>Desarme de muebles y pileta, reparación de cielorraso del lavadero, retiro de escombros, ayuda de gremios</td><td class="num">500.000</td><td class="num">325</td></tr>
+<tr><td>Banquetas y varios</td><td>2 banquetas, ménsulas, selladores, tornillería</td><td class="num">180.000</td><td class="num">120</td></tr>
+<tr class="sub"><td>Subtotal</td><td></td><td class="num">7.950.000</td><td class="num">5.195</td></tr>
+<tr><td>Imprevistos</td><td>10 % (en un edificio antiguo aparecen caños y cables donde no se esperaban)</td><td class="num">795.000</td><td class="num">520</td></tr>
+<tr class="total"><td>Total orientativo</td><td></td><td class="num">8.745.000</td><td class="num">5.715</td></tr>
+</tbody></table></div>
+<div class="grid2">
+  <div class="box"><h3>Versión ajustada · ≈ ARS 6,3 M</h3><p>Mismo frente y granito, pero sin durlock (se repara y pinta la losa, se usan dos plafones LED de superficie de 24 W), sin ventana nueva en el lavadero (se repara la de aluminio) y sin tira bajo barra. Se pierde el cielorraso limpio de la cocina, que es lo que más cambia la sensación del ambiente. No la recomiendo salvo que el tope sea duro.</p></div>
+  <div class="box"><h3>Upgrade que vale la pena · + ARS 1,2 M</h3><p>Reemplazar la cocina de 55 cm por anafe de 4 hornallas + horno eléctrico empotrado en un módulo de 0,60. La mesada de granito corre entera hasta el muro (2,89 m) y el frente queda uniforme. Es el único cambio que mejora el resultado visual de manera clara; todo lo demás es terminación.</p></div>
+</div>
+<p><small>Fuentes de precios consultadas: listados de mesadas de granito Negro Brasil en MercadoLibre Argentina (desde ≈ $220.000 el metro lineal), ventanas PVC DVH en Cotizá tu Ventana y Servidos (150 × 100 entre $880.000 y $1.040.000), amoblamientos en melamina en Leplac (combo 2,00 m bajo mesada + alacena $888.499 en línea estándar), calculadoradurlock.com y Ellaburante (cielorraso suspendido $32.000 a $48.000 el m² colocado, AMBA 20 a 30 % más caro), kits LED bajo alacena de Kaiser LED, y dólar BNA del 14 de septiembre de 2026 según El Cronista.</small></p>
+</section>
+
+<section id="obra">
+<div class="sec-head"><span class="n">09</span><h2>Etapas de obra y verificaciones</h2></div>
+<p>Cuatro a cinco semanas de obra con gremios coordinados. El granito es lo que marca el ritmo: se plantilla con los muebles ya colocados y tarda entre 7 y 10 días.</p>
+<ol>
+  <li><strong>Semana 1 · Desarme.</strong> Retiro de muebles, pileta del lavadero, tendedero interior, tubo fluorescente y las dos ventanas. Picado de la franja de azulejo entre mesada y alacena. La heladera y la cocina se tapan y se corren, no salen del departamento.</li>
+  <li><strong>Semana 1–2 · Instalaciones.</strong> Electricista: nuevos circuitos y cañerías por donde irá el durlock, cajas para tomas y spots. Plomero: llegada de agua fría y desagüe de 40 mm con sifón para el lavarropas en la posición 0,66–1,28, pendiente 2 % hasta el desagüe de la bacha; canilla de servicio y rejilla en el lavadero. Gasista: verificación de ventilación del lavadero.</li>
+  <li><strong>Semana 2 · Aberturas.</strong> Colocación de las dos ventanas de PVC, amure, sellado y terminación de mochetas.</li>
+  <li><strong>Semana 2–3 · Cielorraso y revestimiento.</strong> Durlock en cocina con los recortes de spots; reparación del cielorraso del lavadero; subway en la franja; pintura de techos y paredes.</li>
+  <li><strong>Semana 3 · Muebles.</strong> Colocación de bajo mesada, alacenas, torre de heladera, escobero. Ese mismo día el marmolero toma la plantilla.</li>
+  <li><strong>Semana 4–5 · Granito y terminaciones.</strong> Colocación de mesada y barra, bacha, grifería, conexión del lavarropas, tira LED, spots, plafón, purificador, zócalos de granito, sellado de silicona negra. Limpieza final.</li>
+</ol>
+<div class="note ok"><p><strong>Qué medir antes de pedir cotizaciones.</strong> Largo total del muro del frente (muro a muro, a 0,90 y a 1,60 de altura, porque los muros viejos no son paralelos). Ancho y alto interior del vano de cada ventana. Altura de losa en tres puntos. Profundidad real del lavarropas con la manguera conectada. Distancia del desagüe de la bacha al piso. Posición de los conductos de la caldera y el calefón respecto al cielorraso. Capacidad libre del tablero eléctrico. Con esos ocho datos, cualquier carpintero, marmolero y ventanero puede cotizar sobre este anteproyecto sin visitar.</p></div>
+<p><strong>Próximo paso.</strong> Tomar esas medidas y pedir tres cotizaciones de amoblamiento y dos de granito con el listado de la sección 7. Si los muebles cotizan en el rango de ARS 2,3 a 3,2 M, el resto del presupuesto se sostiene.</p>
+</section>
+</div>
