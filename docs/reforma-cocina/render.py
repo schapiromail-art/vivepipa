@@ -53,18 +53,28 @@ VIEWS = {
     ref=["31a01a22-image.jpg", "ad56bca0-image.jpg"], size="1536x1024",
     prompt=BASE + " CAMERA: standing in the middle of the room facing the cabinet wall straight on, frontal elevation "
            "view, wide angle, showing the whole 3.55 m wall from the left end wall to the right end wall. Only that one wall "
-           "is visible. From left to right on that wall: (1) the stainless Samsung fridge in a recess with a white cabinet "
-           "above it, (2) the built-in front-loading washing machine under the black granite counter, its round door visible "
-           "and flush with the fronts, (3) one cabinet door, (4) the undermount stainless sink with a tall chrome mixer tap "
-           "under the window, (5) a three-drawer unit, (6) the existing black freestanding gas stove at the right end with a "
-           "slim stainless range hood above. Upper white cabinets run above from the washing machine to the stove, with an open "
-           "niche holding a microwave above the washing machine, and the LED strip glowing under them. THE WINDOW IS VERY WIDE: "
-           "one continuous white PVC window 2.30 m wide and 0.60 m high with three sliding panes, starting directly above the "
-           "washing machine and ending above the drawer unit, filling the whole gap between the counter and the upper cabinets. "
-           "There is NO tile between the counter and the upper cabinets except a short piece above the stove; everywhere else "
-           "in that gap you see the window glass. The stove stands on this SAME wall, at the right end of the straight run, its side "
-           "touching the right side wall; the counter ends at the stove and does NOT turn the corner, there is no counter and no "
-           "cabinet on the right side wall."),
+           "is visible. From left to right on that wall: (1) a plain white melamine door 0.62 m wide under the black granite "
+           "counter, closed, identical to the other doors, which hides the built-in washing machine (no appliance visible, only "
+           "a slim ventilation grille at its bottom), (2) one cabinet door, (3) the undermount stainless sink with a tall chrome "
+           "mixer tap under the window, (4) a three-drawer unit, (5) the existing black freestanding gas stove at the right end "
+           "with a slim stainless range hood above. Upper white cabinets run above from the left end to the stove, with an open "
+           "niche holding a microwave above the first door, and the LED strip glowing under them. THE WINDOW IS VERY WIDE: one "
+           "continuous white PVC window 2.30 m wide and 0.60 m high with three sliding panes, starting directly above the first "
+           "door and ending above the drawer unit, filling the whole gap between the counter and the upper cabinets. There is NO "
+           "tile between the counter and the upper cabinets except a short piece above the stove. The stove stands on this SAME "
+           "wall, at the right end of the straight run, its side touching the right side wall; the counter ends at the stove and "
+           "does NOT turn the corner, there is no counter and no cabinet on the right side wall. No fridge in this view."),
+  "05-lavarropas-placard": dict(
+    ref=["RENDER:01-frente-cocina.jpg"], size="1024x1536",
+    prompt=("The reference image is a render of a kitchen wall. Produce a photorealistic close-up of the LEFT part of that same "
+            "wall, frontal view: the module right next to the stainless fridge. It is a white matte Egger melamine cabinet 0.62 m "
+            "wide under the polished black granite counter, and its door is swung OPEN about 100 degrees on 165-degree hinges, "
+            "revealing the front-loading washing machine built in inside the niche, its round porthole door and control panel "
+            "visible, the machine flush with the cabinet fronts. The open door shows its white melamine inner face and a slim "
+            "horizontal stainless bar pull. To the right, the next white door closed. Above, the black granite counter with a "
+            "4 cm front edge, the long window band with white PVC frame, the white upper cabinet with an open niche holding a "
+            "microwave, and the warm LED strip glowing under it. Grey 40x40 floor tiles. Editorial interior photography, no "
+            "people, no text, no watermark.")),
   "02-heladera-lavarropas": dict(
     ref=["ad56bca0-image.jpg"],
     prompt=BASE + " CAMERA: frontal close view facing the wall straight on, showing only the left 1.9 m of the cabinet wall. "

@@ -107,7 +107,7 @@ def plan_propuesta():
     sv = SVG(780, 430, 60, 70, "Planta propuesta: heladera, lavarropas embutido, módulo de puerta, bacha, cajonera y cocina en una sola línea; en el lavadero barra de granito bajo la ventana con dos banquetas")
     plan_shell(sv, False)
     # frente cocina
-    mods = [(0.00,0.67,"heladera","esquina"),(0.67,1.29,"lavarr.","embutido"),(1.29,1.74,"puerta","residuos"),
+    mods = [(0.00,0.67,"heladera","esquina"),(0.67,1.29,"lavarr.","c/ puerta"),(1.29,1.74,"puerta","residuos"),
             (1.74,2.54,"bacha","2 puertas"),(2.54,2.99,"cajones","3"),(2.99,3.55,"cocina","56")]
     for x0,x1,a,b in mods:
         cls = "furn" if a not in ("heladera","cocina") else "furn2"
@@ -151,8 +151,8 @@ def alzado_cocina():
     R(0.03, 1.80, 0.64, 0.60, "furn"); T(0.35, 2.08, "alacena", "lbls"); T(0.35, 1.94, "s/ heladera", "lbls2")
     # zócalo + bajo mesada
     R(0.67, 0.00, 2.32, 0.10, "plinth")
-    R(0.67, 0.10, 0.62, 0.78, "nicho"); sv.circle(0.98, H-0.50, 0.19, "thinc"); sv.circle(0.98, H-0.50, 0.13, "thinc")
-    T(0.98, 0.80, "lavarropas", "lbls"); T(0.98, 0.16, "nicho 62 × 88", "lbls2")
+    R(0.68, 0.10, 0.60, 0.78, "furn"); sv.circle(0.98, H-0.50, 0.17, "thinr"); sv.line(0.70, H-0.70, 0.70, H-0.55, "handle"); R(0.77, 0.12, 0.42, 0.03, "hood")
+    T(0.98, 0.80, "lavarropas", "lbls"); T(0.98, 0.24, "tras puerta", "lbls2")
     R(1.30, 0.10, 0.43, 0.78, "furn"); T(1.515, 0.50, "puerta", "lbls"); T(1.515, 0.37, "residuos", "lbls2")
     R(1.75, 0.10, 0.39, 0.78, "furn"); R(2.15, 0.10, 0.38, 0.78, "furn"); T(2.14, 0.50, "bacha", "lbls"); T(2.14, 0.37, "2 puertas 0,40", "lbls2")
     R(2.55, 0.10, 0.43, 0.20, "furn"); R(2.55, 0.31, 0.43, 0.25, "furn"); R(2.55, 0.57, 0.43, 0.31, "furn"); T(2.765, 0.44, "cajones", "lbls")
@@ -244,13 +244,46 @@ def plan_luz():
     sv.dimh(0, KX, -0.42); sv.dimh(LX0, LX1, -0.42)
     return sv.out()
 
-svgs = dict(actual=plan_actual(), prop=plan_propuesta(), alz=alzado_cocina(), lav=alzado_lavadero(), luz=plan_luz())
+
+def detalle_lavarropas():
+    global S
+    S0 = S; S = 250
+    H = 1.05
+    sv = SVG(760, 470, 80, 30, "Detalle del módulo del lavarropas: alzado con la puerta de melamina cerrada y el equipo detrás, y corte que muestra el nicho de 0,88 bajo la mesada de 0,64 con espacio para mangueras")
+    def R(x, z, w, h, cls, extra=""): sv.rect(x, H-z-h, w, h, cls, extra)
+    def T(x, z, s, cls="lbls", anchor="middle"): sv.text(x, H-z, s, cls, anchor)
+    # ---- alzado (izquierda)
+    R(0.00, 0.00, 0.62, 0.10, "plinth"); R(0.14, 0.02, 0.34, 0.05, "hood")
+    R(0.01, 0.10, 0.60, 0.78, "furn"); sv.line(0.06, H-0.62, 0.06, H-0.47, "handle")
+    R(0.10, 0.12, 0.42, 0.03, "hood")
+    sv.circle(0.31, H-0.50, 0.17, "thinr"); sv.circle(0.31, H-0.50, 0.12, "thinr")
+    R(0.00, 0.88, 0.62, 0.02, "granite2"); R(0.00, 0.86, 0.62, 0.02, "granite2"); R(0.00, 0.90, 0.62, 0.07, "granite2")
+    T(0.31, 0.80, "puerta Egger blanca", "lbls2"); T(0.31, 0.49, "equipo detrás", "lbls2"); T(0.31, 0.19, "rejilla", "lbls2"); T(0.31, 0.035, "rejilla zócalo", "lblw2")
+    T(0.31, -0.40, "ALZADO · puerta cerrada", "lbls")
+    sv.dimh(0.00, 0.62, H+0.12, "0,62", below=True); sv.dimv(H-0.88, H-0.10, -0.10, "0,78", right=False); sv.dimv(H-0.10, H, -0.10, "0,10", right=False); sv.dimv(H-0.97, H-0.88, -0.10, "0,09", right=False)
+    # ---- corte (derecha): pared a la izquierda, frente a la derecha
+    x0 = 1.15
+    R(x0-0.05, 0.00, 0.05, 1.05, "wall")
+    R(x0, 0.88, 0.64, 0.02, "granite2"); R(x0+0.60, 0.86, 0.04, 0.02, "granite2"); R(x0, 0.90, 0.02, 0.07, "granite2")
+    R(x0+0.06, 0.00, 0.55, 0.85, "furn2"); T(x0+0.335, 0.48, "lavarropas", "lbls"); T(x0+0.335, 0.38, "0,55 fondo", "lbls2"); T(x0+0.335, 0.30, "0,85 alto", "lbls2")
+    sv.circle(x0+0.03, H-0.30, 0.02, "thinc"); sv.circle(x0+0.03, H-0.60, 0.02, "thinc"); T(x0+0.03, 0.72, "mang.", "lbls2")
+    R(x0+0.61, 0.10, 0.02, 0.78, "panel"); T(x0+0.62, 0.95, "puerta", "lbls2")
+    R(x0+0.56, 0.00, 0.05, 0.10, "plinth")
+    T(x0+0.32, -0.40, "CORTE · nicho 0,88 bajo mesada 0,64", "lbls")
+    sv.dimh(x0, x0+0.06, H+0.12, "0,06", below=True); sv.dimh(x0+0.06, x0+0.61, H+0.12, "0,55", below=True); sv.dimh(x0+0.61, x0+0.64, H+0.12, "", below=True)
+    sv.dimh(x0, x0+0.64, H+0.26, "mesada 0,64", below=True)
+    sv.dimv(H-0.88, H, x0+0.76, "0,88 libre"); sv.dimv(H-0.90, H-0.88, x0+0.76, "")
+    out = sv.out(); S = S0
+    return out
+
+svgs = dict(det=detalle_lavarropas(), actual=plan_actual(), prop=plan_propuesta(), alz=alzado_cocina(), lav=alzado_lavadero(), luz=plan_luz())
 
 import os, base64
 CAPS = {
   "00-global": "Vista global desde el fondo de la cocina, junto a la puerta del lavadero, como la foto 9: el único frente de muebles a la derecha con la banda de ventana encima, la pared de enfrente libre con la puerta de acceso, y la heladera al fondo en su esquina, contra el muro de entrada y de frente al pasillo, con el lavarropas embutido pegado a su costado.",
-  "01-frente-cocina": "El frente visto de frente, del lavarropas a la cocina, como el alzado: lavarropas embutido, puerta, bacha, cajonera y la cocina existente al final de la línea con purificador; mesada de granito Negro Brasil, alacenas hasta el cielorraso, tira LED y spots. La banda de ventana real mide 2,30 m; el render la dibuja algo más corta. La heladera queda fuera de cuadro a la izquierda, en la esquina.",
-  "02-heladera-lavarropas": "Detalle del extremo izquierdo (recorte de la vista anterior): heladera en su nicho con alacena de cierre y nicho de microondas, lavarropas embutido a ras de los frentes bajo el granito, arranque de la banda de ventana sobre la mesada.",
+  "01-frente-cocina": "Frente visto de frente, como el alzado: puerta de melamina blanca que esconde el lavarropas (con rejilla abajo), puerta, bacha bajo la banda de ventana, cajonera y la cocina existente al final de la línea con purificador. Mesada de granito Negro Brasil, alacenas hasta el cielorraso con nicho para microondas, tira LED y spots. La banda de ventana real mide 2,30 m; el render la dibuja más corta. La heladera queda fuera de cuadro a la izquierda, en su esquina.",
+  "02-heladera-lavarropas": "Detalle del extremo izquierdo (recorte de la vista anterior): el módulo del lavarropas con su puerta de melamina cerrada, igual a las demás, con la rejilla de ventilación en el zócalo y el nicho del microondas arriba. La heladera queda fuera de cuadro, en su esquina a la izquierda.",
+  "05-lavarropas-placard": "El módulo del lavarropas con la puerta de melamina Egger abierta: el equipo va embutido en el nicho de 0,62 × 0,88 bajo la mesada, a ras de los frentes, y con la puerta cerrada no se distingue de los otros placares.",
   "03-lavadero-barra": "Lavadero desde la puerta: ventana nueva de PVC y barra de granito de 1,60 en la pared izquierda, caldera en la pared del fondo y calefón Orbis en la derecha con el escobero debajo, todos donde están hoy. La imagen muestra la variante con bacha compacta en la barra.",
   "04-nocturna-led": "El tramo lavarropas a cajonera de noche, con la tira LED bajo alacena como luz principal: el granito negro refleja la línea de luz, el vidrio de la banda de ventana y el subway la devuelven.",
 }
@@ -269,6 +302,7 @@ def renders_section():
             '<div class="renders">' + "\n".join(items) + '</div>\n</section>')
 html = open("template.html", encoding="utf-8").read()
 html = html.replace("{{RENDERS}}", renders_section())
+html = html.replace("{{FRIDGE_B64}}", base64.b64encode(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "fridge_front.jpg"), "rb").read()).decode())
 for k, v in svgs.items():
     html = html.replace("{{SVG_%s}}" % k.upper(), v)
 open("remodelacion-cocina-lavadero.html", "w", encoding="utf-8").write(html)
