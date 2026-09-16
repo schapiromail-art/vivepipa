@@ -23,8 +23,10 @@ BASE = ("Photorealistic architectural render of the SAME kitchen shown in the re
         "front edge and 7 cm black granite backsplash strip, white glossy subway tile 7.5x15 with graphite grout "
         "between countertop and upper cabinets, white upper cabinets 80 cm tall reaching a closing panel at the "
         "ceiling, warm-neutral 4000K LED strip hidden under the upper cabinets washing light over the black granite, "
-        "new white plasterboard ceiling with four small recessed LED spots in a line, new white PVC sliding window "
-        "with double glazing and no blinds. Clean, uncluttered, no dishes, no objects on the counter except a small "
+        "new white plasterboard ceiling with four small recessed LED spots in a line, the existing window opening kept exactly "
+        "where it is: a long horizontal window band about 2.30 m wide and 0.60 m high running along the cabinet wall from "
+        "above the washing machine to above the drawers, sill just above the counter, top at the underside of the upper "
+        "cabinets, now a new white PVC sliding window with double glazing (three sliding panes) and no blinds. Clean, uncluttered, no dishes, no objects on the counter except a small "
         "bowl of lemons. Realistic materials, natural reflections on the granite, editorial interior photography, "
         "no people, no text, no watermark. IMPORTANT LAYOUT RULE: this is a narrow single-wall galley kitchen. "
         "ALL cabinets, the countertop, the sink, the washing machine and the stove are on ONE wall only, the wall "
@@ -42,7 +44,13 @@ VIEWS = {
            "and flush with the fronts, (3) one cabinet door, (4) the undermount stainless sink with a tall chrome mixer tap "
            "under the window, (5) a three-drawer unit, (6) the existing black freestanding gas stove at the right end with a "
            "slim stainless range hood above. Upper white cabinets run above from the washing machine to the stove, with an open "
-           "niche holding a microwave above the washing machine, and the LED strip glowing under them."),
+           "niche holding a microwave above the washing machine, and the LED strip glowing under them. THE WINDOW IS VERY WIDE: "
+           "one continuous white PVC window 2.30 m wide and 0.60 m high with three sliding panes, starting directly above the "
+           "washing machine and ending above the drawer unit, filling the whole gap between the counter and the upper cabinets. "
+           "There is NO tile between the counter and the upper cabinets except a short piece above the stove; everywhere else "
+           "in that gap you see the window glass. The stove stands on this SAME wall, at the right end of the straight run, its side "
+           "touching the right side wall; the counter ends at the stove and does NOT turn the corner, there is no counter and no "
+           "cabinet on the right side wall."),
   "02-heladera-lavarropas": dict(
     ref=["ad56bca0-image.jpg"],
     prompt=BASE + " CAMERA: frontal close view facing the wall straight on, showing only the left 1.9 m of the cabinet wall. "
@@ -56,8 +64,9 @@ VIEWS = {
     ref=["7b5faf5d-image.jpg"],
     prompt=("Photorealistic architectural render of the SAME small laundry room shown in the reference photo, same "
             "geometry, same camera position standing in the doorway looking in. The room is 1.70 m deep and 1.30 m wide. "
-            "EXACT POSITIONS, do not move anything: LEFT WALL: the window (new white PVC sliding window with double "
-            "glazing and a fixed upper pane with a ventilation grille) and, under it, a new polished black granite breakfast "
+            "EXACT POSITIONS, do not move anything: LEFT WALL: a long window running almost the whole wall, the continuation of the "
+            "kitchen window band (new white PVC sliding window with double glazing, 1.60 m wide and 1.00 m high, with a fixed "
+            "upper pane with a ventilation grille) and, under it, a new polished black granite breakfast "
             "bar 160 x 50 cm at 90 cm height with a 4 cm front edge, two slim stools with light wood seats and black metal "
             "legs tucked underneath, a small white melamine module with an open shelf at the far end of the bar, a chrome "
             "service tap low in the far corner. BACK WALL (facing the camera): the existing white wall-mounted gas boiler "
@@ -71,11 +80,14 @@ VIEWS = {
   "04-nocturna-led": dict(
     ref=["31a01a22-image.jpg"], size="1536x1024",
     prompt=BASE + " CAMERA: facing the cabinet wall straight on, frontal view, showing the central part of the run: the "
-           "sink under the window in the middle, the washing machine at the left edge, the drawers at the right edge. Only "
+           "sink in the middle under the long window band, the washing machine at the left edge, the drawers at the right edge. Only "
            "this one wall is visible, no side walls. Evening scene: the room lights are off except the LED strip under the "
            "upper cabinets, which glows warm-neutral over the black granite and the white subway tiles, plus the ceiling "
            "spots at low level. The window shows a dark blue dusk outside. Moody but realistic exposure, the granite "
-           "reflecting the LED line."),
+           "reflecting the LED line. THE WINDOW IS VERY WIDE: one continuous white PVC window 2.30 m wide and 0.60 m high with "
+           "three sliding panes, starting directly above the washing machine and ending above the drawer unit, filling the whole "
+           "gap between the counter and the upper cabinets; there is NO tile in that gap except a short piece above the stove. The "
+           "stove stands on this SAME wall at the right end of the straight run; the counter does NOT turn the corner."),
 }
 
 def encode_ref(name, max_side=1536):

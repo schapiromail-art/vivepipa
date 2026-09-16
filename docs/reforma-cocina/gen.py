@@ -50,7 +50,7 @@ class SVG:
 KX, KY = 3.55, 1.90          # cocina interior
 WT = 0.15                    # muro
 LX0, LX1 = KX+WT, KX+WT+1.70 # lavadero interior en x
-LY0, LY1 = 0.55, 1.85        # lavadero interior en y
+LY0, LY1 = 0.00, 1.45        # lavadero interior en y (mismo muro norte que la cocina)
 
 def plan_shell(sv, current):
     # muros (relleno) como polígono simple: dibujamos rectángulos de muro
@@ -70,14 +70,14 @@ def plan_shell(sv, current):
     sv.rect(0.10, KY, 0.80, WT, "floor")
     sv.raw(f'<path class="thin" d="M{sv.X(0.10):.1f} {sv.Y(KY):.1f} A{0.8*S:.1f} {0.8*S:.1f} 0 0 1 {sv.X(0.90):.1f} {sv.Y(KY-0.80):.1f}" fill="none"/>')
     sv.line(0.90, KY, 0.90, KY-0.80, "thin")
-    sv.rect(KX, 1.00, WT, 0.75, "floor")
-    sv.raw(f'<path class="thin" d="M{sv.X(KX+WT):.1f} {sv.Y(1.00):.1f} A{0.75*S:.1f} {0.75*S:.1f} 0 0 1 {sv.X(KX+WT+0.75):.1f} {sv.Y(1.75):.1f}" fill="none"/>')
-    sv.line(KX+WT, 1.75, KX+WT+0.75, 1.75, "thin")
+    sv.rect(KX, 0.70, WT, 0.75, "floor")
+    sv.raw(f'<path class="thin" d="M{sv.X(KX+WT):.1f} {sv.Y(0.70):.1f} A{0.75*S:.1f} {0.75*S:.1f} 0 0 1 {sv.X(KX+WT+0.75):.1f} {sv.Y(1.45):.1f}" fill="none"/>')
+    sv.line(KX+WT, 1.45, KX+WT+0.75, 1.45, "thin")
     # ventanas
-    sv.rect(0.95, -WT, 1.60, WT, "win")   # cocina 1.60
-    sv.rect(4.30, LY0-WT, 0.80, WT, "win")  # lavadero 0.80
+    sv.rect(0.70, -WT, 2.30, WT, "win")   # cocina: banda 2,30
+    sv.rect(3.75, LY0-WT, 1.60, WT, "win")  # lavadero: continúa la banda, 1,60
     # artefactos a gas fijos
-    sv.rect(LX1-0.12, 0.85, 0.12, 0.45, "gas"); sv.text(LX1-0.05, 1.10, "caldera", "lbls", "end", 'transform="rotate(-90 %.1f %.1f)"' % (sv.X(LX1-0.05), sv.Y(1.10)))
+    sv.rect(LX1-0.12, 0.30, 0.12, 0.45, "gas"); sv.text(LX1-0.05, 0.55, "caldera", "lbls", "end", 'transform="rotate(-90 %.1f %.1f)"' % (sv.X(LX1-0.05), sv.Y(0.55)))
     sv.rect(4.60, LY1-0.12, 0.50, 0.12, "gas"); sv.text(4.85, LY1-0.16, "calefón", "lbls")
 
 def plan_actual():
@@ -89,18 +89,18 @@ def plan_actual():
     sv.rect(1.97, 0.10, 0.48, 0.38, "sink", 'rx="4"'); sv.text(2.21, 0.33, "bacha", "lbls")
     sv.rect(2.98, 0.02, 0.55, 0.58, "furn"); sv.text(3.26, 0.34, "cocina", "lbls")
     # lavadero actual
-    sv.rect(LX0+0.02, LY0+0.02, 0.60, 0.56, "furn"); sv.text(LX0+0.32, LY0+0.33, "lavarr.", "lbls")
-    sv.rect(4.68, LY0+0.02, 0.56, 0.50, "sink", 'rx="3"'); sv.text(4.96, LY0+0.30, "pileta", "lbls")
-    sv.rect(LX1-0.42, 1.15, 0.40, 0.42, "furn"); sv.text(LX1-0.22, 1.40, "cajon.", "lbls")
-    sv.circle(4.45, 1.55, 0.20, "furn"); sv.text(4.45, 1.58, "aspir.", "lbls")
+    sv.rect(LX0+0.02, 0.02, 0.60, 0.56, "furn"); sv.text(LX0+0.32, 0.33, "lavarr.", "lbls")
+    sv.rect(4.70, 0.02, 0.56, 0.50, "sink", 'rx="3"'); sv.text(4.98, 0.30, "pileta", "lbls")
+    sv.rect(LX1-0.42, 0.85, 0.40, 0.42, "furn"); sv.text(LX1-0.22, 1.10, "cajon.", "lbls")
+    sv.circle(4.50, 1.10, 0.20, "furn"); sv.text(4.50, 1.13, "aspir.", "lbls")
     # cotas
     sv.dimh(0, KX, -0.42); sv.dimh(LX0, LX1, -0.42)
     sv.dimv(0, KY, KX+WT+0.05+1.70+WT+0.35, right=True)
     sv.dimv(LY0, LY1, LX1+WT+0.12, right=True)
-    sv.dimh(0.95, 2.55, -0.27, "vent. 1,60"); sv.dimh(4.30, 5.10, -0.27, "vent. 0,80")
+    sv.dimh(0.70, 3.00, -0.27, "vent. 2,30"); sv.dimh(3.75, 5.35, -0.27, "vent. 1,60")
     sv.text(1.78, KY+0.55, "acceso desde living", "lbl")
     sv.text(0.50, 1.35, "COCINA  6,7 m²", "room", "start")
-    sv.text(LX0+0.10, 1.20, "LAVADERO", "room", "start"); sv.text(LX0+0.10, 1.38, "2,2 m²", "room", "start")
+    sv.text(LX0+0.10, 0.80, "LAVADERO", "room", "start"); sv.text(LX0+0.10, 0.98, "2,5 m²", "room", "start")
     return sv.out()
 
 def plan_propuesta():
@@ -124,7 +124,7 @@ def plan_propuesta():
     sv.text(LX0+0.57, LY0+1.10, "2 banquetas", "lbls2")
     sv.circle(LX1-0.08, LY0+0.58, 0.04, "sink"); sv.text(LX1-0.14, LY0+0.62, "canilla", "lbls2", "end")
     sv.rect(LX0+0.02, LY1-0.36, 0.40, 0.34, "furn"); sv.text(LX0+0.22, LY1-0.18, "escob.", "lbls2")
-    sv.dimv(LY0+0.50, LY1, LX0+1.62, "paso 0,80", right=False)
+    sv.dimv(LY0+0.50, LY1, LX0+1.62, "paso 0,95", right=False)
     # cotas frente
     y = -0.27
     for x0,x1,a,b in mods: sv.dimh(x0, x1, y)
@@ -132,7 +132,7 @@ def plan_propuesta():
     sv.dimv(0, KY, LX1+WT+0.12, right=True)
     sv.text(0.50, 1.35, "COCINA", "room", "start")
     sv.text(1.78, KY+0.55, "acceso desde living", "lbl")
-    sv.text(LX0+0.05, LY1+0.40, "LAVADERO / DESAYUNADOR", "room", "start")
+    sv.text(LX0+0.05, LY1+0.55, "LAVADERO / DESAYUNADOR", "room", "start")
     return sv.out()
 
 def alzado_cocina():
@@ -142,7 +142,7 @@ def alzado_cocina():
     def R(x, z, w, h, cls, extra=""): sv.rect(x, H-z-h, w, h, cls, extra)
     def T(x, z, s, cls="lbls", anchor="middle"): sv.text(x, H-z, s, cls, anchor)
     R(0, 0, KX, H, "floor")
-    R(0.66, 0.99, 2.89, 0.61, "tile")
+    R(3.00, 0.99, 0.55, 0.61, "tile"); R(0.66, 0.99, 0.04, 0.61, "tile")
     R(0, 2.52, KX, 0.08, "ceil"); T(0.06, 2.545, "cielorraso durlock 2,52", "lbls2", "start")
     # torre heladera
     R(0.03, 0.05, 0.60, 1.72, "furn2"); T(0.33, 0.95, "heladera", "lbls"); T(0.33, 0.80, "0,60 × 1,72", "lbls2")
@@ -160,12 +160,12 @@ def alzado_cocina():
     for z in (0.20, 0.44, 0.73): sv.line(2.66, H-z, 2.86, H-z, "handle")
     # mesada granito
     R(0.66, 0.88, 2.32, 0.04, "granite2"); R(0.66, 0.92, 2.32, 0.07, "granite2")
-    T(1.78, 1.02, "granito Negro Brasil 2 cm · frentín 4 · zócalo 7", "lbls2")
+    R(0.66, 0.99, 2.89, 0.01, "granite2")
     # cocina
     R(2.98, 0.00, 0.57, 0.88, "furn2"); T(3.265, 0.45, "cocina", "lbls"); T(3.265, 0.32, "0,55 existente", "lbls2")
     # ventana
-    R(0.95, 1.05, 1.60, 0.55, "winel"); sv.line(1.75, H-1.05, 1.75, H-1.60, "thin")
-    T(1.75, 1.38, "ventana PVC DVH 1,60 × 0,55", "lbls"); T(1.75, 1.24, "corrediza 2 hojas", "lbls2")
+    R(0.70, 1.00, 2.30, 0.60, "winel"); sv.line(1.467, H-1.00, 1.467, H-1.60, "thin"); sv.line(2.233, H-1.00, 2.233, H-1.60, "thin")
+    T(1.85, 1.38, "ventana PVC DVH 2,30 × 0,60 · banda existente", "lbls"); T(1.85, 1.24, "3 hojas corredizas · sigue en el lavadero", "lbls2")
     # alacenas
     R(0.66, 1.60, 0.62, 0.40, "nicho"); T(0.97, 1.78, "microondas", "lbls2"); R(0.66, 2.00, 0.62, 0.40, "furn")
     R(1.29, 1.60, 0.43, 0.80, "furn"); R(1.74, 1.60, 0.39, 0.80, "furn"); R(2.14, 1.60, 0.38, 0.80, "furn"); R(2.54, 1.60, 0.43, 0.80, "furn")
@@ -193,12 +193,12 @@ def alzado_lavadero():
     def T(x, z, s, cls="lbls", anchor="middle"): sv.text(x, H-z, s, cls, anchor)
     R(0, 0, L, H, "floor")
     R(0, 0, L, 1.05, "tile")
-    R(0.55, 1.10, 0.80, 1.00, "winel"); sv.line(0.95, H-1.10, 0.95, H-2.10, "thin")
-    T(0.95, 1.65, "PVC DVH 0,80 × 1,00", "lbls"); T(0.95, 1.52, "corrediza 2 hojas", "lbls2")
-    R(0.55, 2.10, 0.80, 0.30, "winfix"); T(0.95, 2.235, "paño fijo + rejilla vent.", "lbls2")
+    R(0.05, 1.00, 1.60, 1.00, "winel"); sv.line(0.85, H-1.00, 0.85, H-2.00, "thin")
+    T(0.85, 1.55, "PVC DVH 1,60 × 1,00", "lbls"); T(0.85, 1.42, "continúa la banda de cocina · 2 hojas", "lbls2")
+    R(0.05, 2.00, 1.60, 0.30, "winfix"); T(0.85, 2.135, "paño fijo + rejilla de ventilación permanente", "lbls2")
     # barra
     R(0.00, 0.88, 1.60, 0.04, "granite2"); R(0.00, 0.92, 1.60, 0.07, "granite2")
-    T(0.80, 1.00, "barra granito Negro Brasil 1,60 × 0,50", "lbls2")
+    T(0.80, 0.80, "barra granito Negro Brasil 1,60 × 0,50", "lbls2")
     # estante bajo barra aspiradora
     R(1.15, 0.12, 0.45, 0.74, "nicho"); T(1.375, 0.64, "aspiradora", "lbls2"); T(1.375, 0.52, "balde", "lbls2")
     R(1.15, 0.00, 0.45, 0.12, "plinth")
@@ -210,12 +210,12 @@ def alzado_lavadero():
     R(1.62, 0.52, 0.06, 0.04, "sink"); sv.line(1.65, H-0.52, 1.65, H-0.40, "thin"); T(1.69, 0.30, "canilla", "lbls2", "end")
     R(1.40, -0.02, 0.30, 0.03, "hood"); T(1.55, 0.06, "rejilla", "lbls2")
     # LED bajo barra
-    sv.line(0.02, H-0.86, 1.13, H-0.86, "led"); T(0.57, 0.80, "tira LED opcional bajo barra", "led-t")
+    sv.line(0.02, H-0.86, 1.13, H-0.86, "led"); T(0.57, 0.70, "tira LED opcional bajo barra", "led-t")
     # cotas
-    sv.dimh(0, 0.55, H+0.18, below=True); sv.dimh(0.55, 1.35, H+0.18, below=True); sv.dimh(1.35, 1.70, H+0.18, below=True)
+    sv.dimh(0.05, 1.65, H+0.18, "ventana 1,60", below=True)
     sv.dimh(0, 1.60, H+0.34, "barra 1,60", below=True)
     xd = L+0.18
-    sv.dimv(H-0.90, H, xd, "0,90"); sv.dimv(H-1.10, H-0.90, xd, "0,20"); sv.dimv(H-2.10, H-1.10, xd, "1,00"); sv.dimv(H-2.40, H-2.10, xd, "0,30")
+    sv.dimv(H-0.90, H, xd, "0,90"); sv.dimv(H-1.00, H-0.90, xd, "0,10"); sv.dimv(H-2.00, H-1.00, xd, "1,00"); sv.dimv(H-2.30, H-2.00, xd, "0,30")
     return sv.out()
 
 def plan_luz():
@@ -247,10 +247,10 @@ svgs = dict(actual=plan_actual(), prop=plan_propuesta(), alz=alzado_cocina(), la
 
 import os, base64
 CAPS = {
-  "01-frente-cocina": "Frente completo de 3,55 m visto de frente, como el alzado: heladera en su nicho, lavarropas embutido al lado, puerta, bacha bajo la ventana de PVC, cajonera y la cocina existente con purificador; mesada de granito Negro Brasil, subway blanco, alacenas hasta el cielorraso con tira LED y cuatro spots.",
-  "02-heladera-lavarropas": "Detalle del extremo izquierdo del frente (recorte de la vista anterior): heladera en su nicho con alacena de cierre arriba, lavarropas embutido a ras de los frentes bajo el granito, primera puerta y arranque del módulo de bacha.",
+  "01-frente-cocina": "Frente completo de 3,55 m visto de frente, como el alzado: heladera en su nicho con alacena y microondas arriba, lavarropas embutido al lado, puerta, bacha, cajonera y la cocina existente al final de la misma línea con purificador; mesada de granito Negro Brasil, alacenas hasta el cielorraso, tira LED y spots. La banda de ventana real mide 2,30 m, desde el lavarropas hasta la cajonera; el render la dibuja algo más corta.",
+  "02-heladera-lavarropas": "Detalle del extremo izquierdo (recorte de la vista anterior): heladera en su nicho con alacena de cierre y nicho de microondas, lavarropas embutido a ras de los frentes bajo el granito, arranque de la banda de ventana sobre la mesada.",
   "03-lavadero-barra": "Lavadero desde la puerta: ventana nueva de PVC y barra de granito de 1,60 en la pared izquierda, caldera en la pared del fondo y calefón Orbis en la derecha con el escobero debajo, todos donde están hoy. La imagen muestra la variante con bacha compacta en la barra.",
-  "04-nocturna-led": "El mismo frente de noche, con la tira LED bajo alacena como luz principal: el granito negro refleja la línea de luz y el subway blanco la devuelve.",
+  "04-nocturna-led": "El tramo lavarropas a cajonera de noche, con la tira LED bajo alacena como luz principal: el granito negro refleja la línea de luz, el vidrio de la banda de ventana y el subway la devuelven.",
 }
 def renders_section():
     d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "renders")
