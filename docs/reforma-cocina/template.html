@@ -1,0 +1,476 @@
+<title>Cocina Negro Brasil</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F4F5F3; --card:#FFFFFF; --ink:#16181B; --ink2:#3F444B; --muted:#6E747C;
+  --line:#D3D7D8; --line2:#B9BEC1; --granite:#2A2D32; --granite-hi:#4A4E55; --melamina:#FFFFFF; --melamina-line:#9AA0A6;
+  --floor:#E9EBE9; --tile:#F7F8F6; --led:#C9931D; --led-bg:#FFF3D6; --gas:#B8474A; --win:#8FB6D4; --win-bg:#DCEBF5; --stool:#7C8388;
+  --ok:#2F7A4F;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141618; --card:#1C1F23; --ink:#ECEDEA; --ink2:#C7CBCF; --muted:#9AA0A6;
+    --line:#2F343A; --line2:#4A5057; --granite:#0B0C0E; --granite-hi:#3A3F47; --melamina:#2A2E34; --melamina-line:#7C838B;
+    --floor:#22262B; --tile:#262A2F; --led:#E5B04A; --led-bg:#3A2F14; --gas:#D9666A; --win:#6FA3C9; --win-bg:#1F3140; --stool:#9AA0A6;
+    --ok:#6CC08B;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141618; --card:#1C1F23; --ink:#ECEDEA; --ink2:#C7CBCF; --muted:#9AA0A6;
+  --line:#2F343A; --line2:#4A5057; --granite:#0B0C0E; --granite-hi:#3A3F47; --melamina:#2A2E34; --melamina-line:#7C838B;
+  --floor:#22262B; --tile:#262A2F; --led:#E5B04A; --led-bg:#3A2F14; --gas:#D9666A; --win:#6FA3C9; --win-bg:#1F3140; --stool:#9AA0A6;
+  --ok:#6CC08B;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;margin:0;padding-block:28px 72px;padding-inline:clamp(16px,4vw,48px)}
+h1,h2,h3{font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:clamp(34px,6vw,58px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(24px,3.4vw,32px);font-weight:600}
+h3{font-size:19px;font-weight:600;margin-block:18px 6px}
+p{margin:0 0 12px;max-width:68ch}
+.wrap{max-width:1040px;margin-inline:auto}
+.eyebrow{font-family:"Barlow Semi Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:13px;color:var(--muted);font-weight:600}
+/* rótulo */
+.rotulo{border:2px solid var(--ink);display:grid;grid-template-columns:2fr 1fr;margin-block:18px 40px}
+.rotulo .main{padding:22px 24px;border-right:2px solid var(--ink)}
+.rotulo .side{display:grid;grid-template-rows:repeat(5,auto)}
+.rotulo .side div{padding:9px 16px;border-bottom:1px solid var(--line2);font-size:14px}
+.rotulo .side div:last-child{border-bottom:0}
+.rotulo .side b{display:block;font-family:"Barlow Semi Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--muted);font-weight:600}
+.lead{font-size:18px;color:var(--ink2);max-width:62ch;margin-top:14px}
+@media (max-width:640px){.rotulo{grid-template-columns:1fr}.rotulo .main{border-right:0;border-bottom:2px solid var(--ink)}}
+/* secciones */
+section{margin-block:0 48px;scroll-margin-top:16px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:18px}
+.sec-head .n{font-family:"IBM Plex Mono",monospace;color:var(--muted);font-size:14px}
+figure{margin:18px 0 26px;background:var(--card);border:1px solid var(--line);padding:14px 14px 10px}
+figure .scroll{overflow-x:auto}
+figure svg{display:block;max-width:100%;height:auto;min-width:520px;margin-inline:auto;font-family:"IBM Plex Sans",system-ui,sans-serif}
+figcaption{font-size:14px;color:var(--ink2);margin-top:10px;max-width:none}
+/* svg classes */
+.wall{fill:var(--ink)} .floor{fill:var(--floor);stroke:none}
+.furn{fill:var(--melamina);stroke:var(--melamina-line);stroke-width:1.2}
+.furn2{fill:var(--tile);stroke:var(--line2);stroke-width:1.2}
+.nicho{fill:var(--floor);stroke:var(--melamina-line);stroke-width:1.2;stroke-dasharray:4 3}
+.panel{fill:var(--melamina);stroke:var(--melamina-line);stroke-width:1}
+.plinth{fill:var(--granite-hi);stroke:none}
+.sink{fill:var(--win-bg);stroke:var(--win);stroke-width:1.2}
+.win{fill:var(--win-bg);stroke:var(--win);stroke-width:1.5}
+.winel{fill:var(--win-bg);stroke:var(--win);stroke-width:2}
+.winfix{fill:var(--win-bg);stroke:var(--win);stroke-width:2;stroke-dasharray:5 3}
+.gas{fill:none;stroke:var(--gas);stroke-width:2}
+.granite{stroke:var(--granite);stroke-width:4}
+.granite2{fill:var(--granite);stroke:none}
+.tile{fill:var(--tile);stroke:var(--line);stroke-width:1}
+.ceil{fill:var(--line);stroke:none}
+.hood{fill:var(--granite-hi);stroke:none}
+.stool{fill:var(--stool);stroke:none;opacity:.85}
+.thin{stroke:var(--ink2);stroke-width:1;fill:none}
+.thinc{fill:none;stroke:var(--ink2);stroke-width:1.2}
+.thinr{fill:none;stroke:var(--line2);stroke-width:1;stroke-dasharray:4 3}
+.handle{stroke:var(--ink2);stroke-width:2.5;stroke-linecap:round}
+.dim{stroke:var(--muted);stroke-width:1}
+.dimt{fill:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:11.5px}
+.lbl{fill:var(--ink2);font-size:11.5px}
+.lbls{fill:var(--ink);font-size:10.5px;font-weight:600}
+.lblw{fill:var(--paper);font-size:10.5px;font-weight:600}
+.lblw2{fill:var(--line2);font-size:10px}
+.thinrw{fill:none;stroke:var(--line2);stroke-width:1;stroke-dasharray:4 3}
+.lbls2{fill:var(--muted);font-size:10px}
+.room{fill:var(--ink);font-family:"Barlow Semi Condensed",Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:.06em}
+.led{stroke:var(--led);stroke-width:3;stroke-linecap:round}
+.led-t{fill:var(--led);font-size:10.5px;font-weight:600}
+.led-c{fill:var(--led-bg);stroke:var(--led);stroke-width:1.5}
+.led-c2{fill:var(--led);stroke:none}
+.sw{fill:var(--card);stroke:var(--ink);stroke-width:1.2}
+/* tablas */
+.tbl{overflow-x:auto;margin-block:8px 22px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--card)}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-family:"Barlow Semi Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--muted);border-bottom:2px solid var(--ink);font-weight:600}
+td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{border-top:2px solid var(--ink);font-weight:600}
+tr.sub td{color:var(--muted)}
+.tag{display:inline-block;font-family:"Barlow Semi Condensed",Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border:1px solid var(--line2);color:var(--ink2);border-radius:2px;margin-left:6px;vertical-align:middle}
+.tag.opc{border-color:var(--led);color:var(--led)}
+/* grids */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-block:10px 20px}
+.box{background:var(--card);border:1px solid var(--line);padding:16px 18px}
+.box h3{margin-top:0}
+.box p:last-child{margin-bottom:0}
+ul,ol{margin:0 0 14px;padding-left:22px;max-width:70ch}
+li{margin-bottom:6px}
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-block:12px 22px}
+.sw-item{border:1px solid var(--line);background:var(--card)}
+.sw-item .chip{height:56px}
+.sw-item .t{padding:8px 10px;font-size:13px}
+.sw-item .t b{display:block;font-family:"Barlow Semi Condensed",Arial,sans-serif;font-size:14px}
+.renders{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+figure.render{padding:10px 10px 8px;margin:0}
+figure.render img{display:block;width:100%;height:auto}
+.viewer{position:relative;background:var(--card);border:1px solid var(--line);aspect-ratio:4/3;max-width:100%;margin-block:14px 8px}
+.viewer canvas{width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+.viewbtns{position:absolute;left:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:6px}
+.viewbtns button{font-family:"Barlow Semi Condensed",Arial,sans-serif;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer}
+.viewbtns button.on{background:var(--ink);color:var(--paper)}
+.viewbtns button:focus-visible{outline:2px solid var(--led);outline-offset:2px}
+.viewer-note{font-size:14px;color:var(--muted);margin-bottom:20px}
+.note{border-left:3px solid var(--gas);padding:10px 16px;background:var(--card);margin-block:14px 20px;max-width:none}
+.note.ok{border-left-color:var(--ok)}
+.note.led{border-left-color:var(--led)}
+.note p{max-width:none}
+.toc{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;margin-bottom:34px}
+.toc a{color:var(--ink2);text-decoration:none;border-bottom:1px solid var(--line2)}
+.toc a:hover,.toc a:focus-visible{color:var(--ink);border-color:var(--ink);outline:none}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14.5px;margin-bottom:14px}
+.kv b{font-family:"IBM Plex Mono",monospace;font-weight:500;white-space:nowrap}
+small{color:var(--muted)}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+<div class="eyebrow">Anteproyecto · reforma de cocina y lavadero</div>
+<div class="rotulo">
+  <div class="main">
+    <h1>Cocina lineal en blanco y granito Negro Brasil</h1>
+    <p class="lead">Departamento en Palermo, CABA. Cocina de 3,55 × 1,90 m con lavadero anexo de 1,70 × 1,45 m sobre el mismo muro exterior. Lavarropas embutido junto a la heladera, frente completo en melamina Egger blanca, mesada y barra en granito negro, tira LED bajo alacena, cielorraso nuevo con spots y aberturas de PVC con doble vidrio.</p>
+  </div>
+  <div class="side">
+    <div><b>Fecha</b>16 de septiembre de 2026</div>
+    <div><b>Etapa</b>Anteproyecto para cotizar</div>
+    <div><b>Base de medidas</b>Relevamiento fotográfico, tolerancia ±5 cm</div>
+    <div><b>Escala dibujos</b>Proporcional, cotas en metros</div>
+    <div><b>Renders</b>Sección 8, generados sobre las fotos actuales</div>
+  </div>
+</div>
+
+<nav class="toc" aria-label="Contenido">
+  <a href="#relev">1 Relevamiento</a><a href="#diag">2 Diagnóstico</a><a href="#planta">3 Planta propuesta</a><a href="#frente">4 Frente de cocina</a><a href="#lav">5 Lavadero</a><a href="#luz">6 Iluminación y eléctrica</a><a href="#mat">7 Materiales</a><a href="#obra">8 Etapas y verificaciones</a><a href="#maqueta">9 Maqueta 3D</a><a href="#renders">10 Renders</a>
+</nav>
+
+<section id="relev">
+<div class="sec-head"><span class="n">01</span><h2>Relevamiento estimado</h2></div>
+<p>Las medidas salen de las fotos, tomando como regla los azulejos de pared de 20 × 20, los cerámicos de piso de 40 × 40, la heladera Samsung de 60 cm de frente y el lavarropas LG de 8,5 kg (60 × 85 × 55). Antes de encargar muebles o granito hay que confirmarlas con cinta; la sección 9 lista qué medir.</p>
+<figure><div class="scroll">{{SVG_ACTUAL}}</div>
+<figcaption>Estado actual. Frente único de 3,55 m: heladera en la esquina contra el muro de entrada, mirando al pasillo; a su costado arranca el bajo mesada de 2,32 m, bacha simple y cocina de 55 cm contra el muro del lavadero. Banda de ventana de 2,30 × 0,60 sobre la mesada (la persiana roja), que continúa en el lavadero sobre el mismo muro. Lavadero de 2,5 m² con lavarropas y pileta bajo esa ventana, caldera en el muro del fondo y calefón Orbis en el muro derecho.</figcaption></figure>
+<div class="kv">
+  <b>Cocina</b><span>3,55 × 1,90 m interior · 6,7 m² · altura de losa 2,60 m · piso cerámico gris 40 × 40 en buen estado</span>
+  <b>Frente útil</b><span>3,55 m sobre el muro norte: costado de la heladera 0,67 (está en la esquina, contra el muro de entrada, de frente al pasillo) + mesada 2,32 + cocina 0,56</span>
+  <b>Ventana cocina</b><span>aluminio, banda corrida de ≈2,30 × 0,60 m con persiana veneciana roja, desde encima del lavarropas hasta pasando la bacha, antepecho a 1,00 m, dintel a 1,60 m bajo la alacena</span>
+  <b>Lavadero</b><span>1,70 × 1,45 m interior · 2,5 m² · sobre el mismo muro exterior la banda de ventana sigue: corrediza de aluminio detrás del lavarropas y paño esmerilado sobre la pileta, con tendedero exterior</span>
+  <b>Artefactos a gas</b><span>caldera mural (muro del fondo) y calefón Orbis (muro derecho), ambos con conducto de evacuación</span>
+  <b>Cielorraso</b><span>yeso sobre losa con descascarado y humedad en cocina; en lavadero, agujero y revoque suelto</span>
+</div>
+</section>
+
+<section id="diag">
+<div class="sec-head"><span class="n">02</span><h2>Diagnóstico y partido</h2></div>
+<div class="grid2">
+  <div class="box"><h3>Lo que está bien y se conserva</h3><p>El piso gris combina con el blanco y negro y se queda. La distribución lineal es la correcta para un ancho de 1,90: no entra una isla ni un frente enfrentado. La cocina negra a gas es reciente y se mantiene. Los azulejos blancos de las paredes laterales quedan; solo se cambia la franja entre mesada y alacena.</p></div>
+  <div class="box"><h3>Lo que hay que resolver</h3><p>Lavarropas en el lavadero ocupando el único lugar donde podría comer alguien. Muebles con cantos hinchados y frentes vencidos. Tubo fluorescente colgado con cable a la vista. Banda de ventana de aluminio simple, sin aislación, con persiana veneciana roja que tapa la luz. Cielorraso deteriorado en los dos ambientes. Tomas insuficientes y un solo circuito para todo.</p></div>
+</div>
+<p><strong>Partido.</strong> Un solo frente continuo del muro de entrada al muro del lavadero: heladera en su esquina, lavarropas bajo mesada pegado a su costado y escondido detrás de una puerta de melamina igual a las demás, bacha, cajonera y cocina. Mesada de granito Negro Brasil pulido que sigue hasta el lavadero como barra bajo la ventana, donde almuerzan dos personas. Todo el mueble en Egger blanco para que el negro del granito y la luz cálida-neutra de la tira LED sean lo único que se ve. Cielorraso de durlock que esconde losa y cableado y recibe cuatro spots.</p>
+</section>
+
+<section id="planta">
+<div class="sec-head"><span class="n">03</span><h2>Planta propuesta</h2></div>
+<figure><div class="scroll">{{SVG_PROP}}</div>
+<figcaption>Planta propuesta. De izquierda a derecha sobre el frente: costado de heladera 0,67 (queda en la esquina, de frente al pasillo, como hoy) · lavarropas 0,62 · puerta 0,45 · bacha 0,80 · cajonera 0,45 · cocina 0,56 = 3,55 m. La bacha queda a 7 cm de donde está hoy, así el desagüe existente se reutiliza. En el lavadero la barra de 1,60 × 0,50 va bajo la continuación de la misma ventana y deja un paso libre de 0,95 m.</figcaption></figure>
+<div class="tbl"><table>
+<thead><tr><th>Posición desde muro de entrada</th><th>Módulo</th><th class="num">Ancho</th><th>Detalle</th></tr></thead>
+<tbody>
+<tr><td>0,00 – 0,67</td><td>Heladera en esquina</td><td class="num">0,67</td><td>No se mueve: contra el muro de entrada, de frente al pasillo. Sobre el frente ocupa su fondo de 0,67. Alacena de cierre arriba (0,60 × 0,60 h, prof. 0,60, a ras del frente de la heladera). El costado de 18 mm del módulo del lavarropas cierra contra su lateral con 2 cm de aire.</td></tr>
+<tr><td>0,67 – 1,29</td><td>Lavarropas embutido</td><td class="num">0,62</td><td>Nicho libre 0,61 × 0,88 h bajo la mesada, cerrado con una puerta de melamina Egger blanca de 0,60 × 0,78 igual a los otros frentes, bisagras de 165°, rejilla de ventilación en zócalo y puerta. El equipo (0,60 × 0,85 × 0,55) queda a ras de los frentes detrás de la puerta; la mesada de 0,64 deja 6 cm atrás para mangueras y desagüe.</td></tr>
+<tr><td>1,29 – 1,74</td><td>Puerta</td><td class="num">0,45</td><td>Cesto de residuos extraíble con dos tachos.</td></tr>
+<tr><td>1,74 – 2,54</td><td>Módulo bacha</td><td class="num">0,80</td><td>Bacha bajo mesada inox 50 × 40 × 20, dos puertas de 0,40, grifería monocomando cuello alto.</td></tr>
+<tr><td>2,54 – 2,99</td><td>Cajonera</td><td class="num">0,45</td><td>Tres cajones (20 / 25 / 31 cm) con correderas telescópicas de cierre suave. Cubiertos arriba, ollas abajo.</td></tr>
+<tr><td>2,99 – 3,55</td><td>Cocina</td><td class="num">0,56</td><td>Cocina existente de 0,55 contra el muro del lavadero. Zócalo de granito de 7 cm a los dos lados para tapar la junta.</td></tr>
+</tbody></table></div>
+<p>La mesada mide 2,32 m de largo y 0,64 de profundidad (4 cm más que hoy): eso permite que el lavarropas entre con sus conexiones detrás de la puerta y da 2 cm de voladizo sobre los frentes. La alacena va de 1,60 a 2,40 m de altura con una tapa de cierre hasta el cielorraso, de modo que no queda ranura que junte grasa arriba.</p>
+</section>
+
+<section id="frente">
+<div class="sec-head"><span class="n">04</span><h2>Frente de cocina</h2></div>
+<figure><div class="scroll">{{SVG_ALZ}}</div>
+<figcaption>Alzado del muro norte. A la izquierda se ve el lateral de la heladera, que queda en la esquina mirando al pasillo; bajo mesada a 0,90 con granito de 2 cm, frentín de 4 y zócalo de 7; la banda de ventana de 2,30 × 0,60 ocupa casi todo el espacio entre mesada y alacena, con subway blanco solo sobre la cocina; alacenas de 0,80 de alto con nicho abierto para el microondas sobre el lavarropas y purificador de 60 cm sobre la cocina. La tira LED corre por todo el borde inferior de las alacenas, escondida detrás de un listón de 4 cm.</figcaption></figure>
+<figure><div class="scroll">{{SVG_DET}}</div>
+<figcaption>Módulo del lavarropas: nicho de 0,62 × 0,88 bajo la mesada, cerrado con una puerta de melamina Egger blanca de 0,60 × 0,78 igual a los demás frentes, con bisagras de 165° para abrir de par en par y cargar el equipo, rejilla en el zócalo y en la parte baja de la puerta para ventilar. La mesada de 0,64 deja 6 cm detrás para mangueras y desagüe. Con la puerta cerrada el lavarropas desaparece.</figcaption></figure>
+<div class="grid2">
+  <div class="box"><h3>Bajo mesada</h3><p>Cuerpos y frentes en Egger 18 mm Blanco W1000 ST9, cantos ABS de 1 mm a tono, zócalo de 10 cm rehundido en el mismo blanco o en aluminio. Bisagras de cierre suave y tiradores de barra inox de 20 cm colocados horizontales, como los actuales pero sin desnivel.</p></div>
+  <div class="box"><h3>Alacenas</h3><p>Profundidad 0,35, altura 0,80, fondo de 18 mm. Sobre el lavarropas el módulo tiene la mitad inferior abierta (0,62 × 0,40) para el microondas, con toma interior. Sobre la cocina el módulo es más corto (0,65) y lleva el purificador colgado debajo. Tapa de cierre hasta el durlock.</p></div>
+  <div class="box"><h3>Entre mesada y alacena</h3><p>Casi todo es ventana: la banda existente de 2,30 × 0,60 se conserva en su vano y se reemplaza por PVC con doble vidrio de tres hojas corredizas. Debajo queda el zócalo de granito de 7 cm y un antepecho de granito de 3 cm bajo el marco. El subway blanco brillante 7,5 × 15 con pastina grafito va solo en el tramo sobre la cocina (0,55 × 0,70) y en los 4 cm de cada extremo. De noche el vidrio devuelve la tira LED igual que lo haría el revestimiento.</p></div>
+  <div class="box"><h3>Heladera en la esquina</h3><p>Queda donde está, contra el muro de entrada y de frente al pasillo. Arriba se cierra con una alacena de 0,60 × 0,60 a ras de su frente, con rejilla de 60 × 6 cm para que el condensador respire. El módulo del lavarropas apoya su costado contra el lateral de la heladera, así el frente blanco arranca justo donde termina el acero.</p></div>
+</div>
+</section>
+
+<section id="lav">
+<div class="sec-head"><span class="n">05</span><h2>Lavadero como desayunador</h2></div>
+<div class="note"><p><strong>Pendiente de relevamiento.</strong> El lavadero real es más chico y tiene otra forma que la dibujada acá. Esta sección se rehace con cuatro datos: ancho en la puerta, fondo hasta la pared de enfrente, si alguna pared va en ángulo, y en qué pared y a qué distancia de la puerta están la ventana, la caldera y el calefón. Hasta entonces, tomá la barra y la ventana como idea, no como medida.</p></div>
+<p>Con el lavarropas en la cocina, el lavadero queda para la caldera, el calefón y una barra donde almorzar, bajo la misma ventana que hoy tiene detrás el lavarropas. En 1,70 × 1,45 no entran barra y pileta de lavar cómodas a la vez, así que la propuesta elimina la pileta y deja una canilla de servicio con rejilla de piso en el rincón para llenar un balde. La bacha de la cocina queda a dos metros para el resto.</p>
+<figure><div class="scroll">{{SVG_LAV}}</div>
+<figcaption>Alzado de la pared de la ventana del lavadero. Barra de granito Negro Brasil de 1,60 × 0,50 a 0,90 m con frentín de 4 cm y dos banquetas de 0,65 que se guardan debajo. Ventana PVC de 1,60 × 1,00 en el mismo vano que hoy, continuación de la banda de la cocina, con paño fijo superior que conserva la rejilla de ventilación permanente exigida por los artefactos a gas. Estante abierto bajo la barra para la aspiradora y el balde.</figcaption></figure>
+<div class="grid2">
+  <div class="box"><h3>Qué cambia</h3><ul>
+    <li>Sale la pileta de cemento, el tendedero interior de techo y el lavarropas.</li>
+    <li>Barra de granito de 1,60 × 0,50 apoyada en dos ménsulas de hierro pintadas blanco y un módulo lateral de 0,45 con estante abierto.</li>
+    <li>Escobero de 0,40 × 0,35 × 2,00 en Egger blanco junto a la puerta para escoba, secador y productos.</li>
+    <li>Cielorraso: se repara el revoque, se tapa el agujero y se pinta. No conviene durlock acá porque hay dos conductos de gas que deben quedar accesibles.</li>
+    <li>Plafón LED estanco de 18 W en el centro y tira LED opcional bajo el borde de la barra.</li>
+  </ul></div>
+  <div class="box"><h3>Si querés conservar una pileta</h3><p>Alternativa: bacha inox compacta de 34 × 40 en el extremo derecho de la barra, sobre el módulo de 0,45. La barra útil baja a 1,15 m: alcanza para dos banquetas apretadas o para una persona cómoda y otra en la punta.</p><p>Mi recomendación es sin pileta: el lugar para dos era el pedido, y el lavarropas ya no necesita el desagüe ahí.</p></div>
+</div>
+<div class="note"><p><strong>Gas.</strong> El lavadero tiene caldera y calefón de tiro natural. Cualquier cambio de ventana tiene que mantener una ventilación permanente hacia el exterior (rejilla superior en el paño fijo e inferior en la puerta o el muro), y la puerta del lavadero no puede quedar hermética. Antes de cerrar la compra de la abertura conviene que un gasista matriculado valide el esquema; es un trámite corto y evita problemas con la administración del edificio.</p></div>
+</section>
+
+<section id="luz">
+<div class="sec-head"><span class="n">06</span><h2>Iluminación y eléctrica</h2></div>
+<figure><div class="scroll">{{SVG_LUZ}}</div>
+<figcaption>Plano de iluminación y tomas. Tres capas de luz en la cocina: spots generales en línea sobre el borde de la mesada, tira LED bajo alacena para trabajar, y el microondas y el purificador con sus propias luces. En el lavadero, plafón central y tira opcional bajo la barra.</figcaption></figure>
+<div class="tbl"><table>
+<thead><tr><th>Capa</th><th>Artefacto</th><th>Especificación</th><th>Encendido</th></tr></thead>
+<tbody>
+<tr><td>General cocina</td><td>4 spots LED embutidos en durlock</td><td>12 W, 4000K, Ø 9 cm, ángulo 60°, en línea a 0,85 m del muro del frente (sobre el borde de la mesada, no sobre la cabeza de quien cocina)</td><td>Llave junto a la puerta de entrada</td></tr>
+<tr><td>Tarea</td><td>Tira LED bajo alacena</td><td>2,9 m de tira 4000K 9,6 W/m en perfil de aluminio con difusor opal, fuente 24 V 60 W en la alacena sobre el lavarropas. Listón frontal de 4 cm para que no se vea el punto de luz. Mismo tono que los spots para que el granito no cambie de color.</td><td>Segundo punto de la misma llave o sensor táctil en el perfil</td></tr>
+<tr><td>Lavadero</td><td>Plafón LED estanco 18 W</td><td>4000K, IP44 por vapor de la ventana</td><td>Llave dentro del lavadero</td></tr>
+<tr><td>Acento</td><td>Tira LED bajo barra <span class="tag opc">opcional</span></td><td>1,1 m 3000K en perfil empotrado en el frentín de la barra; da el efecto flotante sobre el granito</td><td>Con el plafón</td></tr>
+</tbody></table></div>
+<h3>Tomas y circuitos</h3>
+<ul>
+  <li>Circuito dedicado para el lavarropas: toma de 20 A con disyuntor propio, ubicada en el nicho a 0,40 m del piso, accesible sin sacar el equipo.</li>
+  <li>Heladera en toma propia dentro del nicho. Microondas con toma en el nicho de la alacena. Purificador con toma en la alacena sobre la cocina.</li>
+  <li>Dos tomas dobles sobre mesada a 1,15 m (uno cerca de la bacha, otro cerca de la cocina). Se elimina el toma colgado del muro de la heladera.</li>
+  <li>Cableado nuevo por el cielorraso de durlock hasta el tablero; verificar si el tablero admite dos térmicas más o hay que ampliarlo.</li>
+</ul>
+</section>
+
+<section id="mat">
+<div class="sec-head"><span class="n">07</span><h2>Materiales y terminaciones</h2></div>
+<div class="swatches">
+  <div class="sw-item"><div class="chip" style="background:#1B1C1E"></div><div class="t"><b>Granito Negro Brasil</b>pulido, 2 cm, canto recto doble</div></div>
+  <div class="sw-item"><div class="chip" style="background:#FAFAF8;border-bottom:1px solid #d0d0d0"></div><div class="t"><b>Egger Blanco W1000 ST9</b>18 mm, canto ABS 1 mm</div></div>
+  <div class="sw-item"><div class="chip" style="background:linear-gradient(90deg,#F5F5F3 0 48%,#9a9a9a 48% 52%,#F5F5F3 52%)"></div><div class="t"><b>Subway blanco brillo</b>7,5 × 15, pastina grafito</div></div>
+  <div class="sw-item"><div class="chip" style="background:#FFE9B8"></div><div class="t"><b>LED 4000K</b>spots y tira, misma temperatura</div></div>
+  <div class="sw-item"><div class="chip" style="background:#E6E7E6"></div><div class="t"><b>PVC blanco DVH 4/9/4</b>corredizas en los vanos existentes</div></div>
+  <div class="sw-item"><div class="chip" style="background:#7d8085"></div><div class="t"><b>Piso existente</b>cerámico gris 40 × 40, se conserva</div></div>
+</div>
+<div class="tbl"><table>
+<thead><tr><th>Rubro</th><th>Especificación</th><th class="num">Cantidad</th></tr></thead>
+<tbody>
+<tr><td>Mesada cocina</td><td>Granito Negro Brasil 2 cm pulido, 2,32 × 0,64, frentín 4 cm, zócalo 7 cm en todo el perímetro, recorte para bacha bajo mesada con canto pulido</td><td class="num">2,32 ml</td></tr>
+<tr><td>Barra lavadero</td><td>Mismo granito, 1,60 × 0,50, frentín 4 cm, zócalo 7 cm contra pared, canto pulido en la punta libre</td><td class="num">1,60 ml</td></tr>
+<tr><td>Bajo mesada</td><td>Egger 18 mm blanco, 4 módulos (0,45 / 0,80 / 0,45) + nicho lavarropas 0,62, zócalo 10 cm, bisagras cierre suave, correderas telescópicas</td><td class="num">2,32 ml</td></tr>
+<tr><td>Alacenas</td><td>Egger 18 mm blanco, prof. 0,35, h 0,80 (0,65 sobre cocina), nicho microondas, tapa de cierre 0,12</td><td class="num">2,89 ml</td></tr>
+<tr><td>Torre heladera</td><td>Alacena superior 0,66 × 0,60 × 0,60 + panel lateral 0,60 × 2,40</td><td class="num">1 u</td></tr>
+<tr><td>Lavadero</td><td>Escobero 0,40 × 0,35 × 2,00 + módulo bajo barra 0,45 con estante + 2 ménsulas</td><td class="num">1 juego</td></tr>
+<tr><td>Bacha y grifería</td><td>Bacha inox AISI 304 bajo mesada 50 × 40 × 20, monocomando cuello alto cromo</td><td class="num">1 + 1</td></tr>
+<tr><td>Aberturas</td><td>Ventana PVC DVH cocina 2,30 × 0,60 en el vano existente, 3 hojas corredizas (o 2 corredizas + paño fijo central); ventana lavadero 1,60 × 1,00 corrediza 2 hojas + paño fijo superior 1,60 × 0,30 con rejilla</td><td class="num">2 u</td></tr>
+<tr><td>Cielorraso cocina</td><td>Durlock suspendido a 2,52 (baja 8 cm), 4 recortes para spots, junta tomada y pintura látex antihongo</td><td class="num">6,7 m²</td></tr>
+<tr><td>Revestimiento</td><td>Subway 7,5 × 15 blanco brillo solo sobre la cocina y extremos (0,55 × 0,70 + 10 %), pastina grafito; bajo la ventana, zócalo y antepecho de granito</td><td class="num">0,5 m²</td></tr>
+<tr><td>Pintura</td><td>Látex antihongo blanco en cielorrasos y paredes sobre azulejo; pintura para azulejos blanca sobre la guarda de frutas en las paredes laterales</td><td class="num">≈ 18 m²</td></tr>
+<tr><td>Iluminación</td><td>4 spots 12 W 4000K, plafón 18 W IP44, 2,9 m perfil + tira 4000K + fuente 24 V, purificador 60 cm inox</td><td class="num">ver plano</td></tr>
+<tr><td>Extras</td><td>2 banquetas h 0,65 apilables, canilla de servicio + rejilla</td><td class="num">—</td></tr>
+</tbody></table></div>
+<div class="note led"><p><strong>Por qué Negro Brasil y no Negro Absoluto.</strong> Absoluto es más uniforme pero cuesta el doble y en 2,3 m de mesada la diferencia no se nota. Negro Brasil tiene grano fino y con la tira LED pegada se ve como una lámina negra. Pedirlo pulido, no flameado: el flameado retiene grasa.</p></div>
+</section>
+
+
+<section id="obra">
+<div class="sec-head"><span class="n">08</span><h2>Etapas de obra y verificaciones</h2></div>
+<p>Cuatro a cinco semanas de obra con gremios coordinados. El granito es lo que marca el ritmo: se plantilla con los muebles ya colocados y tarda entre 7 y 10 días.</p>
+<ol>
+  <li><strong>Semana 1 · Desarme.</strong> Retiro de muebles, pileta del lavadero, tendedero interior, tubo fluorescente y las dos ventanas. Picado de la franja de azulejo entre mesada y alacena. La heladera y la cocina se tapan y se corren, no salen del departamento.</li>
+  <li><strong>Semana 1–2 · Instalaciones.</strong> Electricista: nuevos circuitos y cañerías por donde irá el durlock, cajas para tomas y spots. Plomero: llegada de agua fría y desagüe de 40 mm con sifón para el lavarropas en la posición 0,66–1,28, pendiente 2 % hasta el desagüe de la bacha; canilla de servicio y rejilla en el lavadero. Gasista: verificación de ventilación del lavadero.</li>
+  <li><strong>Semana 2 · Aberturas.</strong> Colocación de las dos ventanas de PVC, amure, sellado y terminación de mochetas.</li>
+  <li><strong>Semana 2–3 · Cielorraso y revestimiento.</strong> Durlock en cocina con los recortes de spots; reparación del cielorraso del lavadero; subway en la franja; pintura de techos y paredes.</li>
+  <li><strong>Semana 3 · Muebles.</strong> Colocación de bajo mesada, alacenas, torre de heladera, escobero. Ese mismo día el marmolero toma la plantilla.</li>
+  <li><strong>Semana 4–5 · Granito y terminaciones.</strong> Colocación de mesada y barra, bacha, grifería, conexión del lavarropas, tira LED, spots, plafón, purificador, zócalos de granito, sellado de silicona negra. Limpieza final.</li>
+</ol>
+<div class="note ok"><p><strong>Qué medir antes de pedir cotizaciones.</strong> Largo total del muro del frente (muro a muro, a 0,90 y a 1,60 de altura, porque los muros viejos no son paralelos). Ancho y alto interior del vano de la banda de ventana, y si el tabique entre cocina y lavadero corta un marco continuo o hay dos marcos independientes (define si se piden dos aberturas o una sola con parante). Altura de losa en tres puntos. Profundidad real del lavarropas con la manguera conectada. Distancia del desagüe de la bacha al piso. Posición de los conductos de la caldera y el calefón respecto al cielorraso. Capacidad libre del tablero eléctrico. Con esos ocho datos, cualquier carpintero, marmolero y ventanero puede cotizar sobre este anteproyecto sin visitar.</p></div>
+<p><strong>Próximo paso.</strong> Tomar esas medidas y pedir cotizaciones de amoblamiento, granito y aberturas con el listado de la sección 7 y los dibujos de las secciones 3 a 6.</p>
+</section>
+<section id="maqueta">
+<div class="sec-head"><span class="n">09</span><h2>Maqueta 3D con las medidas del plano</h2></div>
+<p>Modelo construido con las cotas de las secciones 3 y 4, sin interpretación de ninguna imagen: la heladera real (tu foto, como frente del volumen) en su esquina contra el muro de entrada, el lavarropas embutido a su costado con la puerta de melamina entreabierta para que se vea el equipo, la banda de ventana de 2,30 sobre la mesada y la cocina al final de la línea contra el muro del lavadero. Se gira arrastrando, se acerca con la rueda o pellizcando. Los tres botones fijan las vistas útiles. El lavadero no está modelado hasta tener sus medidas.</p>
+<div class="viewer">
+  <canvas id="c3d" aria-label="Maqueta 3D de la cocina propuesta"></canvas>
+  <div class="viewbtns">
+    <button type="button" id="v-entrada" class="on">Desde el pasillo</button>
+    <button type="button" id="v-lavadero">Desde el lavadero</button>
+    <button type="button" id="v-frontal">Frontal</button>
+    <button type="button" id="v-planta">Planta</button>
+  </div>
+</div>
+<p class="viewer-note">Materiales esquemáticos: blanco melamina, negro granito, acero heladera, vidrio de la banda de ventana, tira LED y spots encendidos. La pared de enfrente y el muro de entrada quedan en azulejo blanco.</p>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  if (!window.THREE) return;
+  var canvas = document.getElementById('c3d');
+  var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf1f1ef);
+  var camera = new THREE.PerspectiveCamera(58, 4/3, 0.05, 50);
+
+  // Ejes: X = largo (0 muro de entrada -> 3,55 muro lavadero), Y = altura, Z = ancho (0 muro de la mesada -> 1,90 muro de enfrente)
+  var KX = 3.55, KZ = 1.90, H = 2.60, CEIL = 2.52;
+  var M = {
+    white: new THREE.MeshStandardMaterial({color: 0xfbfbfa, roughness: 0.5, metalness: 0.0}),
+    whiteDark: new THREE.MeshStandardMaterial({color: 0xe9e9e6, roughness: 0.6}),
+    tile: new THREE.MeshStandardMaterial({color: 0xe3e3de, roughness: 0.4, metalness: 0.0}),
+    floor: new THREE.MeshStandardMaterial({color: 0x6f7378, roughness: 0.8}),
+    ceil: new THREE.MeshStandardMaterial({color: 0xfafaf8, roughness: 0.9}),
+    granite: new THREE.MeshStandardMaterial({color: 0x26272b, roughness: 0.3, metalness: 0.15}),
+    steel: new THREE.MeshStandardMaterial({color: 0xc9ced3, roughness: 0.38, metalness: 0.35}),
+    black: new THREE.MeshStandardMaterial({color: 0x2b2c30, roughness: 0.5, metalness: 0.1}),
+    glass: new THREE.MeshStandardMaterial({color: 0x8fbadc, roughness: 0.2, metalness: 0.0, emissive: 0x5f96bf, emissiveIntensity: 0.45}),
+    frame: new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.4}),
+    wood: new THREE.MeshStandardMaterial({color: 0xa8763e, roughness: 0.7}),
+    led: new THREE.MeshStandardMaterial({color: 0xfff1c9, emissive: 0xffd889, emissiveIntensity: 1.6}),
+    spot: new THREE.MeshStandardMaterial({color: 0xffffff, emissive: 0xfff3d6, emissiveIntensity: 1.2}),
+    dark: new THREE.MeshStandardMaterial({color: 0x2a2c30, roughness: 0.7})
+  };
+  var edgeMat = new THREE.LineBasicMaterial({color: 0x9a9c98});
+  function box(w, h, d, mat, x, y, z, opts){
+    var m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
+    m.position.set(x + w/2, y + h/2, z + d/2);
+    m.castShadow = !(opts && opts.noShadow); m.receiveShadow = true;
+    scene.add(m);
+    if (mat === M.white || mat === M.whiteDark || mat === M.steel || mat === M.black) {
+      var e = new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry), edgeMat); e.position.copy(m.position); scene.add(e);
+    }
+    return m;
+  }
+  // envolvente: planos de una sola cara mirando hacia adentro, para poder mirar desde afuera
+  function plane(w, h, mat, x, y, z, rx, ry){
+    var p = new THREE.Mesh(new THREE.PlaneGeometry(w, h), mat);
+    p.rotation.set(rx, ry, 0); p.position.set(x, y, z); p.receiveShadow = true; scene.add(p); return p;
+  }
+  plane(KX, KZ, M.floor, KX/2, 0, KZ/2, -Math.PI/2, 0);
+  plane(KX, KZ, M.ceil, KX/2, CEIL, KZ/2, Math.PI/2, 0);
+  plane(KX, H, M.tile, KX/2, H/2, 0, 0, 0);                    // muro de la mesada
+  plane(KX, H, M.tile, KX/2, H/2, KZ, 0, Math.PI);             // muro de enfrente
+  plane(KZ, H, M.tile, 0, H/2, KZ/2, 0, Math.PI/2);            // muro de entrada
+  plane(KZ, H, M.tile, KX, H/2, KZ/2, 0, -Math.PI/2);          // muro del lavadero
+  // puertas: acceso (muro de enfrente, x 0,10-0,90) y lavadero (muro este, z 0,70-1,45)
+  plane(0.80, 2.05, M.wood, 0.50, 1.025, KZ - 0.005, 0, Math.PI);
+  plane(0.75, 2.05, M.whiteDark, KX - 0.005, 1.025, 1.075, 0, -Math.PI/2);
+  var dfr = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.PlaneGeometry(0.75, 2.05)), edgeMat); dfr.rotation.y = -Math.PI/2; dfr.position.set(KX - 0.006, 1.025, 1.075); scene.add(dfr);
+  // heladera en esquina: contra muro de entrada, frente hacia +X, con la foto real como frente
+  var fridgeTex = new THREE.TextureLoader().load('data:image/jpeg;base64,{{FRIDGE_B64}}');
+  fridgeTex.encoding = THREE.sRGBEncoding;
+  var fridgeFront = new THREE.MeshBasicMaterial({map: fridgeTex});
+  var fr = new THREE.Mesh(new THREE.BoxGeometry(0.67, 1.72, 0.60), [fridgeFront, M.steel, M.steel, M.steel, M.steel, M.steel]);
+  fr.position.set(0.02 + 0.335, 0.05 + 0.86, 0.02 + 0.30); fr.castShadow = true; fr.receiveShadow = true; scene.add(fr);
+  var fre = new THREE.LineSegments(new THREE.EdgesGeometry(fr.geometry), edgeMat); fre.position.copy(fr.position); scene.add(fre);
+  box(0.67, 0.60, 0.60, M.white, 0.02, 1.80, 0.02);              // alacena sobre heladera
+  box(0.67, 0.12, 0.60, M.white, 0.02, 2.40, 0.02);
+  // zócalo y bajo mesada 0,67-2,99
+  box(2.32, 0.10, 0.55, M.dark, 0.67, 0, 0.02);
+  var mods = [[1.30,0.43],[1.75,0.39],[2.15,0.38],[2.55,0.43]];
+  mods.forEach(function(m){ box(m[1], 0.78, 0.58, M.white, m[0], 0.10, 0.02); });
+  // nicho lavarropas 0,67-1,29: equipo dentro y puerta de melamina entreabierta (bisagra en el lado de la heladera)
+  box(0.60, 0.85, 0.50, M.whiteDark, 0.68, 0.0, 0.06);
+  var ring = new THREE.Mesh(new THREE.TorusGeometry(0.17, 0.02, 16, 48), M.steel);
+  ring.position.set(0.98, 0.45, 0.575); scene.add(ring);
+  var drum = new THREE.Mesh(new THREE.CircleGeometry(0.15, 40), M.dark);
+  drum.position.set(0.98, 0.45, 0.568); scene.add(drum);
+  var doorG = new THREE.Group(); doorG.position.set(0.68, 0.10, 0.60); doorG.rotation.y = -1.25; scene.add(doorG);
+  var door = new THREE.Mesh(new THREE.BoxGeometry(0.60, 0.78, 0.018), M.white); door.position.set(0.30, 0.39, 0.009); door.castShadow = true; doorG.add(door);
+  var doorE = new THREE.LineSegments(new THREE.EdgesGeometry(door.geometry), edgeMat); doorE.position.copy(door.position); doorG.add(doorE);
+  var pull = new THREE.Mesh(new THREE.BoxGeometry(0.012, 0.15, 0.02), M.steel); pull.position.set(0.56, 0.52, 0.028); doorG.add(pull);
+  // cajones: tres tiradores
+  [0.20,0.44,0.73].forEach(function(z){ box(0.20, 0.012, 0.02, M.steel, 2.665, z, 0.60); });
+  [1.32,1.77,2.50].forEach(function(x){ box(0.012, 0.15, 0.02, M.steel, x, 0.55, 0.60); });
+  // mesada granito 2 cm + frentín 4 cm + zócalo 7 cm
+  box(2.32, 0.02, 0.64, M.granite, 0.67, 0.88, 0);
+  box(2.32, 0.04, 0.02, M.granite, 0.67, 0.86, 0.62);
+  box(2.88, 0.07, 0.02, M.granite, 0.67, 0.90, 0);
+  // bacha
+  var sink = box(0.50, 0.02, 0.40, M.steel, 1.89, 0.885, 0.12);
+  var tap = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.32, 12), M.steel);
+  tap.position.set(2.14, 1.06, 0.08); scene.add(tap);
+  // cocina existente 2,99-3,55
+  box(0.55, 0.88, 0.58, M.black, 2.995, 0, 0.02);
+  [[3.12,0.16],[3.42,0.16],[3.12,0.44],[3.42,0.44]].forEach(function(p){
+    var b = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.015, 20), M.dark); b.position.set(p[0], 0.89, p[1]); scene.add(b);
+  });
+  // banda de ventana 0,70-3,00, z 1,00-1,60, 3 hojas
+  box(2.30, 0.60, 0.015, M.glass, 0.70, 1.00, 0.004, {noShadow:true});
+  box(2.30, 0.03, 0.04, M.frame, 0.70, 0.985, 0.0); box(2.30, 0.03, 0.04, M.frame, 0.70, 1.585, 0.0);
+  [0.70, 1.467, 2.233, 2.97].forEach(function(x){ box(0.03, 0.60, 0.04, M.frame, x, 1.00, 0.0); });
+  // subway sobre la cocina
+  box(0.55, 0.61, 0.01, M.tile, 3.00, 0.99, 0);
+  // alacenas 0,67-3,55, h 0,80 (0,65 sobre cocina), prof 0,35, tapa a 2,52
+  box(0.62, 0.40, 0.35, M.whiteDark, 0.67, 1.60, 0);   // nicho microondas (abierto)
+  box(0.62, 0.40, 0.35, M.white, 0.67, 2.00, 0);
+  box(0.46, 0.30, 0.34, M.dark, 0.75, 1.62, 0.005);    // microondas
+  [[1.30,0.43],[1.75,0.39],[2.15,0.38],[2.55,0.43]].forEach(function(m){ box(m[1], 0.80, 0.35, M.white, m[0], 1.60, 0); });
+  box(0.56, 0.65, 0.35, M.white, 2.99, 1.75, 0);
+  box(0.56, 0.12, 0.30, M.steel, 2.99, 1.62, 0);       // purificador
+  box(2.88, 0.12, 0.35, M.white, 0.67, 2.40, 0);       // tapa de cierre
+  // tira LED bajo alacena y spots
+  box(2.30, 0.012, 0.012, M.led, 0.68, 1.585, 0.33);
+  var ledLight = new THREE.RectAreaLight ? null : null;
+  [0.55, 1.45, 2.35, 3.20].forEach(function(x){
+    var s = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, 0.01, 24), M.spot); s.position.set(x, CEIL - 0.005, 0.85); scene.add(s);
+    var pl = new THREE.PointLight(0xfff0d8, 0.35, 4, 2); pl.position.set(x, CEIL - 0.1, 0.85); scene.add(pl);
+  });
+  var strip = new THREE.PointLight(0xffe2a8, 0.9, 2.5, 2); strip.position.set(1.85, 1.50, 0.35); scene.add(strip);
+  var strip2 = new THREE.PointLight(0xffe2a8, 0.6, 2.0, 2); strip2.position.set(0.95, 1.50, 0.35); scene.add(strip2);
+  var strip3 = new THREE.PointLight(0xffe2a8, 0.6, 2.0, 2); strip3.position.set(2.75, 1.50, 0.35); scene.add(strip3);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+  var hemi = new THREE.HemisphereLight(0xffffff, 0x9a9a96, 0.6); scene.add(hemi);
+  var sun = new THREE.DirectionalLight(0xffffff, 0.55); sun.position.set(1.2, 3.4, 2.2); sun.castShadow = true;
+  sun.shadow.mapSize.set(1024, 1024); sun.shadow.camera.left = -3; sun.shadow.camera.right = 3; sun.shadow.camera.top = 3; sun.shadow.camera.bottom = -3;
+  scene.add(sun);
+  // ventana como fuente de luz suave
+  var win = new THREE.PointLight(0xdfefff, 0.5, 4, 2); win.position.set(1.85, 1.3, 0.25); scene.add(win);
+  var fl = new THREE.PointLight(0xffffff, 0.7, 3, 2); fl.position.set(1.6, 1.5, 1.0); scene.add(fl);
+
+  // control de orbita simple
+  var target = new THREE.Vector3(1.9, 1.0, 0.5), sph = {r: 2.2, theta: 0.9, phi: 1.25};
+  var presets = {
+    'v-entrada': {t:[1.75,1.0,0.35], r: 2.45, theta: 0.12, phi: 1.25},
+    'v-lavadero': {t:[1.7,1.0,0.45], r: 3.4, theta: 0.62, phi: 1.28},
+    'v-frontal': {t:[1.78,1.2,0.3], r: 3.5, theta: 0, phi: 1.50},
+    'v-planta': {t:[1.78,0.0,0.95], r: 4.6, theta: 0, phi: 0.12}
+  };
+  function apply(){
+    var p = sph.phi, t = sph.theta, r = sph.r;
+    camera.position.set(target.x + r*Math.sin(p)*Math.sin(t), target.y + r*Math.cos(p), target.z + r*Math.sin(p)*Math.cos(t));
+    camera.lookAt(target);
+  }
+  function setPreset(id){
+    var v = presets[id]; target.set(v.t[0], v.t[1], v.t[2]); sph.r = v.r; sph.theta = v.theta; sph.phi = v.phi; apply();
+    Object.keys(presets).forEach(function(k){ var b = document.getElementById(k); if (b) b.classList.toggle('on', k === id); });
+  }
+  Object.keys(presets).forEach(function(k){ var b = document.getElementById(k); if (b) b.addEventListener('click', function(){ setPreset(k); }); });
+  var drag = null;
+  function pt(e){ var t = e.touches ? e.touches[0] : e; return {x: t.clientX, y: t.clientY}; }
+  canvas.addEventListener('pointerdown', function(e){ drag = pt(e); canvas.setPointerCapture && canvas.setPointerCapture(e.pointerId); });
+  canvas.addEventListener('pointermove', function(e){ if (!drag) return; var p = pt(e); sph.theta -= (p.x - drag.x) * 0.006; sph.phi = Math.min(1.56, Math.max(0.12, sph.phi - (p.y - drag.y) * 0.005)); drag = p; apply(); });
+  canvas.addEventListener('pointerup', function(){ drag = null; }); canvas.addEventListener('pointercancel', function(){ drag = null; });
+  canvas.addEventListener('wheel', function(e){ e.preventDefault(); sph.r = Math.min(8, Math.max(0.8, sph.r * (1 + Math.sign(e.deltaY) * 0.08))); apply(); }, {passive: false});
+  var pinch = null;
+  canvas.addEventListener('touchmove', function(e){ if (e.touches.length === 2){ e.preventDefault(); var d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY); if (pinch) { sph.r = Math.min(6, Math.max(0.8, sph.r * pinch / d)); apply(); } pinch = d; } }, {passive: false});
+  canvas.addEventListener('touchend', function(){ pinch = null; });
+  function resize(){
+    var w = canvas.clientWidth || 800, h = canvas.clientHeight || 600;
+    renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  if (window.ResizeObserver) new ResizeObserver(resize).observe(canvas); else window.addEventListener('resize', resize);
+  resize(); setPreset('v-entrada');
+  window.__maqueta = {camera: camera, M: M, doorG: doorG, setPreset: setPreset, resize: resize, render: function(){ renderer.render(scene, camera); }, sph: sph, target: target, apply: apply};
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function loop(){ renderer.render(scene, camera); if (!reduce) requestAnimationFrame(loop); }
+  loop();
+  if (reduce) { ['pointermove','pointerup','wheel','touchmove','click'].forEach(function(ev){ canvas.addEventListener(ev, function(){ renderer.render(scene, camera); }); document.querySelectorAll('.viewbtns button').forEach(function(b){ b.addEventListener('click', function(){ renderer.render(scene, camera); }); }); }); }
+})();
+</script>
+
+{{RENDERS}}
+</div>
