@@ -247,10 +247,10 @@ svgs = dict(actual=plan_actual(), prop=plan_propuesta(), alz=alzado_cocina(), la
 
 import os, base64
 CAPS = {
-  "01-frente-cocina": "Frente de cocina desde el acceso: torre de heladera, lavarropas embutido, bacha, cajonera y cocina bajo la mesada de granito Negro Brasil; alacenas blancas hasta el cielorraso con tira LED.",
-  "02-heladera-lavarropas": "Extremo izquierdo del frente: heladera enmarcada por panel y alacena blancos, lavarropas a ras de los frentes bajo el granito, nicho abierto para el microondas.",
-  "03-lavadero-barra": "Lavadero convertido en desayunador: barra de granito de 1,60 bajo la ventana nueva de PVC, dos banquetas, caldera y calefón en su lugar, escobero junto a la puerta.",
-  "04-nocturna-led": "Escena nocturna con la tira LED bajo alacena como única luz principal: el granito negro refleja la línea de luz y el subway blanco la devuelve.",
+  "01-frente-cocina": "Frente completo de 3,55 m visto de frente, como el alzado: heladera en su nicho, lavarropas embutido al lado, puerta, bacha bajo la ventana de PVC, cajonera y la cocina existente con purificador; mesada de granito Negro Brasil, subway blanco, alacenas hasta el cielorraso con tira LED y cuatro spots.",
+  "02-heladera-lavarropas": "Detalle del extremo izquierdo del frente (recorte de la vista anterior): heladera en su nicho con alacena de cierre arriba, lavarropas embutido a ras de los frentes bajo el granito, primera puerta y arranque del módulo de bacha.",
+  "03-lavadero-barra": "Lavadero desde la puerta: ventana nueva de PVC y barra de granito de 1,60 en la pared izquierda, caldera en la pared del fondo y calefón Orbis en la derecha con el escobero debajo, todos donde están hoy. La imagen muestra la variante con bacha compacta en la barra.",
+  "04-nocturna-led": "El mismo frente de noche, con la tira LED bajo alacena como luz principal: el granito negro refleja la línea de luz y el subway blanco la devuelve.",
 }
 def renders_section():
     d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "renders")
